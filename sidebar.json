@@ -6,27 +6,27 @@
     },
     {
       "dir": "01-fundamentos-de-teste",
-      "label": "1. Fundamentos de Teste"
+      "label": "Fundamentos de Teste"
     },
     {
       "dir": "02-testes-no-ciclo-de-vida",
-      "label": "2. Testes no Ciclo de Vida"
+      "label": "Testes no Ciclo de Vida"
     },
     {
       "dir": "03-teste-estatico",
-      "label": "3. Teste Estático"
+      "label": "Teste Estático"
     },
     {
       "dir": "04-analise-e-modelagem-de-teste",
-      "label": "4. Análise e Modelagem"
+      "label": "Análise e Modelagem"
     },
     {
       "dir": "05-gerenciamento-das-atividades-de-teste",
-      "label": "5. Gerenciamento"
+      "label": "Gerenciamento"
     },
     {
       "dir": "06-ferramentas-de-teste",
-      "label": "6. Ferramentas de Teste"
+      "label": "Ferramentas de Teste"
     },
     {
       "dir": "07-revisao-para-a-prova",

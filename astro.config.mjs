@@ -41,7 +41,7 @@ export default defineConfig({
         },
         {
           label: 'Revisão',
-          items: ['07-dicas-de-prova', '08-glossario', { label: 'Simulados', link: '/simulados/' }],
+          items: ['07-dicas-de-prova', '08-glossario', { label: 'Simulados', link: '/mock-exams/' }],
         },
       ],
     }),

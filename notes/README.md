@@ -25,7 +25,7 @@ Material de estudo em português com todo o conteúdo examinável do **Syllabus 
 1. Leia cada capítulo na ordem, começando pelos **objetivos de aprendizagem** e pela tabela de **palavras-chave** (definição oficial do glossário + explicação em linguagem simples).
 2. Refaça os **exemplos** do capítulo 4 e as fórmulas do capítulo 5 sem olhar a resposta.
 3. Use o **resumo rápido** no final de cada nota para revisão.
-4. Feche com as [Dicas de Prova](07-dicas-de-prova.md) e os [simulados interativos](https://zacarias96.github.io/ctfl-content/simulados/) (exemplos de exame A e B: treino questão a questão ou prova cronometrada de 60 min).
+4. Feche com as [Dicas de Prova](07-dicas-de-prova.md) e os [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/) (exemplos de exame A e B: treino questão a questão ou prova cronometrada de 60 min).
 
 ## Fontes
 

@@ -1,6 +1,6 @@
-/* Simulador de exames. Usa as variáveis de cor do Starlight, então segue tema claro/escuro. */
+/* Mock exam simulator. Uses Starlight color tokens, so it follows the light/dark theme. */
 
-#simulado-app {
+#mock-exam-app {
   --sim-radius: 0.5rem;
   --sim-ok: var(--sl-color-green);
   --sim-ok-bg: var(--sl-color-green-low);
@@ -14,14 +14,14 @@
   font-size: var(--sl-text-base, 1rem);
 }
 
-/* O container usa a classe .not-content do Starlight, que desliga o espaçamento
-   automático do Markdown aqui dentro. Os estilos de base abaixo usam :where() (sem
-   especificidade) para que as classes .sim-* possam sobrescrevê-los. */
-:where(#simulado-app) :where(h2, p, ul, ol, figure, blockquote, pre, table, fieldset) {
+/* The container uses Starlight's .not-content class, which turns off the automatic
+   Markdown spacing inside it. The base styles below use :where() (zero specificity)
+   so the .sim-* classes can override them. */
+:where(#mock-exam-app) :where(h2, p, ul, ol, figure, blockquote, pre, table, fieldset) {
   margin: 0;
 }
 
-:where(#simulado-app) h2 {
+:where(#mock-exam-app) h2 {
   font-size: var(--sl-text-h4, 1.25rem);
   font-weight: 600;
   line-height: 1.3;
@@ -29,15 +29,15 @@
   margin-bottom: 0.75rem;
 }
 
-:where(#simulado-app) p {
+:where(#mock-exam-app) p {
   margin-bottom: 0.75rem;
 }
 
-:where(#simulado-app) p:last-child {
+:where(#mock-exam-app) p:last-child {
   margin-bottom: 0;
 }
 
-:where(#simulado-app) a {
+:where(#mock-exam-app) a {
   color: var(--sl-color-text-accent);
 }
 
@@ -50,7 +50,7 @@
   white-space: nowrap;
 }
 
-/* ---------- botões e controles ---------- */
+/* ---------- buttons and controls ---------- */
 
 .sim-btn {
   display: inline-flex;
@@ -76,22 +76,22 @@
   cursor: not-allowed;
 }
 
-/* Tema escuro: cor fixa, texto branco sobre azul médio (~7:1). */
-#simulado-app .sim-btn-primary {
+/* Dark theme: fixed color, white text on medium blue (~7:1 contrast). */
+#mock-exam-app .sim-btn-primary {
   background: hsl(224, 76%, 48%);
   border-color: hsl(224, 76%, 48%);
   color: #fff;
 }
 
-/* Tema claro: azul escuro do tema com texto branco.
-   No tema claro do Starlight, --sl-color-black é branco. */
-:root[data-theme='light'] #simulado-app .sim-btn-primary {
+/* Light theme: the theme's dark blue with white text.
+   In Starlight's light theme, --sl-color-black is white. */
+:root[data-theme='light'] #mock-exam-app .sim-btn-primary {
   background: var(--sl-color-accent-high);
   border-color: var(--sl-color-accent-high);
   color: var(--sl-color-black);
 }
 
-#simulado-app .sim-btn-primary:hover:not(:disabled) {
+#mock-exam-app .sim-btn-primary:hover:not(:disabled) {
   filter: brightness(1.1);
 }
 
@@ -154,7 +154,7 @@
   max-width: 100%;
 }
 
-/* ---------- tela inicial ---------- */
+/* ---------- home screen ---------- */
 
 .sim-label {
   display: block;
@@ -262,7 +262,7 @@
   color: var(--sl-color-gray-3);
 }
 
-/* ---------- barra superior / cronômetro ---------- */
+/* ---------- top bar / timer ---------- */
 
 .sim-bar {
   display: flex;
@@ -350,7 +350,7 @@
   background: var(--sim-warn);
 }
 
-/* ---------- questão ---------- */
+/* ---------- question ---------- */
 
 .sim-question {
   margin-top: 1.5rem;
@@ -448,7 +448,7 @@
   background: var(--sim-surface);
 }
 
-/* ---------- alternativas ---------- */
+/* ---------- answer options ---------- */
 
 .sim-options {
   display: grid;
@@ -584,7 +584,7 @@
   margin: 0;
 }
 
-/* ---------- resultado ---------- */
+/* ---------- results ---------- */
 
 .sim-score {
   padding: 1.5rem;

@@ -23,6 +23,10 @@ O site abre em http://localhost:4321/ctfl-content/.
 | `astro.config.mjs` | Configuração do site, incluindo a ordem da sidebar. |
 | `src/content.config.ts` | Diz ao Starlight para ler as notas de `notes/`. |
 | `plugins/remark-note-links.mjs` | Converte links entre notas (`01-fundamentos-de-teste.md#...`) em rotas do site. |
+| `src/pages/mock-exams.astro` | Página dos simulados (`/mock-exams/`). |
+| `src/scripts/mock-exams.js`, `src/styles/mock-exams.css` | Lógica e estilos dos simulados (modos treino e prova). |
+| `src/data/mock-exams.json` | Questões, gabarito e justificativas dos simulados A e B. |
+| `public/mock-exams/` | Diagramas usados nas questões. |
 | `.github/workflows/deploy.yml` | Publica o site no GitHub Pages a cada push na `main`. |
 
 ## Adicionando uma nota

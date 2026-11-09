@@ -4238,7 +4238,7 @@
      "k": "K3",
      "explanation": [
       {
-       "img": "b-23-resposta.png",
+       "img": "b-23-answer.png",
        "alt": "Diagrama de estados com as transições numeradas: E1 (START → NOT FULL), E2 (Add, NOT FULL → NOT FULL), E3 (Remove, NOT FULL → NOT FULL), E4 (Add, NOT FULL → FULL), E5 (Remove, FULL → NOT FULL)"
       },
       "Vamos nos referir às transições com E1, …, E5, como na figura. A variável N denota o número de elementos atualmente armazenados. Cada evento de “Adicionar” aumenta N em 1, e cada evento de “Remover” diminui N em 1. Observe que, quando o evento de “Adicionar” ocorre enquanto o sistema está no estado NÃO CHEIO, o estado muda para CHEIO somente se N=2. Se N<2, o sistema permanece no estado NÃO CHEIO. Se N=0, nenhuma ação de “Remover” é possível. Da mesma forma, se N=3, nenhuma ação de “Adicionar” é possível. O teste a) pode ser escrito como E1, E3, E3, E2, E4 (cobrindo",

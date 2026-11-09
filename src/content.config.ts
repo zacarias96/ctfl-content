@@ -2,8 +2,8 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
 
-// As notas ficam em notes/ (e não em src/content/docs) para continuarem
-// navegáveis direto no GitHub. O README.md da pasta vira a página inicial.
+// Notes live in notes/ (not src/content/docs) so they stay browsable directly
+// on GitHub. The folder's README.md becomes the home page.
 export const collections = {
   docs: defineCollection({
     loader: glob({

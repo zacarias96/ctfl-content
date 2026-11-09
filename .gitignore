@@ -2,10 +2,10 @@
 dist/
 .astro/
 
-# dependências
+# dependencies
 node_modules/
 
-# logs e ambiente
+# logs and environment
 npm-debug.log*
 .env
 .env.*

@@ -1,8 +1,9 @@
-// Simulador dos exames de exemplo ISTQB CTFL 4.0.
-// Dois modos:
-//   - treino: questão a questão, com correção e justificativa logo após responder;
-//   - prova: 40 questões cronometradas, correção completa só no final.
-// Sem dependências: recebe o JSON das questões e um elemento raiz.
+// Mock exam simulator for the ISTQB CTFL 4.0 sample exams.
+// Two modes:
+//   - practice: one question at a time, graded with explanations right after answering;
+//   - exam: 40 timed questions, full grading only at the end.
+// No dependencies: takes the questions JSON and a root element.
+// UI text is in Portuguese (the site's language); code and identifiers are in English.
 
 const EXAM = { minutes: 60, extraPct: 25, passMark: 26 };
 
@@ -15,9 +16,9 @@ const CHAPTERS = {
   6: { title: 'Ferramentas de Teste', slug: '06-ferramentas-de-teste' },
 };
 
-const STORE_KEY = 'ctfl-simulados-v1';
+const STORE_KEY = 'ctfl-mock-exams-v1';
 
-// ---------- utilidades ----------
+// ---------- utilities ----------
 
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -36,7 +37,7 @@ function shuffle(arr) {
 }
 
 function fmtTime(ms) {
-  // Formato mm:ss (minutos podem passar de 60, como "75:00" no tempo estendido).
+  // mm:ss format (minutes may exceed 60, e.g. "75:00" with extended time).
   const total = Math.max(0, Math.round(ms / 1000));
   const m = Math.floor(total / 60);
   const s = total % 60;
@@ -45,8 +46,16 @@ function fmtTime(ms) {
 
 const sameSet = (a = [], b = []) => a.length === b.length && a.every((x) => b.includes(x));
 
+// Storage key used before the files were renamed; migrated on first load.
+const LEGACY_STORE_KEY = 'ctfl-simulados-v1';
+
 function loadStore() {
   try {
+    const legacy = localStorage.getItem(LEGACY_STORE_KEY);
+    if (legacy !== null) {
+      if (localStorage.getItem(STORE_KEY) === null) localStorage.setItem(STORE_KEY, legacy);
+      localStorage.removeItem(LEGACY_STORE_KEY);
+    }
     return JSON.parse(localStorage.getItem(STORE_KEY)) || {};
   } catch {
     return {};
@@ -57,11 +66,11 @@ function saveStore(data) {
   try {
     localStorage.setItem(STORE_KEY, JSON.stringify(data));
   } catch {
-    /* armazenamento indisponível: segue sem persistência */
+    /* storage unavailable: continue without persistence */
   }
 }
 
-// ---------- renderização de conteúdo ----------
+// ---------- content rendering ----------
 
 function renderBlocks(blocks, imgBase) {
   let html = '';
@@ -145,13 +154,13 @@ function optionsHtml(q, name, selected, reveal) {
   </fieldset>`;
 }
 
-// ---------- aplicação ----------
+// ---------- app ----------
 
 export function mount(root, data, { base = '/' } = {}) {
-  const imgBase = `${base}simulados/`;
+  const imgBase = `${base}mock-exams/`;
   const exams = Object.fromEntries(data.exams.map((e) => [e.id, e]));
   let store = loadStore();
-  let state = null; // sessão atual
+  let state = null; // current session
   let timer = null;
 
   const persist = () => {
@@ -177,7 +186,7 @@ export function mount(root, data, { base = '/' } = {}) {
     return { ...q, label: extra ? `${e.title} · adicional ${id}` : `${e.title} · ${id}` };
   }
 
-  // ----- tela inicial -----
+  // ----- home screen -----
 
   function renderHome() {
     clearTimer();
@@ -290,7 +299,7 @@ export function mount(root, data, { base = '/' } = {}) {
       order: qs.map((q) => `${examId}:${q.id}`),
       index: 0,
       answers: {}, // ref -> [keys]
-      checked: {}, // treino: ref -> true quando corrigida
+      checked: {}, // practice: ref -> true once graded
       flags: {},
       startedAt: Date.now(),
       deadline: mode === 'exam' ? Date.now() + minutes * 60000 : null,
@@ -313,7 +322,7 @@ export function mount(root, data, { base = '/' } = {}) {
         if (multi) {
           const checked = [...scope.querySelectorAll('.sim-options input:checked')];
           if (checked.length > q.answer.length) {
-            // mantém no máximo N marcadas: desmarca a mais antiga que não seja a atual
+            // keep at most N checked: uncheck the oldest one that is not the current input
             const other = checked.find((c) => c !== input);
             if (other) other.checked = false;
           }
@@ -324,7 +333,7 @@ export function mount(root, data, { base = '/' } = {}) {
     });
   }
 
-  // ----- modo treino -----
+  // ----- practice mode -----
 
   function renderPractice() {
     clearTimer();
@@ -427,7 +436,7 @@ export function mount(root, data, { base = '/' } = {}) {
     if (redo) redo.onclick = () => startSession('practice', state.examId, wrong.map(findQ));
   }
 
-  // ----- modo prova -----
+  // ----- exam mode -----
 
   function renderExam() {
     clearTimer();
@@ -630,7 +639,7 @@ export function mount(root, data, { base = '/' } = {}) {
     if (train) train.onclick = () => startSession('practice', examId, wrong);
   }
 
-  // ----- teclado (treino e prova) -----
+  // ----- keyboard (practice and exam) -----
 
   document.addEventListener('keydown', (e) => {
     if (!state || state.finished || e.ctrlKey || e.metaKey || e.altKey) return;

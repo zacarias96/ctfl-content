@@ -189,4 +189,5 @@ Não. Os casos de teste devem cobrir a história e **não ir além dela**. O rel
 - [Syllabus CTFL v4.0 em português](https://bstqb.online/ctfl) - BSTQB, português (seção 4.5)
 - [INVEST in Good Stories, and SMART Tasks](https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/) - Bill Wake, inglês
 - [Essential XP: Card, Conversation, Confirmation](https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/) - Ron Jeffries, inglês
+- *Bridging the Communication Gap* - Gojko Adzic, Neuri, 2009 (citado no syllabus para ATDD), inglês
 - *Specification by Example* - Gojko Adzic, Manning, 2011, inglês

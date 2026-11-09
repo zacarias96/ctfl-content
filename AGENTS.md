@@ -13,9 +13,9 @@ Keep this split strict, for consistency:
 | English                                                              | Portuguese (pt-BR)                                            |
 | -------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Code, identifiers, CSS classes, JSON keys, data attributes           | Everything the reader sees: UI text, labels, messages         |
-| File and folder names (except notes)                                 | Note file names in `notes/` (e.g. `03-teste-estatico.md`)     |
-| Code comments, config files, workflow names                          | Note content and the READMEs (`README.md`, `notes/README.md`) |
-| Commit messages (Conventional Commits, e.g. `feat(mock-exams): ...`) | Sidebar labels in `astro.config.mjs`                          |
+| File and folder names (except notes)                                 | Note folder and file names in `notes/` (e.g. `03-teste-estatico/01-nocoes-basicas-de-teste-estatico.md`) |
+| Code comments, config files, workflow names                          | Note content, `README.md` and `notes/index.md`                |
+| Commit messages (Conventional Commits, e.g. `feat(mock-exams): ...`) | Sidebar labels (`sidebar.json`, note frontmatter)             |
 
 Page file names become URLs, so new pages also get English names.
 
@@ -37,10 +37,12 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 
 | Path                            | Purpose                                                                            |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
-| `notes/`                        | The notes (plain Markdown, readable on GitHub). `README.md` is the site home page. |
-| `astro.config.mjs`              | Site config and sidebar order. New notes must be added to `sidebar`.               |
+| `notes/index.md`                | Site home page: scope of each section.                                             |
+| `notes/<NN-section>/`           | One folder per syllabus chapter; each `NN-name.md` is a page, ordered by prefix.   |
+| `sidebar.json`                  | Order and labels of the sections (folders); optional `links` (e.g. mock exams).    |
+| `astro.config.mjs`              | Site config. Builds the sidebar from `sidebar.json` and the files in each folder.  |
 | `src/content.config.ts`         | Loads the Starlight docs collection from `notes/` instead of `src/content/docs`.   |
-| `plugins/remark-note-links.mjs` | Rewrites relative links between notes (`01-...md#anchor`) into site routes.        |
+| `plugins/remark-note-links.mjs` | Rewrites relative links between notes (`../01-.../03-...md#anchor`) into routes.   |
 | `src/pages/mock-exams.astro`    | Mock exam page, rendered inside `StarlightPage`.                                   |
 | `src/scripts/mock-exams.js`     | Mock exam app (vanilla JS, no dependencies): practice mode and timed exam mode.    |
 | `src/styles/mock-exams.css`     | Mock exam styles.                                                                  |
@@ -49,9 +51,12 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 
 ## Notes
 
-- Each note starts with frontmatter (`title`, `sidebar.label`).
-- Link between notes with relative `.md` links (`[Cap. 4](04-analise-e-modelagem-de-teste.md)`) so they work both on GitHub and on the site.
-- Each chapter opens with a **Palavras-chave (K1)** table: term, official definition from the [ISTQB glossary (pt-BR)](https://glossary.istqb.org/pt_BR/), and a plain-language explanation.
+- One note per syllabus section (or a small group of sections). A new note goes in its chapter folder with the next numeric prefix; if it lands mid-sequence, renumber the following files and fix every link to them. A new folder also needs an entry in `sidebar.json`.
+- Frontmatter: `title`, `description`, `sidebar.label`. No H1 in the body (Starlight renders the title).
+- Note layout: a quote with the syllabus section (and exam weight when relevant), `## Objetivos de aprendizagem` (LO codes and K-levels), `## Palavras-chave` (term, official definition from the [ISTQB glossary (pt-BR)](https://glossary.istqb.org/pt-br/search/), plain-language explanation), the content, worked exercises for K3 objectives, `## Teste seu conhecimento` (answers inside `<details>`) and `## Referências` (pt-BR sources when available).
+- Link between notes with relative `.md` paths including the numeric prefix (`[Princípios](../01-fundamentos-de-teste/03-principios-de-teste.md)`), so they work both on GitHub and on the site.
+- Diagrams use Mermaid code blocks (rendered client-side by `astro-mermaid`). Avoid `<` inside Mermaid labels.
+- Writing: pt-BR, beginner-friendly, no em dash (use a hyphen or comma), no `---` separators outside frontmatter, no "Resumo"/"Conclusão" section at the end.
 - Content follows the CTFL 4.0 syllabus (BSTQB translation). Cite sources, and quote ISTQB material only for non-commercial study, as its terms allow.
 
 ## Mock exams
@@ -59,6 +64,7 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 - Exam rules live in `EXAM` in `src/scripts/mock-exams.js`: 60 minutes, 40 questions, pass mark 26, +25% time for foreigners taking the exam in Portuguese (per https://bstqb.online/ctfl).
 - Data shape: `exams[] -> { id, title, version, questions[], extra[] }`. Each question has `id`, `stem` (blocks), `options[{ key, text }]`, `answer[]` (two keys for "select TWO" questions), `lo`, `k` and `explanation[]`. Stem and explanation blocks are `{ p }`, `{ li }`, `{ quote: [] }`, `{ pre }`, `{ img, alt }` or `{ table: { head, rows } }`; explanation entries can also be plain strings.
 - `src/data/mock-exams.json` was extracted from the official sample exam PDFs (v1.7, BSTQB translation). Those PDFs are not tracked in git. The pt-BR translation has errors, so option verdicts are normalized to `x) Correta.` / `x) Incorreta.` from the official answer key, which is the source of truth.
+- Review links: each question links to the note that covers its learning objective, through the `NOTES` map (LO prefix -> note path) in `src/scripts/mock-exams.js`. `CHAPTERS[].slug` points to the first note of each chapter (used by the per-chapter score table). Update both when notes are renamed or moved.
 - Progress and history are stored in `localStorage` under `ctfl-mock-exams-v1`. Every access goes through `try/catch`, and the page must work without storage.
 
 ## Styling

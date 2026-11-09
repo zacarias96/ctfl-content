@@ -1,4 +1,4 @@
-# ctfl-content
+# CTFL Content
 
 Notas de estudo em português para a certificação **ISTQB® CTFL 4.0** (Certified Tester Foundation Level), publicadas como site em https://zacarias96.github.io/ctfl-content/.
 

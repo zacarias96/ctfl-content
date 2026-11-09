@@ -7,13 +7,61 @@
 
 const EXAM = { minutes: 60, extraPct: 25, passMark: 26 };
 
+// slug = first note of the section (each chapter is a folder in notes/).
 const CHAPTERS = {
-  1: { title: 'Fundamentos de Teste', slug: '01-fundamentos-de-teste' },
-  2: { title: 'Testes no Ciclo de Vida', slug: '02-testes-no-ciclo-de-vida' },
-  3: { title: 'Teste Estático', slug: '03-teste-estatico' },
-  4: { title: 'Análise e Modelagem', slug: '04-analise-e-modelagem-de-teste' },
-  5: { title: 'Gerenciamento', slug: '05-gerenciamento-das-atividades-de-teste' },
-  6: { title: 'Ferramentas de Teste', slug: '06-ferramentas-de-teste' },
+  1: { title: 'Fundamentos de Teste', slug: '01-fundamentos-de-teste/01-o-que-e-teste' },
+  2: { title: 'Testes no Ciclo de Vida', slug: '02-testes-no-ciclo-de-vida/01-sdlc-e-boas-praticas' },
+  3: { title: 'Teste Estático', slug: '03-teste-estatico/01-nocoes-basicas-de-teste-estatico' },
+  4: { title: 'Análise e Modelagem', slug: '04-analise-e-modelagem-de-teste/01-visao-geral-das-tecnicas' },
+  5: { title: 'Gerenciamento', slug: '05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios' },
+  6: { title: 'Ferramentas de Teste', slug: '06-ferramentas-de-teste/01-ferramentas-e-automacao' },
+};
+
+// Note that covers each learning objective, keyed by LO prefix. List the more
+// specific prefixes first: FL-1.4.3 must match "1.4" only after "1.4.1"/"1.4.2" fail.
+const NOTES = [
+  ['1.1', '01-fundamentos-de-teste/01-o-que-e-teste', 'O que é teste?'],
+  ['1.2', '01-fundamentos-de-teste/02-por-que-testar', 'Por que os testes são necessários?'],
+  ['1.3', '01-fundamentos-de-teste/03-principios-de-teste', 'Os sete princípios de teste'],
+  ['1.4.1', '01-fundamentos-de-teste/04-processo-de-teste', 'Processo de teste'],
+  ['1.4.2', '01-fundamentos-de-teste/04-processo-de-teste', 'Processo de teste'],
+  ['1.4', '01-fundamentos-de-teste/05-testware-rastreabilidade-e-papeis', 'Testware, rastreabilidade e papéis'],
+  ['1.5', '01-fundamentos-de-teste/06-habilidades-e-independencia', 'Habilidades, equipe completa e independência'],
+  ['2.1.3', '02-testes-no-ciclo-de-vida/02-abordagens-test-first', 'TDD, ATDD e BDD'],
+  ['2.1.4', '02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas', 'DevOps, shift-left e retrospectivas'],
+  ['2.1.5', '02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas', 'DevOps, shift-left e retrospectivas'],
+  ['2.1.6', '02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas', 'DevOps, shift-left e retrospectivas'],
+  ['2.1', '02-testes-no-ciclo-de-vida/01-sdlc-e-boas-praticas', 'Teste no ciclo de vida de desenvolvimento'],
+  ['2.2.1', '02-testes-no-ciclo-de-vida/04-niveis-de-teste', 'Níveis de teste'],
+  ['2.2', '02-testes-no-ciclo-de-vida/05-tipos-de-teste-confirmacao-e-regressao', 'Tipos de teste, confirmação e regressão'],
+  ['2.3', '02-testes-no-ciclo-de-vida/06-teste-de-manutencao', 'Teste de manutenção'],
+  ['3.1', '03-teste-estatico/01-nocoes-basicas-de-teste-estatico', 'Noções básicas de teste estático'],
+  ['3.2.4', '03-teste-estatico/03-tipos-de-revisao-e-fatores-de-sucesso', 'Tipos de revisão e fatores de sucesso'],
+  ['3.2.5', '03-teste-estatico/03-tipos-de-revisao-e-fatores-de-sucesso', 'Tipos de revisão e fatores de sucesso'],
+  ['3.2', '03-teste-estatico/02-processo-de-revisao', 'Feedback e processo de revisão'],
+  ['4.1', '04-analise-e-modelagem-de-teste/01-visao-geral-das-tecnicas', 'Visão geral das técnicas de teste'],
+  ['4.2.1', '04-analise-e-modelagem-de-teste/02-particionamento-de-equivalencia', 'Particionamento de equivalência'],
+  ['4.2.2', '04-analise-e-modelagem-de-teste/03-analise-de-valor-limite', 'Análise de valor limite'],
+  ['4.2.3', '04-analise-e-modelagem-de-teste/04-tabela-de-decisao', 'Teste de tabela de decisão'],
+  ['4.2.4', '04-analise-e-modelagem-de-teste/05-transicao-de-estado', 'Teste de transição de estado'],
+  ['4.3', '04-analise-e-modelagem-de-teste/06-caixa-branca', 'Técnicas caixa-branca'],
+  ['4.4', '04-analise-e-modelagem-de-teste/07-baseadas-na-experiencia', 'Técnicas baseadas na experiência'],
+  ['4.5', '04-analise-e-modelagem-de-teste/08-abordagens-colaborativas', 'Histórias, critérios de aceite e ATDD'],
+  ['5.1.4', '05-gerenciamento-das-atividades-de-teste/02-tecnicas-de-estimativa', 'Técnicas de estimativa'],
+  ['5.1.5', '05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes', 'Priorização, pirâmide e quadrantes'],
+  ['5.1.6', '05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes', 'Priorização, pirâmide e quadrantes'],
+  ['5.1.7', '05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes', 'Priorização, pirâmide e quadrantes'],
+  ['5.1', '05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios', 'Plano de teste e critérios'],
+  ['5.2', '05-gerenciamento-das-atividades-de-teste/04-gerenciamento-de-risco', 'Gerenciamento de risco'],
+  ['5.3', '05-gerenciamento-das-atividades-de-teste/05-monitoramento-controle-e-conclusao', 'Monitoramento, controle e conclusão'],
+  ['5.4', '05-gerenciamento-das-atividades-de-teste/06-gerenciamento-de-configuracao', 'Gerenciamento de configuração'],
+  ['5.5', '05-gerenciamento-das-atividades-de-teste/07-gerenciamento-de-defeitos', 'Gerenciamento de defeitos'],
+  ['6', '06-ferramentas-de-teste/01-ferramentas-e-automacao', 'Ferramentas de teste e automação'],
+];
+
+const noteOf = (q) => {
+  const lo = (q.lo || '').replace(/^FL-/, '');
+  return NOTES.find(([p]) => lo === p || lo.startsWith(p + '.')) || null;
 };
 
 const STORE_KEY = 'ctfl-mock-exams-v1';
@@ -117,6 +165,8 @@ function renderExplLine(line) {
 }
 
 function chapterLink(q, base) {
+  const note = noteOf(q);
+  if (note) return `<a href="${base}${note[1]}/">Revisar: ${esc(note[2])}</a>`;
   const ch = CHAPTERS[chapterOf(q)];
   if (!ch) return '';
   return `<a href="${base}${ch.slug}/">Revisar cap. ${chapterOf(q)}: ${esc(ch.title)}</a>`;

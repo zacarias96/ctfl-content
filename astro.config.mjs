@@ -1,18 +1,34 @@
 // @ts-check
+import { readdirSync, readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 import { unified } from '@astrojs/markdown-remark';
 import remarkNoteLinks from './plugins/remark-note-links.mjs';
 
 const base = '/ctfl-content';
 
+// sidebar.json sets the order and labels of the sections (folders in notes/).
+// Inside each folder, note order comes from the numeric file name prefix. The
+// optional "links" field appends pages that are not notes (e.g. mock exams).
+const { sections } = JSON.parse(readFileSync(new URL('./sidebar.json', import.meta.url), 'utf8'));
+
+// Starlight autogenerate only sees src/content/docs, so each section lists its
+// notes straight from the folder (alphabetical order = prefix order).
+const notesOf = (dir) =>
+  readdirSync(new URL(`./notes/${dir}/`, import.meta.url))
+    .filter((f) => f.endsWith('.md'))
+    .sort()
+    .map((f) => `${dir}/${f.replace(/\.md$/, '')}`);
+
 export default defineConfig({
   site: 'https://zacarias96.github.io',
   base,
   markdown: {
-    processor: unified({ remarkPlugins: [[remarkNoteLinks, { base }]] }),
+    processor: unified({ remarkPlugins: [[remarkNoteLinks, { base, notesDir: 'notes' }]] }),
   },
   integrations: [
+    mermaid({ autoTheme: true }),
     starlight({
       title: 'CTFL 4.0 - Notas de Estudo',
       defaultLocale: 'root',
@@ -27,22 +43,10 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Início', link: '/' },
-        {
-          label: 'Capítulos',
-          items: [
-            '00-introducao',
-            '01-fundamentos-de-teste',
-            '02-testes-no-ciclo-de-vida',
-            '03-teste-estatico',
-            '04-analise-e-modelagem-de-teste',
-            '05-gerenciamento-das-atividades-de-teste',
-            '06-ferramentas-de-teste',
-          ],
-        },
-        {
-          label: 'Revisão',
-          items: ['07-dicas-de-prova', '08-glossario', { label: 'Simulados', link: '/mock-exams/' }],
-        },
+        ...sections.map(({ dir, label, links = [] }) => ({
+          label,
+          items: [...notesOf(dir), ...links],
+        })),
       ],
     }),
   ],

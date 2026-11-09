@@ -1,19 +1,34 @@
+import path from 'node:path';
 import { visit } from 'unist-util-visit';
 
 /**
- * Converts relative links between notes (e.g. `01-fundamentos-de-teste.md#13-...`)
- * into site routes (e.g. `/ctfl-content/01-fundamentos-de-teste/#13-...`).
- * Assim os mesmos arquivos funcionam no GitHub e no site.
+ * Converts relative links between notes into site routes, so the same files
+ * work on GitHub and on the site. Examples (from
+ * notes/07-revisao-para-a-prova/01-temas-recorrentes-e-estrategia.md):
+ *
+ *   ../01-fundamentos-de-teste/03-principios-de-teste.md#ausencia
+ *     -> /ctfl-content/01-fundamentos-de-teste/03-principios-de-teste/#ausencia
+ *   ../index.md -> /ctfl-content/
  */
-export default function remarkNoteLinks({ base = '' } = {}) {
+export default function remarkNoteLinks({ base = '', notesDir = 'notes' } = {}) {
   const prefix = base.replace(/\/$/, '');
-  return (tree) => {
+  const root = path.resolve(notesDir);
+
+  return (tree, file) => {
+    if (!file.path) return;
+    const fromDir = path.dirname(path.resolve(file.path));
+
     visit(tree, 'link', (node) => {
-      const match = /^(?:\.\/)?([\w-]+)\.md(#.*)?$/.exec(node.url);
+      const match = /^([^:#?]+)\.md(#.*)?$/.exec(node.url);
       if (!match) return;
-      const [, slug, hash = ''] = match;
-      const path = slug === 'index' || slug === 'README' ? '/' : `/${slug}/`;
-      node.url = `${prefix}${path}${hash}`;
+      const [, target, hash = ''] = match;
+      const rel = path
+        .relative(root, path.resolve(fromDir, target))
+        .split(path.sep)
+        .join('/');
+      if (rel.startsWith('..')) return;
+      const slug = rel.replace(/(^|\/)(index|README)$/, '');
+      node.url = `${prefix}/${slug ? `${slug}/` : ''}${hash}`;
     });
   };
 }

@@ -1,0 +1,680 @@
+/* Simulador de exames. Usa as variáveis de cor do Starlight, então segue tema claro/escuro. */
+
+#simulado-app {
+  --sim-radius: 0.5rem;
+  --sim-ok: var(--sl-color-green);
+  --sim-ok-bg: var(--sl-color-green-low);
+  --sim-ok-text: var(--sl-color-green-high);
+  --sim-bad: var(--sl-color-red);
+  --sim-bad-bg: var(--sl-color-red-low);
+  --sim-bad-text: var(--sl-color-red-high);
+  --sim-warn: var(--sl-color-orange);
+  --sim-border: var(--sl-color-gray-5);
+  --sim-surface: var(--sl-color-gray-6);
+  font-size: var(--sl-text-base, 1rem);
+}
+
+#simulado-app * + * {
+  margin-top: 0;
+}
+
+#simulado-app h2 {
+  font-size: var(--sl-text-h4, 1.25rem);
+  margin: 0 0 0.5rem;
+}
+
+#simulado-app p {
+  margin: 0 0 0.75rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- botões e controles ---------- */
+
+.sim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  background: var(--sl-color-bg);
+  color: var(--sl-color-white);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sim-btn:hover:not(:disabled) {
+  border-color: var(--sl-color-accent);
+}
+
+.sim-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sim-btn-primary {
+  background: var(--sl-color-accent);
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-black);
+}
+
+/* No tema claro do Starlight, --sl-color-white é quase preto e --sl-color-black é branco. */
+:root[data-theme='light'] .sim-btn-primary {
+  color: var(--sl-color-black);
+  background: var(--sl-color-accent-high);
+  border-color: var(--sl-color-accent-high);
+}
+
+.sim-btn-small {
+  min-height: 2rem;
+  padding: 0.2rem 0.75rem;
+  font-size: var(--sl-text-sm, 0.875rem);
+}
+
+.sim-btn:focus-visible,
+.sim-option:focus-within,
+.sim-palette button:focus-visible,
+.sim-seg label:focus-within {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+.sim-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.sim-actions > :last-child {
+  margin-left: auto;
+}
+
+.sim-check {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin: 0 0 0.6rem;
+  cursor: pointer;
+}
+
+.sim-check input {
+  margin-top: 0.3rem;
+  accent-color: var(--sl-color-accent);
+}
+
+.sim-field-inline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+.sim-field-inline select {
+  font: inherit;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--sim-radius);
+  border: 1px solid var(--sim-border);
+  background: var(--sl-color-bg);
+  color: inherit;
+  max-width: 100%;
+}
+
+/* ---------- tela inicial ---------- */
+
+.sim-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.sim-field {
+  margin-bottom: 1.5rem;
+}
+
+.sim-seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sim-seg label {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--sim-radius);
+}
+
+.sim-seg input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+
+.sim-seg span {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  font-weight: 600;
+}
+
+.sim-seg small {
+  font-weight: 400;
+  color: var(--sl-color-gray-3);
+}
+
+.sim-seg input:checked + span {
+  border-color: var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-white);
+}
+
+.sim-modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.sim-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+}
+
+.sim-card .sim-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.sim-resume {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--sl-color-accent);
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+}
+
+.sim-resume .sim-actions {
+  margin-top: 0.5rem;
+}
+
+.sim-resume .sim-actions > :last-child {
+  margin-left: 0;
+}
+
+.sim-history,
+.sim-chapters,
+.sim-review {
+  margin-top: 2rem;
+}
+
+.sim-credits {
+  margin-top: 2.5rem !important;
+  font-size: var(--sl-text-xs, 0.8rem);
+  color: var(--sl-color-gray-3);
+}
+
+/* ---------- barra superior / cronômetro ---------- */
+
+.sim-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+}
+
+.sim-bar-sticky {
+  position: sticky;
+  top: calc(var(--sl-nav-height, 3.5rem) + 0.5rem);
+  z-index: 5;
+}
+
+.sim-timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.sim-timer.is-low {
+  color: var(--sim-bad);
+}
+
+.sim-progress {
+  height: 4px;
+  margin-top: 0.5rem !important;
+  border-radius: 2px;
+  background: var(--sim-border);
+  overflow: hidden;
+}
+
+.sim-progress span {
+  display: block;
+  height: 100%;
+  background: var(--sl-color-accent);
+  transition: width 0.3s;
+}
+
+.sim-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.25rem, 1fr));
+  gap: 0.35rem;
+  margin-top: 0.75rem !important;
+}
+
+.sim-palette button {
+  position: relative;
+  min-height: 2.25rem;
+  border: 1px solid var(--sim-border);
+  border-radius: 0.35rem;
+  background: var(--sl-color-bg);
+  color: inherit;
+  font: inherit;
+  font-size: var(--sl-text-sm, 0.875rem);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.sim-palette button.is-answered {
+  background: var(--sl-color-accent-low);
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-white);
+}
+
+.sim-palette button.is-current {
+  outline: 2px solid var(--sl-color-white);
+  outline-offset: 1px;
+  font-weight: 700;
+}
+
+.sim-palette button.is-flagged::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sim-warn);
+}
+
+/* ---------- questão ---------- */
+
+.sim-question {
+  margin-top: 1.25rem !important;
+}
+
+.sim-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.sim-badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--sim-border);
+  border-radius: 999px;
+  font-size: var(--sl-text-xs, 0.8rem);
+  color: var(--sl-color-gray-2);
+}
+
+.sim-badge-k {
+  border-color: var(--sl-color-accent);
+}
+
+.sim-badge-warn {
+  border-color: var(--sim-warn);
+  color: var(--sim-warn);
+  font-weight: 600;
+}
+
+.sim-stem {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.sim-list {
+  margin: 0 0 0.9rem;
+  padding-left: 1.25rem;
+}
+
+.sim-list li + li {
+  margin-top: 0.2rem;
+}
+
+.sim-quote {
+  margin: 0 0 0.9rem;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--sim-border);
+  color: var(--sl-color-gray-2);
+}
+
+.sim-pre {
+  margin: 0 0 0.9rem;
+  padding: 0.75rem;
+  border-radius: var(--sim-radius);
+  background: var(--sl-color-bg-inline-code);
+  font-size: var(--sl-text-sm, 0.85rem);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.sim-fig {
+  margin: 0 0 0.9rem;
+  padding: 0.75rem;
+  border-radius: var(--sim-radius);
+  background: #fff;
+  text-align: center;
+}
+
+.sim-fig img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sim-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 0.9rem;
+}
+
+.sim-table {
+  border-collapse: collapse;
+  font-size: var(--sl-text-sm, 0.9rem);
+  width: auto;
+}
+
+.sim-table th,
+.sim-table td {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--sim-border);
+  text-align: left;
+}
+
+.sim-table thead th {
+  background: var(--sim-surface);
+}
+
+/* ---------- alternativas ---------- */
+
+.sim-options {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.sim-option {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 0.6rem;
+  align-items: start;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.sim-option input {
+  margin-top: 0.3rem;
+  accent-color: var(--sl-color-accent);
+}
+
+.sim-options:disabled .sim-option {
+  cursor: default;
+}
+
+.sim-option:hover {
+  border-color: var(--sl-color-accent);
+}
+
+.sim-option.is-selected {
+  border-color: var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+}
+
+.sim-key {
+  font-weight: 700;
+}
+
+.sim-option.is-correct {
+  border-color: var(--sim-ok);
+  background: var(--sim-ok-bg);
+}
+
+.sim-option.is-wrong {
+  border-color: var(--sim-bad);
+  background: var(--sim-bad-bg);
+}
+
+.sim-option.is-dim {
+  opacity: 0.7;
+}
+
+.sim-mark {
+  font-weight: 700;
+}
+
+.is-correct .sim-mark {
+  color: var(--sim-ok);
+}
+
+.is-wrong .sim-mark {
+  color: var(--sim-bad);
+}
+
+/* ---------- feedback ---------- */
+
+.sim-feedback {
+  margin-top: 1rem !important;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  background: var(--sim-surface);
+}
+
+.sim-feedback:focus {
+  outline: none;
+}
+
+.sim-feedback.is-ok {
+  border-left-color: var(--sim-ok);
+}
+
+.sim-feedback.is-bad {
+  border-left-color: var(--sim-bad);
+}
+
+.sim-verdict {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.is-ok > .sim-verdict {
+  color: var(--sim-ok);
+}
+
+.is-bad > .sim-verdict {
+  color: var(--sim-bad);
+}
+
+.sim-expl p {
+  margin-bottom: 0.5rem;
+}
+
+.sim-tag {
+  font-weight: 700;
+}
+
+.sim-expl-opt.is-ok .sim-tag {
+  color: var(--sim-ok);
+}
+
+.sim-expl-opt.is-bad .sim-tag {
+  color: var(--sim-bad);
+}
+
+.sim-review-link {
+  margin: 0.75rem 0 0 !important;
+  font-size: var(--sl-text-sm, 0.9rem);
+}
+
+.sim-hint {
+  margin-top: 1rem !important;
+  font-size: var(--sl-text-xs, 0.8rem);
+  color: var(--sl-color-gray-3);
+}
+
+.sim-flag {
+  margin: 0;
+}
+
+/* ---------- resultado ---------- */
+
+.sim-score {
+  padding: 1.5rem;
+  border-radius: var(--sim-radius);
+  border: 1px solid var(--sim-border);
+  text-align: center;
+  background: var(--sim-surface);
+}
+
+.sim-score.is-ok {
+  border-color: var(--sim-ok);
+}
+
+.sim-score.is-bad {
+  border-color: var(--sim-bad);
+}
+
+.sim-score-big {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.25rem !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.sim-score.is-ok .sim-score-big {
+  color: var(--sim-ok);
+}
+
+.sim-score.is-bad .sim-score-big {
+  color: var(--sim-bad);
+}
+
+.sim-meter {
+  display: inline-block;
+  width: 8rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--m) var(--pct), var(--sim-border) var(--pct));
+  vertical-align: middle;
+}
+
+.sim-meter.is-ok {
+  --m: var(--sim-ok);
+}
+
+.sim-meter.is-bad {
+  --m: var(--sim-bad);
+}
+
+.sim-pill {
+  display: inline-block;
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  font-size: var(--sl-text-sm, 0.85rem);
+  font-weight: 700;
+}
+
+.sim-pill.is-ok {
+  background: var(--sim-ok-bg);
+  color: var(--sim-ok-text);
+}
+
+.sim-pill.is-bad {
+  background: var(--sim-bad-bg);
+  color: var(--sim-bad-text);
+}
+
+.sim-filter {
+  margin: 0.5rem 0 1rem;
+}
+
+.sim-review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sim-review-item {
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  margin-bottom: 0.6rem !important;
+}
+
+.sim-review-item[hidden] {
+  display: none;
+}
+
+.sim-review-item summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+}
+
+.sim-review-item details > :not(summary) {
+  margin-left: 0.9rem;
+  margin-right: 0.9rem;
+}
+
+.sim-review-item details[open] {
+  padding-bottom: 0.9rem;
+}
+
+.sim-review-ans {
+  margin-left: auto;
+  font-size: var(--sl-text-sm, 0.9rem);
+}
+
+@media (max-width: 40rem) {
+  .sim-actions > :last-child {
+    margin-left: 0;
+  }
+  .sim-review-ans {
+    margin-left: 0;
+    width: 100%;
+  }
+  .sim-option {
+    grid-template-columns: auto auto 1fr;
+  }
+  .sim-mark {
+    grid-column: 3;
+  }
+}

@@ -25,11 +25,12 @@ Material de estudo em português com todo o conteúdo examinável do **Syllabus 
 1. Leia cada capítulo na ordem, começando pelos **objetivos de aprendizagem** e pela tabela de **palavras-chave** (definição oficial do glossário + explicação em linguagem simples).
 2. Refaça os **exemplos** do capítulo 4 e as fórmulas do capítulo 5 sem olhar a resposta.
 3. Use o **resumo rápido** no final de cada nota para revisão.
-4. Feche com as [Dicas de Prova](07-dicas-de-prova.md) e os simulados oficiais.
+4. Feche com as [Dicas de Prova](07-dicas-de-prova.md) e os [simulados interativos](https://zacarias96.github.io/ctfl-content/simulados/) (exemplos de exame A e B: treino questão a questão ou prova cronometrada de 60 min).
 
 ## Fontes
 
 - ISTQB® Certified Tester Foundation Level Syllabus v4.0, tradução BSTQB (`syllabus_ctfl_4.0-br.pdf`, na raiz do repositório).
+- ISTQB® CTFL v4.0 Sample Exams A e B, v1.7, tradução BSTQB (questões e justificativas dos simulados).
 - [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) em português (definições das palavras-chave e do glossário de apoio).
 - Repositório [Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP](https://github.com/Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP) (notas, quizzes, flashcards e análise dos simulados).
 

@@ -8,7 +8,52 @@ sidebar:
 
 ## Palavras-chave (K1)
 
-critérios de aceite, desenvolvimento orientado por teste de aceite, técnica de teste caixa-preta, análise de valor de limite, cobertura de ramificação, teste baseado em lista de verificação, abordagem de teste baseada na colaboração, cobertura, item de cobertura, teste de tabela de decisão, particionamento de equivalência, suposição de erro, técnica de teste baseada na experiência, teste exploratório, teste de transição de estado, cobertura de instrução, técnica de teste, técnica de teste caixa-branca
+Definições do [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) (pt-BR). Repare como quase toda técnica é definida por **qual é a condição de teste** que ela usa.
+
+**Base: técnica, cobertura e item de cobertura**
+
+| Termo             | Definição (Glossário ISTQB)                                                                                                   | Em outras palavras                                                                                    |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| técnica de teste  | Um procedimento usado para definir condições de teste, modelar casos de teste e especificar dados de teste.                   | O "método" que guia análise e modelagem.                                                              |
+| cobertura         | O grau em que os itens de uma abrangência específica são executados por um conjunto de testes, expresso como uma porcentagem. | itens exercitados ÷ itens identificados × 100%.                                                       |
+| item de cobertura | Um atributo ou combinação de atributos derivados de uma ou mais condições de teste por meio de uma técnica de teste.          | **O que se conta** para medir cobertura (partições, limites, colunas, transições, instruções, ramos). |
+
+**Caixa-preta** (baseadas na especificação)
+
+| Termo                           | Definição (Glossário ISTQB)                                                                                                                               | Item de cobertura                                   |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| técnica de teste caixa-preta    | Uma técnica de teste baseada na especificação de um componente ou sistema.                                                                                | -                                                   |
+| particionamento de equivalência | Uma técnica de teste caixa-preta na qual as condições de teste são partições de equivalência exercidas por um membro representativo de cada partição.     | Partições (válidas **e** inválidas).                |
+| análise de valor limite         | Uma técnica de teste caixa-preta na qual as condições de teste são valores limite.                                                                        | Limites (+ vizinhos, em 2 ou 3 valores).            |
+| teste de tabela de decisão      | Uma técnica de teste caixa preta na qual as condições de teste são as combinações de condições e as ações resultantes mostradas em uma tabela de decisão. | Colunas **viáveis**.                                |
+| teste de transição de estado    | Uma técnica de teste caixa-preta na qual as condições de teste são transições de estado ou sequências delas.                                              | Estados, transições válidas ou todas as transições. |
+
+> Apoio: **partição de equivalência** = subconjunto de valores que o sistema deve tratar **da mesma forma**; **valor limite** = valor mínimo ou máximo de uma partição de equivalência **ordenada**.
+
+**Caixa-branca** (baseadas na estrutura)
+
+| Termo                         | Definição (Glossário ISTQB)                                                    | Em outras palavras                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
+| técnica de teste caixa-branca | Uma técnica de teste baseada na estrutura interna de um componente ou sistema. | Precisa enxergar o código.                                                                    |
+| cobertura de instrução        | A cobertura das instruções de código-fonte executáveis.                        | Cada linha executável rodou ao menos uma vez?                                                 |
+| cobertura de ramificação      | A cobertura de ramificações em um gráfico de fluxo de controle.                | Cada caminho de cada decisão (if/else, case, loop) foi seguido? 100% ramos ⇒ 100% instruções. |
+
+**Baseadas na experiência**
+
+| Termo                                   | Definição (Glossário ISTQB)                                                                                                                                                                      | Em outras palavras                                                                                      |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| técnica de teste baseada na experiência | Uma técnica de teste baseada na experiência, no conhecimento e na intuição do testador.                                                                                                          | Complementa as técnicas sistemáticas.                                                                   |
+| suposição de erro                       | Uma técnica de teste na qual as condições de teste são baseadas no conhecimento do testador sobre falhas passadas ou modos de falha.                                                             | No glossário atual aparece como **adivinhação de erros**. Ataques de falha são uma forma metódica dela. |
+| teste exploratório                      | Uma abordagem de teste na qual os testes são modelados e executados dinamicamente com base no conhecimento do testador, na exploração de um item de teste e nos resultados de testes anteriores. | Modelar, executar e aprender **ao mesmo tempo**; pode ser em sessões com **carta de teste**.            |
+| teste baseado em lista de verificação   | Uma técnica de teste baseada em experiência na qual os casos de teste são modelados para executar os itens de uma lista de verificação.                                                          | Checklist em forma de **perguntas**, sem itens verificáveis automaticamente.                            |
+
+**Baseadas na colaboração**
+
+| Termo                                         | Definição (Glossário ISTQB)                                                                                         | Em outras palavras                                          |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| abordagem de teste baseada na colaboração     | Uma abordagem de teste que se concentra na prevenção de defeitos por meio da colaboração entre stakeholders.        | Foco em **prevenir**, não em detectar.                      |
+| critérios de aceite                           | Os critérios que um produto de trabalho deve satisfazer para ser aceito pelos stakeholders.                         | As condições que dizem "esta história está pronta".         |
+| desenvolvimento orientado por teste de aceite | Uma abordagem de teste baseada em colaboração que define testes de aceite na linguagem de domínio dos stakeholders. | ATDD: os testes de aceite são escritos **antes** do código. |
 
 ## Objetivos de aprendizagem
 

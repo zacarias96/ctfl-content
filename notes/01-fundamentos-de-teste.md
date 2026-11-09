@@ -6,7 +6,57 @@ sidebar:
 
 ## Palavras-chave (K1)
 
-cobertura, depuração, defeito, erro, falha, qualidade, garantia de qualidade, causa raiz, análise de teste, base de teste, caso de teste, conclusão do teste, condição de teste, controle de teste, dados de teste, modelagem de teste, execução de teste, implementação de teste, monitoramento de teste, objeto de teste, objetivo de teste, planejamento de teste, procedimento de teste, resultado de teste, teste, testware, validação, verificação
+Definições do [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) (pt-BR), agrupadas por assunto, com uma leitura "em outras palavras" para fixar.
+
+**Conceitos centrais**
+
+| Termo                 | Definição (Glossário ISTQB)                                                                                                                            | Em outras palavras                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| teste                 | O processo no ciclo de vida do desenvolvimento de software que avalia a qualidade de um componente ou sistema e dos produtos de trabalho relacionados. | Vai muito além de "executar o sistema": inclui revisar, planejar, analisar... |
+| qualidade             | O grau em que um produto de trabalho atende aos requisitos declarados e implícitos.                                                                    | Não é só o que está escrito: o implícito também conta.                        |
+| garantia de qualidade | Atividades focadas em proporcionar confiança de que os requisitos de qualidade serão cumpridos.                                                        | QA = **processo**, preventivo. Teste é QC (produto, corretivo).               |
+| verificação           | O processo de confirmar se um produto final atende às suas especificações.                                                                             | "Fizemos **conforme a especificação**?"                                       |
+| validação             | Confirmação, por meio de análise, de que um produto do trabalho atende às necessidades de uma parte interessada.                                       | "Fizemos **o que o usuário precisa**?"                                        |
+| depuração             | O processo de encontrar, analisar e remover as causas de falhas em um componente ou sistema.                                                           | Teste **mostra** a falha; depuração **corrige** a causa (tarefa do dev).      |
+| cobertura             | O grau em que os itens de uma abrangência específica são executados por um conjunto de testes, expresso como uma porcentagem.                          | "Quantos % do que eu queria exercitar foi exercitado?"                        |
+
+**Da causa ao sintoma** (a cadeia cai muito na prova)
+
+| Termo      | Definição (Glossário ISTQB)                                                                                                                  | Em outras palavras                                |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| causa raiz | Uma fonte de um defeito tal que, se ele for removido, a ocorrência do tipo do defeito é reduzida ou removida.                                | O "porquê" do erro (pressa, falta de treino...).  |
+| erro       | Uma ação humana que resulta em um defeito.                                                                                                   | Engano de **uma pessoa**.                         |
+| defeito    | Uma imperfeição ou deficiência em um produto de trabalho que não atende aos seus requisitos ou especificações ou prejudica o uso pretendido. | O "bug" **no artefato** (código, requisito, doc). |
+| falha      | Uma situação em que um componente ou sistema não atende aos requisitos dentro dos limites especificados durante sua execução.                | O defeito **se manifestando em execução**.        |
+
+> Cadeia: **causa raiz → erro → defeito → falha**. Nem todo defeito gera falha (o trecho pode nunca ser executado), e falhas também podem vir de condições ambientais (radiação, campo magnético).
+
+**Atividades do processo de teste** (na ordem do processo)
+
+| Termo                  | Definição (Glossário ISTQB)                                                                                                                                                   | Em outras palavras                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| planejamento de teste  | Atividade de criação ou atualização de um plano de teste.                                                                                                                     | Definir objetivos e a abordagem.                                    |
+| monitoramento de teste | A atividade que verifica o status das atividades de teste, identifica quaisquer desvios do planejado ou esperado e relata o status aos stakeholders.                          | **Observar** e medir.                                               |
+| controle de teste      | A atividade que desenvolve e aplica ações corretivas para colocar um projeto de teste no caminho certo quando ele se desvia do que foi planejado.                             | **Agir** sobre o que o monitoramento mostrou.                       |
+| análise de teste       | A atividade que identifica as condições de teste, analisando a base do teste.                                                                                                 | **O que** testar.                                                   |
+| modelagem de teste     | Atividade que deriva e especifica os casos e condições de teste.                                                                                                              | **Como** testar.                                                    |
+| implementação de teste | A atividade que prepara o testware necessário para a execução do teste.                                                                                                       | Deixar **tudo pronto** para rodar (procedimentos, dados, ambiente). |
+| execução de teste      | Atividade que executa um teste em um componente ou sistema produzindo resultados reais.                                                                                       | Rodar e comparar real x esperado.                                   |
+| conclusão do teste     | A atividade que torna o testware disponível para uso posterior, deixando o ambiente de teste em condições satisfatórias e comunicando os resultados obtidos aos stakeholders. | Arquivar, limpar, lições aprendidas.                                |
+
+**Artefatos e elementos do teste**
+
+| Termo                 | Definição (Glossário ISTQB)                                                                                                                                                                                     | Em outras palavras                                             |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| objetivo de teste     | O propósito do teste.                                                                                                                                                                                           | Por que estou testando (achar defeitos, reduzir risco...).     |
+| objeto de teste       | O produto de trabalho a ser testado.                                                                                                                                                                            | **O alvo** do teste.                                           |
+| base de teste         | O conjunto de conhecimentos usado como base para a análise e o modelagem de teste.                                                                                                                              | **De onde** tiro os testes (requisitos, histórias, código...). |
+| condição de teste     | Um aspecto testável de um componente ou sistema que se pretenda testar.                                                                                                                                         | Resultado da **análise**.                                      |
+| caso de teste         | Um conjunto de pré-condições, entradas, ações (quando aplicável), resultados esperados e pós-condições, desenvolvidos com base nas condições de teste.                                                          | Resultado da **modelagem**.                                    |
+| procedimento de teste | Uma sequência de casos de teste em ordem de execução e quaisquer ações associadas que possam ser necessárias para estabelecer as pré-condições iniciais e quaisquer atividades de encerramento após a execução. | Resultado da **implementação**.                                |
+| dados de teste        | Dados necessários para a execução de um teste.                                                                                                                                                                  | Valores concretos usados nos casos.                            |
+| resultado de teste    | O status da execução de um teste.                                                                                                                                                                               | Passou, falhou, bloqueado...                                   |
+| testware              | Produtos de trabalho produzidos durante o processo de teste para uso no planejamento, projeto, execução, avaliação e relatório de testes.                                                                       | **Tudo** o que o teste produz.                                 |
 
 ## Objetivos de aprendizagem
 

@@ -6,7 +6,29 @@ sidebar:
 
 ## Palavras-chave (K1)
 
-anomalia, teste dinâmico, revisão formal, revisão informal, inspeção, revisão, análise estática, teste estático, revisão técnica, walkthrough
+Definições do [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) (pt-BR).
+
+**Estático x dinâmico**
+
+| Termo            | Definição (Glossário ISTQB)                                                                                                             | Em outras palavras                                              |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| teste estático   | Uma abordagem de teste que não envolve a execução de um item de teste.                                                                  | Revisões + análise estática. Encontra **defeitos** diretamente. |
+| teste dinâmico   | Uma abordagem de teste que envolve a execução de um item de teste.                                                                      | Encontra **falhas**, e daí se chega aos defeitos.               |
+| análise estática | O processo automatizado de avaliar um componente ou sistema sem executá-lo, com base em sua forma, estrutura, conteúdo ou documentação. | Feita por **ferramenta** (linters, analisadores de código).     |
+| anomalia         | Uma condição que se desvia da expectativa.                                                                                              | O que a revisão registra; depois se decide se é defeito ou não. |
+
+**Revisões** (do menos ao mais formal)
+
+| Termo            | Definição (Glossário ISTQB)                                                                                                                                                                               | Em outras palavras                                                         |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| revisão          | Um tipo de teste estático no qual a qualidade de um produto ou processo de trabalho é avaliada por indivíduos.                                                                                            | Feita por **pessoas**.                                                     |
+| revisão informal | Um tipo de revisão que não segue um processo definido e que não tem saída formalmente documentada.                                                                                                        | Ex.: pedir para um colega dar uma olhada.                                  |
+| revisão formal   | Uma revisão que segue um processo definido com um resultado formalmente documentado.                                                                                                                      | Walkthrough, revisão técnica e inspeção são formais (em graus diferentes). |
+| walkthrough      | Um tipo de revisão formal em que o autor conduz os membros da equipe de revisão pela obra, e estes fazem perguntas e comentários.                                                                         | **Autor lidera**; bom para educar e gerar consenso.                        |
+| revisão técnica  | Um tipo de revisão formal por uma equipe de pessoas tecnicamente qualificadas que examina a qualidade de um produto de trabalho e identifica discrepâncias em relação às especificações e normas.         | Pares técnicos, conduzida por **moderador**; foco em decisões técnicas.    |
+| inspeção         | Um tipo de revisão formal que usa funções e medidas definidas da equipe para identificar defeitos em um produto de trabalho e melhorar o processo de revisão e o processo de desenvolvimento de software. | A **mais formal**: autor não lidera, coleta **métricas**.                  |
+
+> Funções na revisão (glossário): **moderador** = a pessoa responsável pela realização das reuniões de revisão; **redator** = a pessoa que registra informações durante as reuniões; **revisor** = participante que identifica defeitos nos produtos de trabalho.
 
 ## Objetivos de aprendizagem
 

@@ -8,7 +8,54 @@ sidebar:
 
 ## Palavras-chave (K1)
 
-gerenciamento de defeitos, relatório de defeitos, critérios de entrada, critérios de saída, risco de produto, risco de projeto, risco, análise de risco, avaliação de risco, controle de risco, identificação de risco, nível de risco, gerenciamento de risco, mitigação de risco, monitoramento de risco, teste baseado em risco, abordagem de teste, relatório de conclusão de teste, controle de teste, monitoramento de teste, plano de teste, planejamento de teste, relatório de progresso de teste, pirâmide de teste, quadrantes de teste
+Definições do [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) (pt-BR), agrupadas por seção do capítulo.
+
+**Planejamento**
+
+| Termo                 | Definição (Glossário ISTQB)                                                                                                                                                                                                             | Em outras palavras                                                                |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| planejamento de teste | Atividade de criação ou atualização de um plano de teste.                                                                                                                                                                               | É contínuo: o plano é revisto ao longo do projeto.                                |
+| plano de teste        | Documentação que descreve os objetivos, os meios e o cronograma dos testes para garantir a coordenação dos mesmos.                                                                                                                      | O "contrato" do teste: escopo, abordagem, recursos, riscos.                       |
+| abordagem de teste    | A forma de realizar as tarefas de teste.                                                                                                                                                                                                | Níveis, tipos, técnicas, entregáveis, critérios...                                |
+| critérios de entrada  | O conjunto de condições para iniciar oficialmente uma tarefa definida.                                                                                                                                                                  | Em ágil, parecido com a **Definition of Ready**.                                  |
+| critérios de saída    | Um conjunto de condições para a conclusão oficial de uma tarefa definida.                                                                                                                                                               | Em ágil, parecido com a **Definition of Done**.                                   |
+| pirâmide de teste     | Um modelo gráfico representando a relação da quantidade de testes por nível, com um número maior na base do que no ponto mais elevado.                                                                                                  | Base: muitos testes pequenos, rápidos e isolados; topo: poucos testes E2E lentos. |
+| quadrantes de teste   | Um modelo de classificação de tipos/níveis de teste em quatro quadrantes, relacionando-os em duas dimensões de objetivos de teste: apoio à equipe versus crítica ao produto, e orientado para a tecnologia versus orientado ao negócio. | Modelo de Brian Marick (Q1 a Q4).                                                 |
+
+**Risco**
+
+| Termo                  | Definição (Glossário ISTQB)                                                                                                                                                  | Em outras palavras                                                                   |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| risco                  | Um fator que pode resultar em consequências negativas.                                                                                                                       | Tem **probabilidade** e **impacto**.                                                 |
+| nível de risco         | A medida de um risco definida pelo impacto e pela probabilidade de sua ocorrência.                                                                                           | Quantitativo: probabilidade × impacto.                                               |
+| risco de projeto       | Um risco que afeta o sucesso do projeto.                                                                                                                                     | Prazo, pessoas, fornecedores, ferramentas.                                           |
+| risco de produto       | Um risco que afeta a qualidade de um produto.                                                                                                                                | Funcionalidade faltando, cálculo errado, lentidão...                                 |
+| gerenciamento de risco | O processo para lidar com os riscos.                                                                                                                                         | = análise de risco + controle de risco.                                              |
+| análise de risco       | O processo global de identificação e avaliação de riscos.                                                                                                                    | = identificação + avaliação.                                                         |
+| identificação de risco | O processo de encontrar, reconhecer e descrever riscos.                                                                                                                      | Brainstorming, workshops, entrevistas, causa-efeito.                                 |
+| avaliação de risco     | O processo para examinar e determinar o nível dos riscos identificados.                                                                                                      | Categorizar, priorizar e propor tratamento.                                          |
+| controle de risco      | O processo geral de mitigação e monitoramento de risco.                                                                                                                      | = mitigação + monitoramento.                                                         |
+| mitigação de risco     | O processo pelo qual as decisões são tomadas e medidas de proteção são implementadas para reduzir ou manter os riscos em níveis específicos.                                 | Testar é uma forma de mitigar; também há aceitar, transferir, plano de contingência. |
+| monitoramento de risco | A atividade que verifica e informa o status dos riscos conhecidos aos stakeholders.                                                                                          | Acompanhar se a mitigação funcionou e se surgiram riscos novos.                      |
+| teste baseado em risco | Uma abordagem de teste na qual o gerenciamento, a seleção, a priorização e o uso de atividades e recursos de teste são baseados nos tipos e níveis de risco correspondentes. | Mais risco → mais (e antes) teste.                                                   |
+
+**Monitoramento, controle e relatórios**
+
+| Termo                           | Definição (Glossário ISTQB)                                                                                                                                           | Em outras palavras                                                          |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| monitoramento de teste          | A atividade que verifica o status das atividades de teste, identifica quaisquer desvios do planejado ou esperado e relata o status aos stakeholders.                  | Coletar informação.                                                         |
+| controle de teste               | A atividade que desenvolve e aplica ações corretivas para colocar um projeto de teste no caminho certo quando ele se desvia do que foi planejado.                     | Usar a informação para agir.                                                |
+| relatório de progresso de teste | Um tipo de relatório de teste periódico que inclui o progresso das atividades de teste em relação a um baseline, aos riscos e as alternativas que exigem uma decisão. | **Durante** o teste, periódico.                                             |
+| relatório de conclusão de teste | Um tipo de relatório de teste produzido em marcos de conclusão que fornece uma avaliação dos itens de teste correspondentes em relação aos critérios de saída.        | **No fim**; no glossário atual aparece como _relatório de resumo de teste_. |
+
+**Defeitos**
+
+| Termo                     | Definição (Glossário ISTQB)                                                                           | Em outras palavras                              |
+| ------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| gerenciamento de defeitos | O processo de reconhecimento, registro, classificação, investigação, correção e descarte de defeitos. | O fluxo completo, da descoberta ao fechamento.  |
+| relatório de defeitos     | Documentação da ocorrência, natureza e status de um defeito.                                          | Precisa permitir **reproduzir** e **resolver**. |
+
+> Pares úteis do glossário: **severidade** = o grau de impacto que um defeito tem no desenvolvimento, nos testes ou na operação; **prioridade** = o nível de importância atribuído a uma tarefa de acordo com critérios específicos. Severidade é **impacto**; prioridade é **urgência** de correção.
 
 ## Objetivos de aprendizagem
 

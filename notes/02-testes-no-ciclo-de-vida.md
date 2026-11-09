@@ -6,7 +6,44 @@ sidebar:
 
 ## Palavras-chave (K1)
 
-teste de aceite, teste caixa-preta, teste de integração de componentes, teste de componentes, teste de confirmação, teste funcional, teste de integração, teste de manutenção, teste não funcional, teste de regressão, shift-left, teste de integração de sistemas, teste de sistemas, nível de teste, objeto de teste, tipo de teste, teste caixa-branca
+Definições do [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) (pt-BR), agrupadas por assunto.
+
+**Níveis de teste** (estágios: _quando/onde_ se testa)
+
+| Termo                              | Definição (Glossário ISTQB)                                                                                        | Em outras palavras                                                                                         |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| nível de teste                     | Uma instância específica de um processo de teste.                                                                  | Um "estágio" com objetivo, base e objeto próprios.                                                         |
+| teste de componentes               | Um nível de teste que se concentra em componentes individuais de hardware ou software.                             | Também chamado **teste de unidade**; geralmente feito pelo dev.                                            |
+| teste de integração                | Um nível de teste que se concentra nas interações entre componentes ou sistemas.                                   | Termo "guarda-chuva" para os dois abaixo.                                                                  |
+| teste de integração de componentes | Testes de integração de componentes.                                                                               | Interfaces **internas** entre componentes.                                                                 |
+| teste de integração de sistemas    | Um nível de teste que se concentra na integração de sistemas.                                                      | Interfaces com **sistemas externos** (APIs, serviços de terceiros).                                        |
+| teste de sistemas                  | Nível de teste que se concentra na verificação de que um sistema como um todo atenda aos requisitos especificados. | Visão **ponta a ponta** do sistema; costuma ter equipe independente.                                       |
+| teste de aceite                    | Nível de teste que se concentra na determinação de aceitar o sistema.                                              | Foco em **validação** e prontidão para implantação (UAT, operacional, contratual, regulatório, alfa/beta). |
+
+**Tipos de teste** (características: _o que_ se avalia)
+
+| Termo               | Definição (Glossário ISTQB)                                                                                                          | Em outras palavras                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| tipo de teste       | Um grupo de atividades de teste com base em objetivos específicos que visam características específicas de um componente ou sistema. | Qualquer tipo pode ocorrer em qualquer nível.                 |
+| teste funcional     | Um tipo de teste para determinar a adequação funcional de um objeto de teste.                                                        | **O que** o sistema faz.                                      |
+| teste não funcional | Um tipo de teste para avaliar se um componente ou sistema está em conformidade com os requisitos não funcionais.                     | **Quão bem** ele faz (desempenho, segurança, usabilidade...). |
+| teste caixa-preta   | Uma abordagem de teste baseada na especificação de um componente ou sistema.                                                         | Olha o **comportamento**, sem ver o código.                   |
+| teste caixa-branca  | Uma abordagem de teste baseada na estrutura interna de um componente ou sistema.                                                     | Olha a **estrutura** (código, arquitetura, fluxo).            |
+
+**Testes relacionados a mudanças**
+
+| Termo                | Definição (Glossário ISTQB)                                                                                                                                | Em outras palavras                                                                        |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| teste de confirmação | Um tipo de teste relacionado à mudança realizado após a correção de um defeito para confirmar que uma falha causada por esse defeito não ocorre novamente. | "O defeito **foi corrigido**?"                                                            |
+| teste de regressão   | Um tipo de teste relacionado a mudanças para detectar se os defeitos foram introduzidos ou descobertos em áreas inalteradas do software.                   | "A mudança **quebrou algo** que funcionava?" Ótimo candidato à automação.                 |
+| teste de manutenção  | Um tipo de teste que avalia o efeito das alterações feitas em um sistema operacional ou em seu ambiente.                                                   | Testes **depois que o sistema já está em produção** (correções, migração, aposentadoria). |
+
+**Outros**
+
+| Termo           | Definição (Glossário ISTQB)                                                                                                                            | Em outras palavras                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| objeto de teste | O produto de trabalho a ser testado.                                                                                                                   | Muda conforme o nível (componente, sistema...).                                                        |
+| shift-left      | Uma abordagem de teste para realizar atividades de teste e garantia de qualidade o mais cedo possível no ciclo de vida de desenvolvimento de software. | Testar **antes** = defeito mais barato. Contraponto: _shift right_ (testar continuamente em produção). |
 
 ## Objetivos de aprendizagem
 

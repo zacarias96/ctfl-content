@@ -39,7 +39,7 @@ export default defineConfig({
             '06-ferramentas-de-teste',
           ],
         },
-        { label: 'Revisão', items: ['07-dicas-de-prova'] },
+        { label: 'Revisão', items: ['07-dicas-de-prova', '08-glossario'] },
       ],
     }),
   ],

@@ -18,10 +18,11 @@ Material de estudo em português com todo o conteúdo examinável do **Syllabus 
 | 5   | [Gerenciamento das Atividades de Teste](05-gerenciamento-das-atividades-de-teste.md) | 335 min           | Estimativas, priorização, pirâmide, quadrantes, riscos, defeitos           |
 | 6   | [Ferramentas de Teste](06-ferramentas-de-teste.md)                                   | 20 min            | Tipos de ferramentas, benefícios e riscos da automação                     |
 | 7   | [Dicas de Prova](07-dicas-de-prova.md)                                               | -                 | Temas recorrentes, pares que confundem, roteiro para cálculos              |
+| 8   | [Glossário de Apoio](08-glossario.md)                                                | -                 | Termos complementares do Glossário ISTQB, com exemplos e pegadinhas        |
 
 ## Como estudar
 
-1. Leia cada capítulo na ordem, começando pelos **objetivos de aprendizagem** e **palavras-chave**.
+1. Leia cada capítulo na ordem, começando pelos **objetivos de aprendizagem** e pela tabela de **palavras-chave** (definição oficial do glossário + explicação em linguagem simples).
 2. Refaça os **exemplos** do capítulo 4 e as fórmulas do capítulo 5 sem olhar a resposta.
 3. Use o **resumo rápido** no final de cada nota para revisão.
 4. Feche com as [Dicas de Prova](07-dicas-de-prova.md) e os simulados oficiais.
@@ -29,6 +30,7 @@ Material de estudo em português com todo o conteúdo examinável do **Syllabus 
 ## Fontes
 
 - ISTQB® Certified Tester Foundation Level Syllabus v4.0, tradução BSTQB (`syllabus_ctfl_4.0-br.pdf`, na raiz do repositório).
+- [Glossário ISTQB](https://glossary.istqb.org/pt_BR/) em português (definições das palavras-chave e do glossário de apoio).
 - Repositório [Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP](https://github.com/Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP) (notas, quizzes, flashcards e análise dos simulados).
 
 Material de estudo pessoal, não comercial. Conteúdo do syllabus © ISTQB®, utilizado conforme as condições de uso do próprio syllabus (extratos para uso não comercial com citação da fonte).

@@ -62,17 +62,23 @@
   cursor: not-allowed;
 }
 
-.sim-btn-primary {
-  background: var(--sl-color-accent);
-  border-color: var(--sl-color-accent);
+/* Tema escuro: cor fixa, texto branco sobre azul médio (~7:1). */
+#simulado-app .sim-btn-primary {
+  background: hsl(224, 76%, 48%);
+  border-color: hsl(224, 76%, 48%);
+  color: #fff;
+}
+
+/* Tema claro: azul escuro do tema com texto branco.
+   No tema claro do Starlight, --sl-color-black é branco. */
+:root[data-theme='light'] #simulado-app .sim-btn-primary {
+  background: var(--sl-color-accent-high);
+  border-color: var(--sl-color-accent-high);
   color: var(--sl-color-black);
 }
 
-/* No tema claro do Starlight, --sl-color-white é quase preto e --sl-color-black é branco. */
-:root[data-theme='light'] .sim-btn-primary {
-  color: var(--sl-color-black);
-  background: var(--sl-color-accent-high);
-  border-color: var(--sl-color-accent-high);
+#simulado-app .sim-btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
 }
 
 .sim-btn-small {
@@ -94,6 +100,14 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+}
+
+/* Com o prefixo #simulado-app para vencer o reset "* + *" acima. */
+#simulado-app .sim-actions {
+  margin-top: 1.75rem;
+}
+
+#simulado-app .sim-options {
   margin-top: 1.25rem;
 }
 
@@ -209,7 +223,7 @@
   background: var(--sim-surface);
 }
 
-.sim-resume .sim-actions {
+#simulado-app .sim-resume .sim-actions {
   margin-top: 0.5rem;
 }
 

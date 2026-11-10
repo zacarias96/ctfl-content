@@ -1,0 +1,57 @@
+name: Tests
+
+# Runs on every pull request so the "Mock exam tests" check always reports a
+# status (a workflow skipped by a paths filter leaves a required check pending).
+# The tests themselves only run when the change touches the mock exam app.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Mock exam tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # Paths that affect the mock exam: app code, data and styles (src/), tests,
+      # question diagrams, the notes the review links point to, and the toolchain.
+      - name: Check for mock exam changes
+        id: changes
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          changed=$(git diff --name-only "origin/$BASE_REF...HEAD")
+          echo "$changed"
+          if echo "$changed" | grep -qE '^(src/|tests/|public/mock-exams/|notes/|package(-lock)?\.json$|vitest\.config\.js$|\.github/workflows/tests\.yml$)'; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "No mock exam files changed; skipping the tests." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - if: steps.changes.outputs.run == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - if: steps.changes.outputs.run == 'true'
+        run: npm ci
+
+      - if: steps.changes.outputs.run == 'true'
+        run: npm test

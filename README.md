@@ -15,6 +15,16 @@ npm run dev
 
 O site abre em http://localhost:4321/ctfl-content/.
 
+### Testes
+
+Os simulados têm testes unitários com [Vitest](https://vitest.dev), em [`tests/mock-exams/`](tests/mock-exams), um arquivo por bloco (utilitários, links para as notas, armazenamento, renderização, dados das questões, treino, prova e histórico).
+
+```bash
+npm test
+```
+
+No GitHub, os testes rodam antes de cada deploy e em todo pull request que altere `src/`, `tests/`, `notes/`, `public/mock-exams/` ou as dependências.
+
 ## Estrutura
 
 | Caminho | O que é |
@@ -31,7 +41,9 @@ O site abre em http://localhost:4321/ctfl-content/.
 | `public/mock-exams/` | Diagramas usados nas questões. |
 | `references/` | Material de consulta. `ctfl-4.0-syllabus-pt-br.pdf` é o syllabus CTFL 4.0 na tradução do BSTQB. |
 | `.claude/skills/exam-performance/` | Skill do Claude Code (`/exam-performance`) que analisa o resultado da prova por objetivo de aprendizagem e monta um mapa de estudos. Os relatórios ficam em `reports/`, fora do git. |
-| `.github/workflows/deploy.yml` | Publica o site no GitHub Pages a cada push na `main`. |
+| `tests/`, `vitest.config.js` | Testes unitários dos simulados (Vitest + jsdom). |
+| `.github/workflows/deploy.yml` | Roda os testes e publica o site no GitHub Pages a cada push na `main`. |
+| `.github/workflows/tests.yml` | Roda os testes em pull requests que alteram os simulados. |
 
 ## Padrão das notas
 

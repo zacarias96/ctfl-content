@@ -27,11 +27,14 @@ Requires Node.js 22 or newer (CI uses 24).
 npm install
 npm run dev      # http://localhost:4321/ctfl-content/
 npm run build    # output in dist/
+npm test         # Vitest unit tests for the mock exam app
 ```
 
-There is no test suite. Validate changes with `npm run build`, and check UI changes in the browser in both light and dark themes and at phone width.
+Validate changes with `npm test` and `npm run build`, and check UI changes in the browser in both light and dark themes and at phone width.
 
-Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Pages).
+Tests live in `tests/mock-exams/`, one file per block of `src/scripts/mock-exams.js` (utils, notes, storage, render, data, practice, exam, history), with shared fixtures in `helpers.js` and jsdom shims in `tests/setup.js`. The app's helpers are named exports so they can be tested directly. Add tests to the matching block when changing the mock exam.
+
+Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Pages), only after the tests pass. Pull requests run the tests in `.github/workflows/tests.yml` (check "Mock exam tests") when they touch `src/`, `tests/`, `notes/`, `public/mock-exams/`, the package files or the test config; the check reports success without running otherwise, so it can be marked as required.
 
 ## Structure
 
@@ -48,6 +51,7 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 | `src/styles/mock-exams.css`     | Mock exam styles.                                                                  |
 | `src/data/mock-exams.json`      | Questions, answer keys and explanations for sample exams A and B.                  |
 | `public/mock-exams/`            | Diagrams referenced by the questions.                                              |
+| `tests/mock-exams/`             | Vitest unit tests for the mock exam app, one file per block.                       |
 | `references/`                   | Reference material: `ctfl-4.0-syllabus-pt-br.pdf` (CTFL 4.0 syllabus, BSTQB pt-BR). |
 | `.claude/skills/exam-performance/` | Skill that turns per-LO exam results into a study map. `data/lo-catalog.json` holds the official LO groups (ISTQB exam structure tables), syllabus pages and note paths; reports go to `reports/` (gitignored). |
 

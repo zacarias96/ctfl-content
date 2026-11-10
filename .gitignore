@@ -10,3 +10,6 @@ npm-debug.log*
 .env
 .env.*
 .DS_Store
+
+# personal exam reports (exam-performance skill)
+reports/

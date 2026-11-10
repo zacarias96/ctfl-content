@@ -48,6 +48,8 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 | `src/styles/mock-exams.css`     | Mock exam styles.                                                                  |
 | `src/data/mock-exams.json`      | Questions, answer keys and explanations for sample exams A and B.                  |
 | `public/mock-exams/`            | Diagrams referenced by the questions.                                              |
+| `references/`                   | Reference material: `ctfl-4.0-syllabus-pt-br.pdf` (CTFL 4.0 syllabus, BSTQB pt-BR). |
+| `.claude/skills/exam-performance/` | Skill that turns per-LO exam results into a study map. `data/lo-catalog.json` holds the official LO groups (ISTQB exam structure tables), syllabus pages and note paths; reports go to `reports/` (gitignored). |
 
 ## Notes
 
@@ -65,7 +67,7 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 - Exam rules live in `EXAM` in `src/scripts/mock-exams.js`: 60 minutes, 40 questions, pass mark 26, +25% time for foreigners taking the exam in Portuguese (per https://bstqb.online/ctfl).
 - Data shape: `exams[] -> { id, title, version, questions[], extra[] }`. Each question has `id`, `stem` (blocks), `options[{ key, text }]`, `answer[]` (two keys for "select TWO" questions), `lo`, `k` and `explanation[]`. Stem and explanation blocks are `{ p }`, `{ li }`, `{ quote: [] }`, `{ pre }`, `{ img, alt }` or `{ table: { head, rows } }`; explanation entries can also be plain strings.
 - `src/data/mock-exams.json` was extracted from the official sample exam PDFs (v1.7, BSTQB translation). Those PDFs are not tracked in git. The pt-BR translation has errors, so option verdicts are normalized to `x) Correta.` / `x) Incorreta.` from the official answer key, which is the source of truth.
-- Review links: each question links to the note that covers its learning objective, through the `NOTES` map (LO prefix -> note path) in `src/scripts/mock-exams.js`. `CHAPTERS[].slug` points to the first note of each chapter (used by the per-chapter score table). Update both when notes are renamed or moved.
+- Review links: each question links to the note that covers its learning objective, through the `NOTES` map (LO prefix -> note path) in `src/scripts/mock-exams.js`. `CHAPTERS[].slug` points to the first note of each chapter (used by the per-chapter score table). Update both, and the `note` fields in `.claude/skills/exam-performance/data/lo-catalog.json`, when notes are renamed or moved.
 - Progress and history are stored in `localStorage` under `ctfl-mock-exams-v1`. Every access goes through `try/catch`, and the page must work without storage.
 
 ## Styling

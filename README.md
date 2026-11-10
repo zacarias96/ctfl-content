@@ -29,6 +29,8 @@ O site abre em http://localhost:4321/ctfl-content/.
 | `src/scripts/mock-exams.js`, `src/styles/mock-exams.css` | Lógica e estilos dos simulados (modos treino e prova). O mapa `NOTES` em `mock-exams.js` liga cada objetivo de aprendizagem (FL-x.y.z) à nota que o cobre; se uma nota for renomeada, atualize esse mapa. |
 | `src/data/mock-exams.json` | Questões, gabarito e justificativas dos simulados A e B. |
 | `public/mock-exams/` | Diagramas usados nas questões. |
+| `references/` | Material de consulta. `ctfl-4.0-syllabus-pt-br.pdf` é o syllabus CTFL 4.0 na tradução do BSTQB. |
+| `.claude/skills/exam-performance/` | Skill do Claude Code (`/exam-performance`) que analisa o resultado da prova por objetivo de aprendizagem e monta um mapa de estudos. Os relatórios ficam em `reports/`, fora do git. |
 | `.github/workflows/deploy.yml` | Publica o site no GitHub Pages a cada push na `main`. |
 
 ## Padrão das notas

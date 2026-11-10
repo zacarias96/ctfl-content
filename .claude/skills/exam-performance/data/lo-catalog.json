@@ -1,0 +1,806 @@
+{
+  "source": {
+    "syllabus": "ISTQB CTFL v4.0, tradução BSTQB (references/ctfl-4.0-syllabus-pt-br.pdf)",
+    "structure": "ISTQB Exam Structure and Rules Tables v1.18 (2026-05-27), CTFL v4.0",
+    "structure_url": "https://istqb.org/wp-content/uploads/2026/05/ISTQB_Exam-Structure-and-Rules-Tables_v1.18.pdf",
+    "syllabus_page_note": "Páginas físicas do PDF (1 = capa), para usar com Read pages"
+  },
+  "exam": {
+    "questions": 40,
+    "pass_mark": 26,
+    "minutes": 60,
+    "minutes_extended": 75,
+    "k": {
+      "K1": 8,
+      "K2": 24,
+      "K3": 8
+    }
+  },
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Fundamentos de Teste",
+      "questions": 8,
+      "k": {
+        "K1": 2,
+        "K2": 6,
+        "K3": 0
+      },
+      "first_note": "notes/01-fundamentos-de-teste/01-o-que-e-teste.md"
+    },
+    {
+      "chapter": 2,
+      "title": "Testes ao longo do ciclo de vida",
+      "questions": 6,
+      "k": {
+        "K1": 2,
+        "K2": 4,
+        "K3": 0
+      },
+      "first_note": "notes/02-testes-no-ciclo-de-vida/01-sdlc-e-boas-praticas.md"
+    },
+    {
+      "chapter": 3,
+      "title": "Teste Estático",
+      "questions": 4,
+      "k": {
+        "K1": 2,
+        "K2": 2,
+        "K3": 0
+      },
+      "first_note": "notes/03-teste-estatico/01-nocoes-basicas-de-teste-estatico.md"
+    },
+    {
+      "chapter": 4,
+      "title": "Análise e Modelagem de Teste",
+      "questions": 11,
+      "k": {
+        "K1": 0,
+        "K2": 6,
+        "K3": 5
+      },
+      "first_note": "notes/04-analise-e-modelagem-de-teste/01-visao-geral-das-tecnicas.md"
+    },
+    {
+      "chapter": 5,
+      "title": "Gerenciamento das Atividades de Teste",
+      "questions": 9,
+      "k": {
+        "K1": 1,
+        "K2": 5,
+        "K3": 3
+      },
+      "first_note": "notes/05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios.md"
+    },
+    {
+      "chapter": 6,
+      "title": "Ferramentas de Teste",
+      "questions": 2,
+      "k": {
+        "K1": 1,
+        "K2": 1,
+        "K3": 0
+      },
+      "first_note": "notes/06-ferramentas-de-teste/01-ferramentas-e-automacao.md"
+    }
+  ],
+  "groups": [
+    {
+      "id": "G1.1",
+      "chapter": 1,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-1.1.1", "FL-1.2.2"]
+    },
+    {
+      "id": "G1.2",
+      "chapter": 1,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-1.5.2"]
+    },
+    {
+      "id": "G1.3",
+      "chapter": 1,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-1.1.2", "FL-1.2.1", "FL-1.2.3"]
+    },
+    {
+      "id": "G1.4",
+      "chapter": 1,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-1.3.1"]
+    },
+    {
+      "id": "G1.5",
+      "chapter": 1,
+      "k": "K2",
+      "questions": 3,
+      "los": ["FL-1.4.1", "FL-1.4.2", "FL-1.4.3", "FL-1.4.4", "FL-1.4.5"]
+    },
+    {
+      "id": "G1.6",
+      "chapter": 1,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-1.5.1", "FL-1.5.3"]
+    },
+    {
+      "id": "G2.1",
+      "chapter": 2,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-2.1.2"]
+    },
+    {
+      "id": "G2.2",
+      "chapter": 2,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-2.1.3"]
+    },
+    {
+      "id": "G2.3",
+      "chapter": 2,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-2.2.1", "FL-2.2.2"]
+    },
+    {
+      "id": "G2.4",
+      "chapter": 2,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-2.2.3", "FL-2.3.1"]
+    },
+    {
+      "id": "G2.5",
+      "chapter": 2,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-2.1.1", "FL-2.1.6"]
+    },
+    {
+      "id": "G2.6",
+      "chapter": 2,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-2.1.4", "FL-2.1.5"]
+    },
+    {
+      "id": "G3.1",
+      "chapter": 3,
+      "k": "K1",
+      "questions": 2,
+      "los": ["FL-3.1.1", "FL-3.2.1", "FL-3.2.3", "FL-3.2.5"]
+    },
+    {
+      "id": "G3.2",
+      "chapter": 3,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-3.1.2", "FL-3.1.3"]
+    },
+    {
+      "id": "G3.3",
+      "chapter": 3,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-3.2.2", "FL-3.2.4"]
+    },
+    {
+      "id": "G4.1",
+      "chapter": 4,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-4.1.1"]
+    },
+    {
+      "id": "G4.2",
+      "chapter": 4,
+      "k": "K2",
+      "questions": 2,
+      "los": ["FL-4.3.1", "FL-4.3.2", "FL-4.3.3"]
+    },
+    {
+      "id": "G4.3",
+      "chapter": 4,
+      "k": "K2",
+      "questions": 2,
+      "los": ["FL-4.4.1", "FL-4.4.2", "FL-4.4.3"]
+    },
+    {
+      "id": "G4.4",
+      "chapter": 4,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-4.5.1", "FL-4.5.2"]
+    },
+    {
+      "id": "G4.5",
+      "chapter": 4,
+      "k": "K3",
+      "questions": 5,
+      "los": ["FL-4.2.1", "FL-4.2.2", "FL-4.2.3", "FL-4.2.4", "FL-4.5.3"]
+    },
+    {
+      "id": "G5.1",
+      "chapter": 5,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-5.1.2", "FL-5.1.6", "FL-5.2.1", "FL-5.3.1"]
+    },
+    {
+      "id": "G5.2",
+      "chapter": 5,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-5.1.1", "FL-5.1.3"]
+    },
+    {
+      "id": "G5.3",
+      "chapter": 5,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-5.1.7"]
+    },
+    {
+      "id": "G5.4",
+      "chapter": 5,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-5.2.2", "FL-5.2.3", "FL-5.2.4"]
+    },
+    {
+      "id": "G5.5",
+      "chapter": 5,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-5.3.2", "FL-5.3.3"]
+    },
+    {
+      "id": "G5.6",
+      "chapter": 5,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-5.4.1"]
+    },
+    {
+      "id": "G5.7",
+      "chapter": 5,
+      "k": "K3",
+      "questions": 3,
+      "los": ["FL-5.1.4", "FL-5.1.5", "FL-5.5.1"]
+    },
+    {
+      "id": "G6.1",
+      "chapter": 6,
+      "k": "K2",
+      "questions": 1,
+      "los": ["FL-6.1.1"]
+    },
+    {
+      "id": "G6.2",
+      "chapter": 6,
+      "k": "K1",
+      "questions": 1,
+      "los": ["FL-6.2.1"]
+    }
+  ],
+  "los": {
+    "FL-1.1.1": {
+      "k": "K1",
+      "title": "Identificar objetivos típicos de teste",
+      "chapter": 1,
+      "group": "G1.1",
+      "syllabus_page": 14,
+      "note": "notes/01-fundamentos-de-teste/01-o-que-e-teste.md"
+    },
+    "FL-1.1.2": {
+      "k": "K2",
+      "title": "Diferenciar teste de depuração",
+      "chapter": 1,
+      "group": "G1.3",
+      "syllabus_page": 14,
+      "note": "notes/01-fundamentos-de-teste/01-o-que-e-teste.md"
+    },
+    "FL-1.2.1": {
+      "k": "K2",
+      "title": "Exemplificar por que os testes são necessários",
+      "chapter": 1,
+      "group": "G1.3",
+      "syllabus_page": 15,
+      "note": "notes/01-fundamentos-de-teste/02-por-que-testar.md"
+    },
+    "FL-1.2.2": {
+      "k": "K1",
+      "title": "Relembrar a relação entre testes e garantia de qualidade",
+      "chapter": 1,
+      "group": "G1.1",
+      "syllabus_page": 15,
+      "note": "notes/01-fundamentos-de-teste/02-por-que-testar.md"
+    },
+    "FL-1.2.3": {
+      "k": "K2",
+      "title": "Distinguir entre causa raiz, erro, defeito e falha",
+      "chapter": 1,
+      "group": "G1.3",
+      "syllabus_page": 16,
+      "note": "notes/01-fundamentos-de-teste/02-por-que-testar.md"
+    },
+    "FL-1.3.1": {
+      "k": "K2",
+      "title": "Explicar os sete princípios de teste",
+      "chapter": 1,
+      "group": "G1.4",
+      "syllabus_page": 16,
+      "note": "notes/01-fundamentos-de-teste/03-principios-de-teste.md"
+    },
+    "FL-1.4.1": {
+      "k": "K2",
+      "title": "Resumir as diferentes atividades e tarefas de teste",
+      "chapter": 1,
+      "group": "G1.5",
+      "syllabus_page": 17,
+      "note": "notes/01-fundamentos-de-teste/04-processo-de-teste.md"
+    },
+    "FL-1.4.2": {
+      "k": "K2",
+      "title": "Explicar o impacto do contexto no processo de teste",
+      "chapter": 1,
+      "group": "G1.5",
+      "syllabus_page": 18,
+      "note": "notes/01-fundamentos-de-teste/04-processo-de-teste.md"
+    },
+    "FL-1.4.3": {
+      "k": "K2",
+      "title": "Diferenciar testware que dá suporte às atividades de teste",
+      "chapter": 1,
+      "group": "G1.5",
+      "syllabus_page": 18,
+      "note": "notes/01-fundamentos-de-teste/05-testware-rastreabilidade-e-papeis.md"
+    },
+    "FL-1.4.4": {
+      "k": "K2",
+      "title": "Explicar o valor de manter a rastreabilidade",
+      "chapter": 1,
+      "group": "G1.5",
+      "syllabus_page": 19,
+      "note": "notes/01-fundamentos-de-teste/05-testware-rastreabilidade-e-papeis.md"
+    },
+    "FL-1.4.5": {
+      "k": "K2",
+      "title": "Comparar os diferentes papéis no teste",
+      "chapter": 1,
+      "group": "G1.5",
+      "syllabus_page": 19,
+      "note": "notes/01-fundamentos-de-teste/05-testware-rastreabilidade-e-papeis.md"
+    },
+    "FL-1.5.1": {
+      "k": "K2",
+      "title": "Dar exemplos das habilidades genéricas necessárias para testar",
+      "chapter": 1,
+      "group": "G1.6",
+      "syllabus_page": 19,
+      "note": "notes/01-fundamentos-de-teste/06-habilidades-e-independencia.md"
+    },
+    "FL-1.5.2": {
+      "k": "K1",
+      "title": "Relembrar as vantagens da abordagem de equipe completa",
+      "chapter": 1,
+      "group": "G1.2",
+      "syllabus_page": 20,
+      "note": "notes/01-fundamentos-de-teste/06-habilidades-e-independencia.md"
+    },
+    "FL-1.5.3": {
+      "k": "K2",
+      "title": "Distinguir os benefícios e as desvantagens da independência dos testes",
+      "chapter": 1,
+      "group": "G1.6",
+      "syllabus_page": 20,
+      "note": "notes/01-fundamentos-de-teste/06-habilidades-e-independencia.md"
+    },
+    "FL-2.1.1": {
+      "k": "K2",
+      "title": "Explicar o impacto do ciclo de vida de desenvolvimento de software escolhido nos testes",
+      "chapter": 2,
+      "group": "G2.5",
+      "syllabus_page": 23,
+      "note": "notes/02-testes-no-ciclo-de-vida/01-sdlc-e-boas-praticas.md"
+    },
+    "FL-2.1.2": {
+      "k": "K1",
+      "title": "Relembrar as boas práticas de teste que se aplicam a todos os ciclos de vida de desenvolvimento de software",
+      "chapter": 2,
+      "group": "G2.1",
+      "syllabus_page": 23,
+      "note": "notes/02-testes-no-ciclo-de-vida/01-sdlc-e-boas-praticas.md"
+    },
+    "FL-2.1.3": {
+      "k": "K1",
+      "title": "Relembrar os exemplos de abordagens de desenvolvimento que priorizam o teste",
+      "chapter": 2,
+      "group": "G2.2",
+      "syllabus_page": 24,
+      "note": "notes/02-testes-no-ciclo-de-vida/02-abordagens-test-first.md"
+    },
+    "FL-2.1.4": {
+      "k": "K2",
+      "title": "Resumir como o DevOps pode ter um impacto nos testes",
+      "chapter": 2,
+      "group": "G2.6",
+      "syllabus_page": 24,
+      "note": "notes/02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas.md"
+    },
+    "FL-2.1.5": {
+      "k": "K2",
+      "title": "Explicar a abordagem shift-left",
+      "chapter": 2,
+      "group": "G2.6",
+      "syllabus_page": 25,
+      "note": "notes/02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas.md"
+    },
+    "FL-2.1.6": {
+      "k": "K2",
+      "title": "Explicar como as retrospectivas podem ser usadas como um mecanismo de melhoria de processos",
+      "chapter": 2,
+      "group": "G2.5",
+      "syllabus_page": 25,
+      "note": "notes/02-testes-no-ciclo-de-vida/03-devops-shift-left-e-retrospectivas.md"
+    },
+    "FL-2.2.1": {
+      "k": "K2",
+      "title": "Distinguir os diferentes níveis de teste",
+      "chapter": 2,
+      "group": "G2.3",
+      "syllabus_page": 26,
+      "note": "notes/02-testes-no-ciclo-de-vida/04-niveis-de-teste.md"
+    },
+    "FL-2.2.2": {
+      "k": "K2",
+      "title": "Distinguir os diferentes tipos de teste",
+      "chapter": 2,
+      "group": "G2.3",
+      "syllabus_page": 27,
+      "note": "notes/02-testes-no-ciclo-de-vida/05-tipos-de-teste-confirmacao-e-regressao.md"
+    },
+    "FL-2.2.3": {
+      "k": "K2",
+      "title": "Distinguir o teste de confirmação do teste de regressão",
+      "chapter": 2,
+      "group": "G2.4",
+      "syllabus_page": 27,
+      "note": "notes/02-testes-no-ciclo-de-vida/05-tipos-de-teste-confirmacao-e-regressao.md"
+    },
+    "FL-2.3.1": {
+      "k": "K2",
+      "title": "Resumir os testes de manutenção e seus acionadores",
+      "chapter": 2,
+      "group": "G2.4",
+      "syllabus_page": 28,
+      "note": "notes/02-testes-no-ciclo-de-vida/06-teste-de-manutencao.md"
+    },
+    "FL-3.1.1": {
+      "k": "K1",
+      "title": "Reconhecer os tipos de produtos que podem ser examinados pelas diferentes técnicas de teste estático",
+      "chapter": 3,
+      "group": "G3.1",
+      "syllabus_page": 30,
+      "note": "notes/03-teste-estatico/01-nocoes-basicas-de-teste-estatico.md"
+    },
+    "FL-3.1.2": {
+      "k": "K2",
+      "title": "Explicar o valor dos testes estáticos",
+      "chapter": 3,
+      "group": "G3.2",
+      "syllabus_page": 30,
+      "note": "notes/03-teste-estatico/01-nocoes-basicas-de-teste-estatico.md"
+    },
+    "FL-3.1.3": {
+      "k": "K2",
+      "title": "Comparar e contrastar testes estáticos e dinâmicos",
+      "chapter": 3,
+      "group": "G3.2",
+      "syllabus_page": 31,
+      "note": "notes/03-teste-estatico/01-nocoes-basicas-de-teste-estatico.md"
+    },
+    "FL-3.2.1": {
+      "k": "K1",
+      "title": "Identificar os benefícios do feedback antecipado e frequente dos stakeholders",
+      "chapter": 3,
+      "group": "G3.1",
+      "syllabus_page": 31,
+      "note": "notes/03-teste-estatico/02-processo-de-revisao.md"
+    },
+    "FL-3.2.2": {
+      "k": "K2",
+      "title": "Resumir as atividades do processo de revisão",
+      "chapter": 3,
+      "group": "G3.3",
+      "syllabus_page": 31,
+      "note": "notes/03-teste-estatico/02-processo-de-revisao.md"
+    },
+    "FL-3.2.3": {
+      "k": "K1",
+      "title": "Relembrar quais responsabilidades são atribuídas às funções principais ao realizar revisões",
+      "chapter": 3,
+      "group": "G3.1",
+      "syllabus_page": 32,
+      "note": "notes/03-teste-estatico/02-processo-de-revisao.md"
+    },
+    "FL-3.2.4": {
+      "k": "K2",
+      "title": "Comparar e contrastar os diferentes tipos de revisão",
+      "chapter": 3,
+      "group": "G3.3",
+      "syllabus_page": 32,
+      "note": "notes/03-teste-estatico/03-tipos-de-revisao-e-fatores-de-sucesso.md"
+    },
+    "FL-3.2.5": {
+      "k": "K1",
+      "title": "Relembrar os fatores que contribuem para uma revisão bem-sucedida",
+      "chapter": 3,
+      "group": "G3.1",
+      "syllabus_page": 33,
+      "note": "notes/03-teste-estatico/03-tipos-de-revisao-e-fatores-de-sucesso.md"
+    },
+    "FL-4.1.1": {
+      "k": "K2",
+      "title": "Distinguir técnicas de teste baseadas em caixa-preta, caixa-branca e experiência",
+      "chapter": 4,
+      "group": "G4.1",
+      "syllabus_page": 35,
+      "note": "notes/04-analise-e-modelagem-de-teste/01-visao-geral-das-tecnicas.md"
+    },
+    "FL-4.2.1": {
+      "k": "K3",
+      "title": "Usar o particionamento de equivalência para derivar casos de teste",
+      "chapter": 4,
+      "group": "G4.5",
+      "syllabus_page": 35,
+      "note": "notes/04-analise-e-modelagem-de-teste/02-particionamento-de-equivalencia.md"
+    },
+    "FL-4.2.2": {
+      "k": "K3",
+      "title": "Usar a análise de valor limite para derivar casos de teste",
+      "chapter": 4,
+      "group": "G4.5",
+      "syllabus_page": 36,
+      "note": "notes/04-analise-e-modelagem-de-teste/03-analise-de-valor-limite.md"
+    },
+    "FL-4.2.3": {
+      "k": "K3",
+      "title": "Usar testes de tabela de decisão para derivar casos de teste",
+      "chapter": 4,
+      "group": "G4.5",
+      "syllabus_page": 36,
+      "note": "notes/04-analise-e-modelagem-de-teste/04-tabela-de-decisao.md"
+    },
+    "FL-4.2.4": {
+      "k": "K3",
+      "title": "Usar o teste de transição de estado para derivar casos de teste",
+      "chapter": 4,
+      "group": "G4.5",
+      "syllabus_page": 37,
+      "note": "notes/04-analise-e-modelagem-de-teste/05-transicao-de-estado.md"
+    },
+    "FL-4.3.1": {
+      "k": "K2",
+      "title": "Explicar o teste de instrução",
+      "chapter": 4,
+      "group": "G4.2",
+      "syllabus_page": 38,
+      "note": "notes/04-analise-e-modelagem-de-teste/06-caixa-branca.md"
+    },
+    "FL-4.3.2": {
+      "k": "K2",
+      "title": "Explicar o teste de ramificação",
+      "chapter": 4,
+      "group": "G4.2",
+      "syllabus_page": 38,
+      "note": "notes/04-analise-e-modelagem-de-teste/06-caixa-branca.md"
+    },
+    "FL-4.3.3": {
+      "k": "K2",
+      "title": "Explicar o valor dos testes caixa-branca",
+      "chapter": 4,
+      "group": "G4.2",
+      "syllabus_page": 38,
+      "note": "notes/04-analise-e-modelagem-de-teste/06-caixa-branca.md"
+    },
+    "FL-4.4.1": {
+      "k": "K2",
+      "title": "Explicar a suposição de erros",
+      "chapter": 4,
+      "group": "G4.3",
+      "syllabus_page": 39,
+      "note": "notes/04-analise-e-modelagem-de-teste/07-baseadas-na-experiencia.md"
+    },
+    "FL-4.4.2": {
+      "k": "K2",
+      "title": "Explicar o teste exploratório",
+      "chapter": 4,
+      "group": "G4.3",
+      "syllabus_page": 39,
+      "note": "notes/04-analise-e-modelagem-de-teste/07-baseadas-na-experiencia.md"
+    },
+    "FL-4.4.3": {
+      "k": "K2",
+      "title": "Explicar os testes baseados em listas de verificação",
+      "chapter": 4,
+      "group": "G4.3",
+      "syllabus_page": 40,
+      "note": "notes/04-analise-e-modelagem-de-teste/07-baseadas-na-experiencia.md"
+    },
+    "FL-4.5.1": {
+      "k": "K2",
+      "title": "Explicar como escrever histórias de usuários em colaboração com desenvolvedores e representantes de negócios",
+      "chapter": 4,
+      "group": "G4.4",
+      "syllabus_page": 40,
+      "note": "notes/04-analise-e-modelagem-de-teste/08-abordagens-colaborativas.md"
+    },
+    "FL-4.5.2": {
+      "k": "K2",
+      "title": "Classificar as diferentes opções para escrever critérios de aceite",
+      "chapter": 4,
+      "group": "G4.4",
+      "syllabus_page": 41,
+      "note": "notes/04-analise-e-modelagem-de-teste/08-abordagens-colaborativas.md"
+    },
+    "FL-4.5.3": {
+      "k": "K3",
+      "title": "Usar o desenvolvimento orientado por testes de aceite (ATDD) para derivar casos de teste",
+      "chapter": 4,
+      "group": "G4.5",
+      "syllabus_page": 41,
+      "note": "notes/04-analise-e-modelagem-de-teste/08-abordagens-colaborativas.md"
+    },
+    "FL-5.1.1": {
+      "k": "K2",
+      "title": "Exemplificar a finalidade e o conteúdo de um plano de teste",
+      "chapter": 5,
+      "group": "G5.2",
+      "syllabus_page": 42,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios.md"
+    },
+    "FL-5.1.2": {
+      "k": "K1",
+      "title": "Reconhecer como um testador agrega valor ao planejamento de iteração e lançamento",
+      "chapter": 5,
+      "group": "G5.1",
+      "syllabus_page": 43,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios.md"
+    },
+    "FL-5.1.3": {
+      "k": "K2",
+      "title": "Comparar e contrastar critérios de entrada e critérios de saída",
+      "chapter": 5,
+      "group": "G5.2",
+      "syllabus_page": 43,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/01-plano-de-teste-e-criterios.md"
+    },
+    "FL-5.1.4": {
+      "k": "K3",
+      "title": "Usar técnicas de estimativa para calcular o esforço necessário de teste",
+      "chapter": 5,
+      "group": "G5.7",
+      "syllabus_page": 44,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/02-tecnicas-de-estimativa.md"
+    },
+    "FL-5.1.5": {
+      "k": "K3",
+      "title": "Aplicar a priorização de casos de teste",
+      "chapter": 5,
+      "group": "G5.7",
+      "syllabus_page": 45,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes.md"
+    },
+    "FL-5.1.6": {
+      "k": "K1",
+      "title": "Relembrar os conceitos da pirâmide de teste",
+      "chapter": 5,
+      "group": "G5.1",
+      "syllabus_page": 45,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes.md"
+    },
+    "FL-5.1.7": {
+      "k": "K2",
+      "title": "Resumir os quadrantes de teste e suas relações com os níveis e tipos de teste",
+      "chapter": 5,
+      "group": "G5.3",
+      "syllabus_page": 45,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/03-priorizacao-piramide-e-quadrantes.md"
+    },
+    "FL-5.2.1": {
+      "k": "K1",
+      "title": "Identificar o nível de risco usando a probabilidade de risco e o impacto do risco",
+      "chapter": 5,
+      "group": "G5.1",
+      "syllabus_page": 46,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/04-gerenciamento-de-risco.md"
+    },
+    "FL-5.2.2": {
+      "k": "K2",
+      "title": "Distinguir entre riscos de projeto e riscos de produto",
+      "chapter": 5,
+      "group": "G5.4",
+      "syllabus_page": 46,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/04-gerenciamento-de-risco.md"
+    },
+    "FL-5.2.3": {
+      "k": "K2",
+      "title": "Explicar como a análise de risco do produto pode influenciar o rigor e o escopo dos testes",
+      "chapter": 5,
+      "group": "G5.4",
+      "syllabus_page": 47,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/04-gerenciamento-de-risco.md"
+    },
+    "FL-5.2.4": {
+      "k": "K2",
+      "title": "Explicar quais medidas podem ser tomadas em resposta aos riscos analisados do produto",
+      "chapter": 5,
+      "group": "G5.4",
+      "syllabus_page": 47,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/04-gerenciamento-de-risco.md"
+    },
+    "FL-5.3.1": {
+      "k": "K1",
+      "title": "Relembrar as métricas usadas para testes",
+      "chapter": 5,
+      "group": "G5.1",
+      "syllabus_page": 48,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/05-monitoramento-controle-e-conclusao.md"
+    },
+    "FL-5.3.2": {
+      "k": "K2",
+      "title": "Resumir as finalidades, o conteúdo e o público dos relatórios de teste",
+      "chapter": 5,
+      "group": "G5.5",
+      "syllabus_page": 49,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/05-monitoramento-controle-e-conclusao.md"
+    },
+    "FL-5.3.3": {
+      "k": "K2",
+      "title": "Exemplificar como comunicar o status do teste",
+      "chapter": 5,
+      "group": "G5.5",
+      "syllabus_page": 49,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/05-monitoramento-controle-e-conclusao.md"
+    },
+    "FL-5.4.1": {
+      "k": "K2",
+      "title": "Resumir como o gerenciamento de configuração apoia os testes",
+      "chapter": 5,
+      "group": "G5.6",
+      "syllabus_page": 50,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/06-gerenciamento-de-configuracao.md"
+    },
+    "FL-5.5.1": {
+      "k": "K3",
+      "title": "Preparar um relatório de defeitos",
+      "chapter": 5,
+      "group": "G5.7",
+      "syllabus_page": 50,
+      "note": "notes/05-gerenciamento-das-atividades-de-teste/07-gerenciamento-de-defeitos.md"
+    },
+    "FL-6.1.1": {
+      "k": "K2",
+      "title": "Explicar como os diferentes tipos de ferramentas de teste dão suporte aos testes",
+      "chapter": 6,
+      "group": "G6.1",
+      "syllabus_page": 53,
+      "note": "notes/06-ferramentas-de-teste/01-ferramentas-e-automacao.md"
+    },
+    "FL-6.2.1": {
+      "k": "K1",
+      "title": "Relembrar os benefícios e os riscos da automação de testes",
+      "chapter": 6,
+      "group": "G6.2",
+      "syllabus_page": 53,
+      "note": "notes/06-ferramentas-de-teste/01-ferramentas-e-automacao.md"
+    }
+  }
+}

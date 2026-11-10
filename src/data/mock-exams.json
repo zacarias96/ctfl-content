@@ -270,7 +270,7 @@
        "li": "ii. Criando uma visão de produto"
       },
       {
-       "li": "iii. Ser um bom jogador de equipe"
+       "li": "iii. Saber trabalhar em equipe (ser um team player)"
       },
       {
        "li": "iv. Planejar e organizar o trabalho da equipe."
@@ -319,7 +319,7 @@
      "id": "8",
      "stem": [
       {
-       "p": "De que forma a abordagem de equipe multidisciplinar se manifesta nas interações entre os testadores e os representantes da empresa?"
+       "p": "De que forma a abordagem de equipe completa (whole team) se manifesta nas interações entre os testadores e os representantes da empresa?"
       }
      ],
      "options": [
@@ -720,10 +720,10 @@
      "id": "17",
      "stem": [
       {
-       "p": "As avaliações utilizadas na sua organização possuem os seguintes atributos:"
+       "p": "As revisões utilizadas na sua organização possuem os seguintes atributos:"
       },
       {
-       "li": "Existe a função de um escriba."
+       "li": "Existe a função de um redator."
       },
       {
        "li": "O principal objetivo é avaliar a qualidade."
@@ -738,7 +738,7 @@
        "li": "É produzido um relatório de revisão."
       },
       {
-       "p": "Qual dos seguintes tipos de avaliação é MAIS provável de ser usado?"
+       "p": "Qual dos seguintes tipos de revisão é MAIS provável de ser usado?"
       }
      ],
      "options": [
@@ -748,11 +748,11 @@
       },
       {
        "key": "b",
-       "text": "Passo a passo"
+       "text": "Walkthrough"
       },
       {
        "key": "c",
-       "text": "Análise técnica"
+       "text": "Revisão técnica"
       },
       {
        "key": "d",
@@ -783,7 +783,7 @@
      "id": "18",
      "stem": [
       {
-       "p": "Qual das seguintes afirmações NÃO é um fator que contribui para avaliações bem-sucedidas?"
+       "p": "Qual das seguintes afirmações NÃO é um fator que contribui para revisões bem-sucedidas?"
       }
      ],
      "options": [
@@ -850,7 +850,7 @@
       "a) Incorreta. Essa é uma característica comum das técnicas de teste caixa-branca. As condições de teste, os casos de teste e os dados de teste são derivados de uma base de teste que pode incluir código, arquitetura de software, projeto detalhado ou qualquer outra fonte de informação relativa à estrutura do software.",
       "b) Incorreta. Essa é uma característica comum das técnicas de teste caixa-branca. A cobertura é medida com base nos itens testados dentro de uma estrutura selecionada e na técnica de teste aplicada à base de teste",
       "c) Correta. Essa é uma característica comum das técnicas de teste baseadas em experiência. Esse conhecimento e experiência incluem o uso esperado do software, seu ambiente, defeitos prováveis e a distribuição desses defeitos, que são usados para definir os testes",
-      "d) Incorreta. Essa é uma característica comum das técnicas de teste de caixa preta. Casos de teste podem ser usados para detectar lacunas nos requisitos e na implementação dos requisitos, bem como desvios em relação aos requisitos não"
+      "d) Incorreta. Essa é uma característica comum das técnicas de teste caixa-preta. Casos de teste podem ser usados para detectar lacunas nos requisitos e na implementação dos requisitos, bem como desvios em relação aos requisitos não"
      ]
     },
     {
@@ -1268,7 +1268,7 @@
      "k": "K2",
      "explanation": [
       "a) Incorreta. O ponto forte fundamental das técnicas de teste caixa-branca é que toda a implementação do software é levada em consideração durante os testes",
-      "b) Incorreta. As medidas de cobertura de caixa aberta fornecem uma avaliação objetiva da cobertura e oferecem as informações necessárias para permitir a geração de testes adicionais para aumentar essa cobertura",
+      "b) Incorreta. As medidas de cobertura caixa-branca fornecem uma avaliação objetiva da cobertura e oferecem as informações necessárias para permitir a geração de testes adicionais para aumentar essa cobertura",
       "c) Incorreta. As técnicas de teste de caixa aberta podem ser usadas para realizar revisões (testes estáticos)",
       "d) Correta. Essa é a fraqueza das técnicas de teste de caixa aberta. Elas não são capazes de identificar a implementação ausente, pois se baseiam exclusivamente na estrutura do objeto de teste, e não na especificação de requisitos não"
      ]
@@ -2307,7 +2307,7 @@
        "li": "iv. Redução no número de testes de regressão associados à refatoração de código."
       },
       {
-       "li": "v. Configurar a estrutura de automação de testes é barato, já que tudo é automatizado."
+       "li": "v. Configurar a framework de automação de testes é barato, já que tudo é automatizado."
       }
      ],
      "options": [
@@ -2339,7 +2339,7 @@
       "ii. É falso. Normalmente, precisamos de menos esforço para testes manuais devido ao uso da automação de testes",
       "iii. É verdade. A disponibilidade constante de software executável é uma vantagem",
       "iv. É falso. São necessários mais testes de regressão",
-      "v. É falso. Nem tudo é automatizado e a implantação de uma estrutura de automação de testes é cara",
+      "v. É falso. Nem tudo é automatizado e a implantação de uma framework de automação de testes é cara",
       "Portanto:",
       "a) Incorreta.",
       "b) Incorreta.",
@@ -2552,13 +2552,13 @@
      "id": "A13",
      "stem": [
       {
-       "p": "Qual das seguintes afirmações sobre avaliações formais é VERDADEIRA?"
+       "p": "Qual das seguintes afirmações sobre revisões formais é VERDADEIRA?"
       }
      ],
      "options": [
       {
        "key": "a",
-       "text": "Algumas avaliações não exigem mais de uma função."
+       "text": "Algumas revisões não exigem mais de uma função."
       },
       {
        "key": "b",
@@ -2589,7 +2589,7 @@
      "id": "A14",
      "stem": [
       {
-       "p": "Que tarefas a gestão pode assumir durante uma avaliação formal?"
+       "p": "Que tarefas a gestão pode assumir durante uma revisão formal?"
       }
      ],
      "options": [
@@ -2603,7 +2603,7 @@
       },
       {
        "key": "c",
-       "text": "Garantir o bom funcionamento das reuniões de avaliação e moderá-las, se necessário."
+       "text": "Garantir o bom funcionamento das reuniões de revisão e moderá-las, se necessário."
       },
       {
        "key": "d",
@@ -2729,7 +2729,7 @@
      "options": [
       {
        "key": "a",
-       "text": "Caixa preta"
+       "text": "Caixa-preta"
       },
       {
        "key": "b",
@@ -2939,7 +2939,7 @@
      "options": [
       {
        "key": "a",
-       "text": "Isso enfatiza a importância de se ter muito mais testes nos níveis mais baixos de avaliação."
+       "text": "Isso enfatiza a importância de se ter muito mais testes nos níveis de teste mais baixos."
       },
       {
        "key": "b",
@@ -3373,7 +3373,7 @@
      "lo": "FL-1.4.2",
      "k": "K2",
      "explanation": [
-      "a) Incorreta. É improvável que a equipe de marketing da organização realize muitos testes (embora em algumas organizações eles possam estar envolvidos com testes de aceitação), portanto, seu nível médio de experiência (a maior parte da qual seria em marketing) provavelmente não impactará a forma como os testes são realizados para um determinado objeto de teste.",
+      "a) Incorreta. É improvável que a equipe de marketing da organização realize muitos testes (embora em algumas organizações eles possam estar envolvidos com testes de aceite), portanto, seu nível médio de experiência (a maior parte da qual seria em marketing) provavelmente não impactará a forma como os testes são realizados para um determinado objeto de teste.",
       "b) Incorreta. O nível de conhecimento dos usuários sobre o novo sistema que está sendo desenvolvido para eles provavelmente não afetará a forma como os testes são realizados. Qualquer envolvimento do usuário que possa afetar a execução dos testes provavelmente resultará de decisões tomadas pelos testadores, pelo cliente e pelo gerente de projeto.",
       "c) Correta. O número de anos de experiência dos membros da equipe de testes de eficiência de desempenho ajudará a determinar as capacidades e o conhecimento (por exemplo, de diferentes ferramentas e tipos de defeitos) que os membros da equipe aplicarão ao realizar os testes.",
       "d) Incorreta. A estrutura organizacional dos diferentes usuários finais (que podem ser variados) muda entre os usuários. Portanto, pode nem ser possível saber, durante o teste da aplicação, que a estrutura organizacional do usuário final terá pouca influência sobre a execução dos testes."
@@ -3448,7 +3448,7 @@
      "k": "K2",
      "explanation": [
       "a) Incorreta. Habilidades de comunicação eficazes, escuta ativa e capacidade de trabalho em equipe permitem que um testador interaja efetivamente com todos os stakeholders; no entanto, um conhecimento profundo de diversos jogos de computador que lhe permitiu se dar bem com um desenvolvedor específico não é um exemplo de uma habilidade genérica útil para testadores.",
-      "b) Correta. O conhecimento do domínio, que permite compreender e comunicar com usuários finais e representantes de negócios, é uma das habilidades genéricas exigidas dos testadores. Um testador com experiência como piloto estaria mais apto a compreender os critérios de aceitação do sistema de controle do helicóptero.",
+      "b) Correta. O conhecimento do domínio, que permite compreender e comunicar com usuários finais e representantes de negócios, é uma das habilidades genéricas exigidas dos testadores. Um testador com experiência como piloto estaria mais apto a compreender os critérios de aceite do sistema de controle do helicóptero.",
       "c) Incorreta. Embora habilidades de programação possam ser consideradas conhecimento técnico que aumenta a eficiência na utilização de algumas ferramentas de teste, é improvável que essas habilidades melhorem a comunicação com analistas de negócios.",
       "d) Incorreta. Embora meticulosidade, atenção aos detalhes, curiosidade e uma abordagem metódica para identificar defeitos difíceis de encontrar sejam habilidades genéricas úteis para testadores, é improvável que eles gerem casos de teste antes de iniciar os testes exploratórios. Isso porque um dos principais princípios dos testes exploratórios é que os casos de teste sejam gerados durante o teste, e não roteirizados antecipadamente."
      ]
@@ -3484,9 +3484,9 @@
      "lo": "FL-1.5.2",
      "k": "K1",
      "explanation": [
-      "a) Incorreta. A abordagem de equipe integrada permite que qualquer membro da equipe com as habilidades e o conhecimento necessários execute qualquer tarefa; no entanto, isso não significa que os membros da equipe possam assumir qualquer função a qualquer momento. Normalmente, eles assumem apenas as funções para as quais são competentes, e não há nenhuma sugestão de que todos os membros da equipe possam desempenhar todas as funções.",
+      "a) Incorreta. A abordagem de equipe completa (whole team) permite que qualquer membro da equipe com as habilidades e o conhecimento necessários execute qualquer tarefa; no entanto, isso não significa que os membros da equipe possam assumir qualquer função a qualquer momento. Normalmente, eles assumem apenas as funções para as quais são competentes, e não há nenhuma sugestão de que todos os membros da equipe possam desempenhar todas as funções.",
       "b) Incorreta. A abordagem de equipe completa se aplica ao funcionamento de uma única equipe (tipicamente no desenvolvimento ágil de software); ela não abrange o trabalho conjunto de várias equipes em projetos maiores, e não sugere que apenas uma equipe \"completa\" seja necessária para um projeto inteiro.",
-      "c) Incorreta. A abordagem de equipe multidisciplinar não exige que todos os membros da equipe participem de todas as decisões importantes. Por exemplo, não há necessidade de o representante da área de negócios (ou seja, o Product Owner) estar envolvido em todas as decisões técnicas que não afetam o resultado do negócio, e implementar tal abordagem atrasaria desnecessariamente o progresso da equipe.",
+      "c) Incorreta. A abordagem de equipe completa (whole team) não exige que todos os membros da equipe participem de todas as decisões importantes. Por exemplo, não há necessidade de o representante da área de negócios (ou seja, o Product Owner) estar envolvido em todas as decisões técnicas que não afetam o resultado do negócio, e implementar tal abordagem atrasaria desnecessariamente o progresso da equipe.",
       "d) Correta. Ao aproveitar ao máximo as diversas habilidades de cada membro da equipe, a abordagem que envolve toda a equipe fomenta uma dinâmica superior, promove uma comunicação e colaboração robustas e gera uma sinergia que beneficia todo o projeto."
      ]
     },
@@ -3599,7 +3599,7 @@
      "k": "K1",
      "explanation": [
       "a) Correta. O Desenvolvimento Orientado a Testes (TDD) é um exemplo bem conhecido de uma abordagem de desenvolvimento que prioriza os testes.",
-      "b) Incorreta. O Desenvolvimento Orientado a Cobertura (Coversage-Driven Development) não é um exemplo correto de uma abordagem de desenvolvimento orientada a testes (TDD).",
+      "b) Incorreta. O Desenvolvimento Orientado a Cobertura (Coverage-Driven Development) não é um exemplo correto de uma abordagem de desenvolvimento orientada a testes (TDD).",
       "c) Incorreta. O Desenvolvimento Orientado à Qualidade (QDD) não é um exemplo correto de uma abordagem de desenvolvimento baseada em testes (TDD).",
       "d) Incorreta. O Desenvolvimento Orientado a Funcionalidades (Feature-Driven Development) não é um exemplo de abordagem de desenvolvimento orientada a testes (TDD), mas sim uma metodologia ágil de desenvolvimento de software baseada na entrega de funcionalidades (em oposição às histórias de usuário do Scrum)."
      ]
@@ -3622,7 +3622,7 @@
       },
       {
        "key": "c",
-       "text": "Para tratar desenvolvedores e operações de forma igualitária, os testadores alocarão mais esforços aos testes de lançamento realizados pelas operações, utilizando uma abordagem de deslocamento para a direita."
+       "text": "Para tratar desenvolvedores e operações de forma igualitária, os testadores alocarão mais esforços aos testes de lançamento realizados pelas operações, utilizando uma abordagem shift-right."
       },
       {
        "key": "d",
@@ -3674,7 +3674,7 @@
      "explanation": [
       "a) Correta. Os testes de sistema examinam o comportamento e as capacidades do sistema completo e abrangem testes não funcionais de características de qualidade, incluindo testes de segurança. Esse tipo de teste geralmente é realizado por uma equipe de testes independente com base nas especificações do sistema.",
       "b) Incorreta. O teste de integração de sistemas examina as interfaces com outros sistemas e serviços externos.",
-      "c) Incorreta. O teste beta é um tipo de teste de aceitação realizado em um local externo por pessoas que não fazem parte da equipe de desenvolvimento.",
+      "c) Incorreta. O teste beta é um tipo de teste de aceite realizado em um local externo por pessoas que não fazem parte da equipe de desenvolvimento.",
       "d) Incorreta. O teste de integração de componentes envolve testar as interfaces e interações entre os componentes de um sistema, como a interface do usuário e o banco de dados."
      ]
     },
@@ -3865,10 +3865,10 @@
      "id": "18",
      "stem": [
       {
-       "p": "Considerando os seguintes papéis nas avaliações:"
+       "p": "Considerando os seguintes papéis nas revisões:"
       },
       {
-       "li": "1. Escriba"
+       "li": "1. Redator"
       },
       {
        "li": "2. Líder da revisão"
@@ -3880,13 +3880,13 @@
        "li": "4. Gerente"
       },
       {
-       "p": "E as seguintes responsabilidades nas avaliações:"
+       "p": "E as seguintes responsabilidades nas revisões:"
       },
       {
-       "li": "A. Garante o bom funcionamento das reuniões de avaliação e a criação de um ambiente seguro para a avaliação."
+       "li": "A. Garante o bom funcionamento das reuniões de revisão e a criação de um ambiente seguro para a revisão."
       },
       {
-       "li": "B. Informações de revisão de registros, como decisões e novas anomalias encontradas durante a reunião de revisão."
+       "li": "B. Registra informações da revisão, como decisões e novas anomalias encontradas durante a reunião de revisão."
       },
       {
        "li": "C. Decide o que deve ser analisado e fornece recursos, como pessoal e tempo para a análise."
@@ -3925,7 +3925,7 @@
       "Considerando cada uma das funções listadas:",
       "1. Secretário (ou Registrador) - responsável por coletar o feedback dos revisores e documentar as informações da revisão, como as decisões tomadas e quaisquer novas anomalias identificadas durante a reunião de revisão. (Registra informações da revisão, como decisões e novas anomalias encontradas durante a reunião de revisão - B)",
       "2. Líder de Revisão - responsável por supervisionar o processo de revisão, incluindo a seleção dos membros da equipe de revisão, o agendamento de reuniões de revisão e a garantia de que a revisão seja concluída com sucesso. (Assume a responsabilidade geral pela revisão, incluindo a organização de quando e onde a revisão ocorrerá - D)",
-      "3. Facilitador (ou Moderador) - responsável por garantir que as reuniões de avaliação sejam conduzidas de forma eficaz, incluindo a gestão do tempo, a mediação das discussões e a criação de um ambiente seguro onde todos possam expressar livremente as suas opiniões. (Garante o bom funcionamento das reuniões de avaliação e a criação de um ambiente seguro para a avaliação - A)",
+      "3. Facilitador (ou Moderador) - responsável por garantir que as reuniões de revisão sejam conduzidas de forma eficaz, incluindo a gestão do tempo, a mediação das discussões e a criação de um ambiente seguro onde todos possam expressar livremente as suas opiniões. (Garante o bom funcionamento das reuniões de revisão e a criação de um ambiente seguro para a revisão - A)",
       "4. Gerente - responsável por decidir o que precisa ser revisado e alocar recursos, como pessoal e tempo, para a revisão. (Dcide o que deve ser revisado e fornece recursos, como pessoal e tempo para a revisão - C) Por isso:",
       "a) Incorreta.",
       "b) Incorreta.",
@@ -4268,7 +4268,7 @@
       },
       {
        "key": "b",
-       "text": "Existe pelo menos uma declaração que deve ter sido executada tanto por T1 quanto por T2."
+       "text": "Existe pelo menos uma instrução que deve ter sido executada tanto por T1 quanto por T2."
       },
       {
        "key": "c",
@@ -4392,7 +4392,7 @@
       },
       {
        "key": "b",
-       "text": "“A cobertura da declaração alcançada ultrapassa 85%”"
+       "text": "“A cobertura de instrução alcançada ultrapassa 85%”"
       },
       {
        "key": "c",
@@ -4459,8 +4459,8 @@
      "explanation": [
       "a) Incorreta. O formato orientado a regras inclui formatos como listas de verificação com marcadores ou tabelas de mapeamento de entrada e saída, mostrando explicitamente as regras a serem seguidas. Dado/Quando/Então é um formato orientado a cenários porque descreve um cenário a ser verificado.",
       "b) Correta. Este é um formato Dado/Quando/Então, que é orientado a cenários.",
-      "c) Incorreta. Não existe um formato de critérios de aceitação \"orientado ao produto\".",
-      "d) Incorreta. Não existe um formato de critérios de aceitação \"orientado a processos\"."
+      "c) Incorreta. Não existe um formato de critérios de aceite \"orientado ao produto\".",
+      "d) Incorreta. Não existe um formato de critérios de aceite \"orientado a processos\"."
      ]
     },
     {
@@ -4543,7 +4543,7 @@
       },
       {
        "key": "d",
-       "text": "A cobertura da declaração é de pelo menos 80%."
+       "text": "A cobertura de instrução é de pelo menos 80%."
       }
      ],
      "answer": [
@@ -4768,7 +4768,7 @@
      "explanation": [
       "a) Incorreta. Os testes de usabilidade são testes voltados para o negócio que avaliam o produto (Q3).",
       "b) Incorreta. Testes funcionais são testes voltados para o negócio (Q2).",
-      "c) Incorreta. O teste de aceitação do usuário é um teste voltado para o negócio que avalia criticamente o produto (Q3).",
+      "c) Incorreta. O teste de aceite do usuário é um teste voltado para o negócio que avalia criticamente o produto (Q3).",
       "d) Correta. O teste de integração de componentes é um teste voltado para a tecnologia que dá suporte à equipe (orienta o desenvolvimento) (Q1)"
      ]
     },
@@ -4986,7 +4986,7 @@
       },
       {
        "key": "d",
-       "text": "Os controladores TC3, TC4 e TC5 apresentam defeitos (dados de entrada duplicados) e devem ser corrigidos."
+       "text": "Os casos de teste TC3, TC4 e TC5 apresentam defeitos (dados de entrada duplicados) e devem ser corrigidos."
       }
      ],
      "answer": [
@@ -5017,7 +5017,7 @@
        "li": "3. Máquinas virtuais"
       },
       {
-       "li": "4. Avaliações de suporte"
+       "li": "4. Apoio a revisões"
       },
       {
        "p": "E as seguintes categorias de ferramentas de teste:"

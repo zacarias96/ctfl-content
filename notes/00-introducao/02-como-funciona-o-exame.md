@@ -87,7 +87,7 @@ Algumas dicas práticas:
 2. **Gaste mais tempo onde há mais questões e mais K3.** Capítulo 4 (técnicas) e capítulo 5 (estimativas, priorização, risco, defeitos) merecem pelo menos metade do seu tempo de estudo.
 3. **Refaça os cálculos à mão.** Partições de equivalência, valores limite, tabelas de decisão, transição de estado, cobertura e estimativas aparecem como exercícios. Ler o exemplo não é o mesmo que saber fazer.
 4. **Treine o vocabulário.** Muitas questões erradas vêm de confundir pares de termos (erro e defeito, verificação e validação, teste de confirmação e teste de regressão). A seção de revisão tem uma lista desses pares.
-5. **Faça os simulados oficiais.** Os exemplos de exame A e B estão nos [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/), com justificativa de cada alternativa. Faça pelo menos um no modo prova, cronometrado, antes da prova real.
+5. **Faça os simulados oficiais.** Os exemplos de exame A, B, C e D estão nos [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/), com justificativa de cada alternativa. Faça pelo menos um no modo prova, cronometrado, antes da prova real.
 
 ## Teste seu conhecimento
 

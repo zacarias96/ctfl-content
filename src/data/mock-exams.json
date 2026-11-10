@@ -5108,6 +5108,3723 @@
     }
    ],
    "extra": []
+  },
+  {
+   "id": "C",
+   "title": "Simulado C",
+   "version": "v1.6 (tradução livre)",
+   "questions": [
+    {
+     "id": "1",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um objetivo de teste típico?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Validar que os requisitos documentados são atendidos."
+      },
+      {
+       "key": "b",
+       "text": "Provocar falhas e identificar defeitos."
+      },
+      {
+       "key": "c",
+       "text": "Provocar erros e identificar causas raiz."
+      },
+      {
+       "key": "d",
+       "text": "Verificar se o objeto de teste atende às expectativas dos usuários."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-1.1.1",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Validar que os requisitos documentados são atendidos está errado, porque a validação trata de atender às necessidades e expectativas dos usuários, enquanto a verificação trata de atender aos requisitos especificados. A frase estaria certa se trocássemos 'validar' por 'verificar'",
+      "b) Correta. Provocar falhas e identificar defeitos é, provavelmente, o objetivo mais comum do teste dinâmico",
+      "c) Incorreta. Os testadores não provocam erros, eles tentam provocar falhas. Erros costumam ser cometidos pelos desenvolvedores (e não podem ser realmente provocados) e resultam em defeitos, que os testadores tentam identificar diretamente, pelo teste estático, ou indiretamente, pelas falhas no teste dinâmico. Identificar causas raiz é útil, mas faz parte da depuração, que é uma atividade separada do teste",
+      "d) Incorreta. A verificação trata de checar se os requisitos especificados (documentados) são atendidos, enquanto a validação trata de atender às necessidades e expectativas dos usuários. A frase estaria certa se trocássemos 'verificar' por 'validar'"
+     ]
+    },
+    {
+     "id": "2",
+     "stem": [
+      {
+       "p": "Qual das seguintes afirmações MELHOR descreve a diferença entre teste e depuração?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O teste provoca falhas, enquanto a depuração corrige falhas."
+      },
+      {
+       "key": "b",
+       "text": "O teste é uma atividade negativa, enquanto a depuração é uma atividade positiva."
+      },
+      {
+       "key": "c",
+       "text": "O teste determina que existem defeitos, enquanto a depuração remove os defeitos."
+      },
+      {
+       "key": "d",
+       "text": "O teste encontra a causa dos defeitos, enquanto a depuração corrige a causa dos defeitos."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-1.1.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O teste dinâmico de fato provoca falhas (a partir das quais os defeitos podem ser localizados e corrigidos). Mas a depuração trata de localizar e corrigir defeitos. Portanto, a depuração não corrige falhas",
+      "b) Incorreta. Tanto o teste quanto a depuração contribuem para melhorar a qualidade do objeto de teste, então ambos devem ser vistos de forma positiva. A depuração costuma ser vista como positiva porque conserta algo. O teste dinâmico envolve fazer o objeto de teste falhar de propósito, e por isso algumas pessoas o consideram negativo, mas essa é uma visão muito estreita (e não costuma ser a dos testadores). Existem casos de teste positivos, que checam se o objeto de teste faz corretamente o que deveria fazer, e negativos, que checam se ele não faz o que não deveria fazer",
+      "c) Correta. O teste determina que existem defeitos, seja diretamente, observando o defeito em revisões (ou por uma ferramenta, na análise estática), seja indiretamente, provocando uma falha no teste dinâmico. A depuração é uma atividade separada do teste (normalmente feita pelos desenvolvedores) e trata de localizar os defeitos (só no caso do teste dinâmico) e corrigi-los",
+      "d) Incorreta. As causas dos defeitos costumam ser erros humanos. O teste encontra defeitos, diretamente pelo teste estático ou indiretamente provocando falhas no teste dinâmico, e a depuração corrige os defeitos. Portanto, o teste não encontra a causa dos defeitos e a depuração não corrige a causa dos defeitos"
+     ]
+    },
+    {
+     "id": "3",
+     "stem": [
+      {
+       "p": "A 'falácia da ausência de defeitos' é um dos princípios de teste. Qual das seguintes opções é um exemplo de como lidar com esse princípio na prática?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Explicar que não é possível o teste mostrar a ausência de defeitos."
+      },
+      {
+       "key": "b",
+       "text": "Apoiar os usuários finais na realização do teste de aceite."
+      },
+      {
+       "key": "c",
+       "text": "Garantir que não restem defeitos de implementação no sistema entregue."
+      },
+      {
+       "key": "d",
+       "text": "Modificar os testes que não provocam falhas para garantir que restem poucos defeitos."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-1.3.1",
+     "k": "K2",
+     "explanation": [
+      "A 'falácia da ausência de defeitos' diz que garantir a correção de acordo com os requisitos (ou seja, verificar a ausência de defeitos de implementação) não garante a satisfação dos usuários com o sistema. Para lidar com isso, também é preciso validar que o sistema atende às necessidades e expectativas dos usuários, cumpre os objetivos de negócio e supera os sistemas concorrentes.",
+      "a) Incorreta. O princípio 'o teste mostra a presença, não a ausência de defeitos' explica que o teste pode detectar a existência de defeitos no objeto de teste, mas não pode demonstrar que não há defeitos e, assim, garantir sua correção. Explicar isso atenderia, em parte, a esse princípio, e não à falácia da ausência de defeitos",
+      "b) Correta. Ao apoiar o usuário final na realização do teste de aceite, deve ser possível validar que o sistema atende às necessidades e expectativas dos usuários",
+      "c) Incorreta. Não é possível garantir que não restem defeitos de implementação no sistema entregue, como explica o princípio 'o teste mostra a presença, não a ausência de defeitos': o teste pode detectar defeitos, mas não pode demonstrar que eles não existem e, assim, garantir a correção",
+      "d) Incorreta. Modificar os testes que não provocam falhas é uma forma de lidar com o princípio 'os testes se degradam', segundo o qual repetir testes idênticos em código inalterado dificilmente revela defeitos novos, então modificar os testes pode ser essencial. Isso não valida que o sistema atende às necessidades e expectativas dos usuários"
+     ]
+    },
+    {
+     "id": "4",
+     "stem": [
+      {
+       "p": "Quais DUAS das seguintes atividades de teste têm MAIOR probabilidade de envolver a aplicação da análise de valor limite e do particionamento de equivalência?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Implementação do teste."
+      },
+      {
+       "key": "b",
+       "text": "Projeto de teste."
+      },
+      {
+       "key": "c",
+       "text": "Execução do teste."
+      },
+      {
+       "key": "d",
+       "text": "Monitoramento do teste."
+      },
+      {
+       "key": "e",
+       "text": "Análise de teste."
+      }
+     ],
+     "answer": [
+      "b",
+      "e"
+     ],
+     "lo": "FL-1.4.1",
+     "k": "K2",
+     "explanation": [
+      "Considere a seguinte descrição da análise de teste: para identificar as funcionalidades que precisam de teste, a base de teste é analisada e definida em condições de teste, que depois são priorizadas junto com os riscos relacionados. A identificação sistemática de condições de teste como itens de cobertura costuma envolver o uso de técnicas de teste, tanto na análise de teste quanto como parte do projeto de teste.",
+      "Por essa descrição, as técnicas de teste costumam ser usadas nas atividades de análise de teste e de projeto de teste. A análise de valor limite e o particionamento de equivalência são técnicas de teste.",
+      "a) Incorreta. A implementação do teste dificilmente envolve técnicas de teste, porque trata principalmente de reunir os casos de teste em procedimentos de teste, enquanto as técnicas de teste criam casos de teste",
+      "b) Correta. O projeto de teste costuma usar técnicas de teste para criar casos de teste a partir das condições de teste e dos itens de cobertura",
+      "c) Incorreta. A execução do teste dificilmente envolve técnicas de teste, porque trata principalmente de executar os procedimentos de teste (e, portanto, os casos de teste), enquanto as técnicas de teste criam casos de teste",
+      "d) Incorreta. O monitoramento do teste dificilmente envolve técnicas de teste. Ele trata principalmente de checagens contínuas de que o plano está sendo seguido, enquanto as técnicas de teste criam casos de teste",
+      "e) Correta. A análise de teste costuma usar técnicas de teste para identificar condições de teste"
+     ]
+    },
+    {
+     "id": "5",
+     "stem": [
+      {
+       "p": "Considere os seguintes itens de testware:"
+      },
+      {
+       "pre": "1. Itens de cobertura\n2. Solicitações de mudança\n3. Cronograma de execução do teste\n4. Condições de teste priorizadas"
+      },
+      {
+       "p": "E as seguintes atividades de teste:"
+      },
+      {
+       "pre": "A. Análise de teste\nB. Projeto de teste\nC. Implementação do teste\nD. Conclusão do teste"
+      },
+      {
+       "p": "Qual das seguintes opções MELHOR mostra o testware produzido por cada atividade?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "1B, 2D, 3C, 4A"
+      },
+      {
+       "key": "b",
+       "text": "1B, 2D, 3A, 4C"
+      },
+      {
+       "key": "c",
+       "text": "1D, 2C, 3A, 4B"
+      },
+      {
+       "key": "d",
+       "text": "1D, 2C, 3B, 4A"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-1.4.3",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada atividade de teste listada e o testware que ela produz:",
+      {
+       "li": "A. Análise de teste: condições de teste priorizadas (4) (por exemplo, critérios de aceite) e relatórios de defeitos encontrados na base de teste"
+      },
+      {
+       "li": "B. Projeto de teste: casos de teste priorizados, cartas de teste, itens de cobertura (1), requisitos de dados de teste e requisitos do ambiente de teste"
+      },
+      {
+       "li": "C. Implementação do teste: procedimentos de teste, scripts de teste automatizados, suítes de teste, dados de teste, cronograma de execução do teste (3) e elementos do ambiente de teste, como stubs, drivers, simuladores e virtualização de serviços"
+      },
+      {
+       "li": "D. Conclusão do teste: relatório de conclusão do teste, lições aprendidas documentadas, itens de ação para melhoria e solicitações de mudança (2) (como itens do backlog do produto)"
+      },
+      "Por isso:",
+      "a) Correta. A correspondência certa é: 1B, 2D, 3C, 4A",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "6",
+     "stem": [
+      {
+       "p": "Qual das seguintes afirmações sobre os diferentes papéis no teste tem MAIOR probabilidade de estar CORRETA?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "No desenvolvimento ágil de software, o papel de gerenciamento de teste é responsabilidade principal da equipe, enquanto o papel de testador é responsabilidade principal de uma única pessoa de fora da equipe."
+      },
+      {
+       "key": "b",
+       "text": "O papel de testador é o principal responsável pelo monitoramento e controle do teste, enquanto o papel de gerenciamento de teste é o principal responsável pelo planejamento e pela conclusão do teste."
+      },
+      {
+       "key": "c",
+       "text": "No desenvolvimento ágil de software, as atividades de gerenciamento de teste que abrangem várias equipes ficam com um gerente de teste de fora da equipe, enquanto algumas tarefas de gerenciamento de teste ficam com a própria equipe."
+      },
+      {
+       "key": "d",
+       "text": "O papel de gerenciamento de teste é o principal responsável pela análise e pelo projeto de teste, enquanto o papel de testador é o principal responsável pela implementação e pela execução do teste."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-1.4.5",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. É verdade que, no desenvolvimento ágil, algumas tarefas de gerenciamento de teste podem ficar com a própria equipe ágil, mas o papel de testador não é responsabilidade principal de uma única pessoa de fora da equipe. O teste tende a ser feito por vários membros da equipe, seguindo a abordagem de equipe completa",
+      "b) Incorreta. O papel de gerenciamento de teste envolve principalmente atividades de planejamento, monitoramento e controle e conclusão do teste. Então a afirmação está parcialmente certa, mas é errado dizer que o papel de testador é o principal responsável pelo monitoramento e controle do teste",
+      "c) Correta. No desenvolvimento ágil, algumas tarefas de gerenciamento de teste podem ficar com a própria equipe ágil. Já as atividades de teste que abrangem várias equipes de uma organização podem ficar com gerentes de teste de fora da equipe de desenvolvimento",
+      "d) Incorreta. O papel de gerenciamento de teste envolve principalmente planejamento, monitoramento e controle e conclusão do teste, enquanto o papel de testador é o principal responsável pelos aspectos técnicos e de engenharia do teste, como análise, projeto, implementação e execução do teste. Então o papel de gerenciamento de teste normalmente não é responsável pela análise e pelo projeto de teste, embora seja certo dizer que o papel de testador é o principal responsável pela implementação e pela execução do teste"
+     ]
+    },
+    {
+     "id": "7",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é uma vantagem da abordagem de equipe completa?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Equipes sem testadores."
+      },
+      {
+       "key": "b",
+       "text": "Melhor dinâmica da equipe."
+      },
+      {
+       "key": "c",
+       "text": "Membros da equipe especialistas."
+      },
+      {
+       "key": "d",
+       "text": "Equipes maiores."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-1.5.2",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Na abordagem de equipe completa, os testadores têm um papel essencial: compartilham sua experiência em teste com a equipe e orientam o desenvolvimento do produto. Eles colaboram com os outros membros para chegar aos níveis de qualidade desejados e trabalham com os representantes do negócio para criar testes de aceite. Os testadores também trabalham com os desenvolvedores para definir a melhor estratégia de teste e as abordagens de automação",
+      "b) Correta. Ao aproveitar da melhor forma as diferentes habilidades de cada membro, a abordagem de equipe completa favorece uma dinâmica de equipe melhor, promove comunicação e colaboração sólidas e gera uma sinergia que beneficia o projeto inteiro",
+      "c) Incorreta. A abordagem de equipe completa permite que qualquer membro com as habilidades e o conhecimento necessários assuma qualquer tarefa, então membros especialistas não são uma vantagem dessa abordagem",
+      "d) Incorreta. Não há orientação específica sobre o tamanho ideal de equipes que usam a abordagem de equipe completa, nem sugestão de que equipes maiores sejam melhores"
+     ]
+    },
+    {
+     "id": "8",
+     "stem": [
+      {
+       "p": "Qual das seguintes afirmações sobre a independência do teste está CORRETA?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Testadores independentes encontram defeitos por terem uma perspectiva técnica diferente da dos desenvolvedores, mas essa independência pode levar a uma relação de confronto com os desenvolvedores."
+      },
+      {
+       "key": "b",
+       "text": "Como os desenvolvedores conhecem bem o próprio código, encontram poucos defeitos nele; porém, como compartilham a formação em software com os testadores, esses defeitos também seriam encontrados pelos testadores."
+      },
+      {
+       "key": "c",
+       "text": "O teste independente exige testadores de fora da equipe do desenvolvedor e, de preferência, de fora da organização; porém, esses testadores têm dificuldade para entender o domínio da aplicação."
+      },
+      {
+       "key": "d",
+       "text": "Testadores de fora da equipe do desenvolvedor são mais independentes do que os de dentro da equipe, mas os de dentro da equipe têm mais chance de serem culpados por atrasos na entrega do produto."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-1.5.3",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. O principal benefício da independência do teste é que os testadores tendem a identificar tipos de falhas e defeitos diferentes dos que os desenvolvedores identificam, por causa de suas formações, pontos de vista técnicos e possíveis vieses diferentes, incluindo o viés cognitivo. A principal desvantagem é que os testadores podem ficar isolados da equipe de desenvolvimento, o que gera problemas de comunicação, falta de colaboração e, possivelmente, uma relação de confronto, com os testadores sendo culpados por atrasos e gargalos na entrega",
+      "b) Incorreta. Conhecer bem o próprio código não faz o desenvolvedor encontrar poucos defeitos nele; ao contrário, esse conhecimento permite encontrar muitos defeitos com eficiência. E, em vez de terem uma formação em comum, o fato de desenvolvedores e testadores terem formações diferentes é justamente o motivo apontado para encontrarem tipos de defeitos diferentes",
+      "c) Incorreta. O teste pode ter diferentes níveis de independência, desde nenhuma (o próprio autor) até muito alta (testadores de fora da organização). Na maioria dos projetos há vários níveis de independência: os desenvolvedores fazem o teste de componente e o teste de integração de componentes, a equipe de teste faz o teste de sistema e o teste de integração de sistemas, e os representantes do negócio fazem o teste de aceite. Então os testadores podem estar na equipe do desenvolvedor e não precisam vir de fora da organização. O conhecimento do domínio da aplicação varia de caso a caso e não depende do nível de independência",
+      "d) Incorreta. Testadores de fora da equipe do desenvolvedor costumam ser mais independentes do que os de dentro. Porém, há mais motivo para crer que os de fora fiquem mais isolados dos desenvolvedores e, por isso, tenham mais chance de serem culpados por atrasos na entrega do produto"
+     ]
+    },
+    {
+     "id": "9",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é uma boa prática de teste que se aplica a todos os ciclos de vida de desenvolvimento de software?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Para cada nível de teste, existe um nível de desenvolvimento correspondente."
+      },
+      {
+       "key": "b",
+       "text": "Para cada objetivo de teste, existe um objetivo de desenvolvimento correspondente."
+      },
+      {
+       "key": "c",
+       "text": "Para cada atividade de teste, existe uma atividade de usuário correspondente."
+      },
+      {
+       "key": "d",
+       "text": "Para cada atividade de desenvolvimento, existe uma atividade de teste correspondente."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-2.1.2",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. O controle de qualidade se aplica a todas as atividades de desenvolvimento, ou seja, toda atividade de desenvolvimento de software tem uma atividade de teste correspondente. Aqui, porém, a frase tenta igualar níveis de teste a níveis de desenvolvimento, e, embora 'nível de teste' tenha um significado conhecido, não existe um entendimento comum do termo 'nível de desenvolvimento'",
+      "b) Incorreta. Toda atividade de desenvolvimento de software tem uma atividade de teste correspondente, mas os objetivos de teste são bem diferentes. Por exemplo, pode haver o objetivo de teste de garantir que o objeto de teste cumpre uma exigência contratual de que certo tipo de teste seja feito antes da entrega. Nesse caso, não há motivo para existir um objetivo de desenvolvimento correspondente",
+      "c) Incorreta. Toda atividade de desenvolvimento de software tem uma atividade de teste correspondente, mas a mesma simetria não vale entre teste e atividades de usuário. Em alguns sistemas é difícil até identificar os usuários finais. E algumas atividades de teste são voltadas aos desenvolvedores (por exemplo, testar a facilidade de manutenção), sem nenhum aspecto ligado ao usuário",
+      "d) Correta. O controle de qualidade se aplica a todas as atividades de desenvolvimento, ou seja, toda atividade de desenvolvimento de software tem uma atividade de teste correspondente"
+     ]
+    },
+    {
+     "id": "10",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um exemplo de abordagem de desenvolvimento test-first (teste primeiro)?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Desenvolvimento orientado por teste de componente."
+      },
+      {
+       "key": "b",
+       "text": "Desenvolvimento orientado por teste de integração."
+      },
+      {
+       "key": "c",
+       "text": "Desenvolvimento orientado por teste de sistema."
+      },
+      {
+       "key": "d",
+       "text": "Desenvolvimento orientado por teste de aceite (ATDD)."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-2.1.3",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. 'Desenvolvimento orientado por teste de componente' não é um exemplo de abordagem test-first",
+      "b) Incorreta. 'Desenvolvimento orientado por teste de integração' não é um exemplo de abordagem test-first",
+      "c) Incorreta. 'Desenvolvimento orientado por teste de sistema' não é um exemplo de abordagem test-first",
+      "d) Correta. O desenvolvimento orientado por teste de aceite (ATDD) é um exemplo bem conhecido de abordagem test-first"
+     ]
+    },
+    {
+     "id": "11",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções MELHOR descreve o shift-left?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Quando os desenvolvedores concordam, as atividades manuais do lado esquerdo do processo de teste são automatizadas para apoiar o princípio 'testes antecipados economizam tempo e dinheiro'."
+      },
+      {
+       "key": "b",
+       "text": "Quando for vantajoso em custo, as atividades de teste são antecipadas no ciclo de vida de desenvolvimento de software (SDLC) para reduzir o custo total da qualidade, diminuindo o número de defeitos encontrados mais tarde no SDLC."
+      },
+      {
+       "key": "c",
+       "text": "Quando têm tempo livre, os testadores precisam automatizar testes de regressão, começando pelos testes de componente e de integração de componentes."
+      },
+      {
+       "key": "d",
+       "text": "Quando possível, os testadores são treinados para fazer tarefas no início do SDLC, para que mais atividades de teste possam ser automatizadas mais tarde no SDLC."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-2.1.5",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. As práticas de shift-left buscam fazer mais atividades de teste nas fases iniciais do ciclo de vida de desenvolvimento de software (SDLC), representando o SDLC como um movimento da esquerda para a direita. Não existe 'lado esquerdo do processo de teste'",
+      "b) Correta. O shift-left reforça a importância de começar a testar mais cedo no SDLC. Aplicá-lo exige treinamento adicional e mais esforço e custo nas fases iniciais do SDLC, mas a economia total tende a ser maior",
+      "c) Incorreta. Testes de componente e de integração de componentes automatizados para regressão costumam ser valiosos, mas criá-los normalmente é responsabilidade dos desenvolvedores, e, numa abordagem de integração e entrega contínuas (CI/CD), esses testes já são enviados junto com o código. Em algumas situações o testador pode automatizar testes de regressão, às vezes até de componente e de integração de componentes, mas isso não faz parte do shift-left, que antecipa o teste no SDLC",
+      "d) Incorreta. Treinar testadores para fazer tarefas no início do SDLC apoiaria o shift-left, por reforçar a importância de testar mais cedo. Mas automatizar mais atividades de teste para serem feitas mais tarde no SDLC não faz parte do shift-left"
+     ]
+    },
+    {
+     "id": "12",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MENOR probabilidade de acontecer como resultado de uma retrospectiva?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "A qualidade dos futuros objetos de teste melhora graças à identificação de melhorias nas práticas de desenvolvimento."
+      },
+      {
+       "key": "b",
+       "text": "A eficiência do teste melhora com a aceleração, por automação, da configuração dos ambientes de teste."
+      },
+      {
+       "key": "c",
+       "text": "Os usuários finais passam a entender melhor os processos de desenvolvimento e de teste."
+      },
+      {
+       "key": "d",
+       "text": "Os scripts de teste automatizados são aprimorados com o feedback dos desenvolvedores."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-2.1.6",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Um dos propósitos das retrospectivas é identificar possíveis melhorias de processo, que, se postas em prática, devem elevar a qualidade das próximas saídas do processo de desenvolvimento (os objetos de teste). Então isso é provável como resultado de uma retrospectiva",
+      "b) Incorreta. Um benefício das retrospectivas para o teste é o aumento da eficiência do teste por meio de melhorias de processo. Então isso é provável como resultado de uma retrospectiva",
+      "c) Correta. Participam das retrospectivas, em geral, testadores, desenvolvedores, arquitetos, product owners e analistas de negócio, mas os usuários finais raramente são convidados ou comparecem, e também dificilmente recebem algum relatório dessas reuniões. Por isso, é muito improvável que eles aprendam e entendam mais sobre os processos de desenvolvimento e de teste por meio das retrospectivas",
+      "d) Incorreta. Um benefício das retrospectivas para o teste é a melhoria da qualidade do testware (incluindo scripts de teste automatizados) por meio de revisões conjuntas com os desenvolvedores. Então isso é provável como resultado de uma retrospectiva"
+     ]
+    },
+    {
+     "id": "13",
+     "stem": [
+      {
+       "p": "Qual dos seguintes níveis de teste tem MAIOR probabilidade de estar sendo executado se o teste tem foco em validação e não está sendo feito por testadores?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Teste de componente."
+      },
+      {
+       "key": "b",
+       "text": "Teste de integração de componentes."
+      },
+      {
+       "key": "c",
+       "text": "Teste de integração de sistemas."
+      },
+      {
+       "key": "d",
+       "text": "Teste de aceite."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-2.2.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O teste de componente (também chamado de teste unitário) testa componentes individuais de forma isolada e é, em sua maior parte, verificação contra uma especificação, e não validação contra as necessidades dos usuários. Ele normalmente não é feito por testadores, já que os desenvolvedores costumam fazê-lo no próprio ambiente de desenvolvimento",
+      "b) Incorreta. O teste de integração de componentes testa as interfaces e interações entre componentes e é, em sua maior parte, verificação contra uma especificação, e não validação contra as necessidades dos usuários. Ele normalmente não é feito por testadores, já que os desenvolvedores costumam fazê-lo",
+      "c) Incorreta. O teste de integração de sistemas examina as interfaces com outros sistemas e serviços externos e é, em sua maior parte, verificação contra uma especificação, e não validação contra as necessidades dos usuários. Esse teste também costuma ser feito por testadores",
+      "d) Correta. O teste de aceite se concentra em validar que o sistema atende às necessidades de negócio do usuário e está pronto para implantação. O ideal é que seja feito pelos usuários finais"
+     ]
+    },
+    {
+     "id": "14",
+     "stem": [
+      {
+       "p": "O software de um sistema de navegação foi atualizado porque sugeria rotas que violam as leis de trânsito, como andar na contramão em ruas de mão única. Qual das seguintes opções MELHOR descreve o teste que será feito?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Apenas teste de confirmação."
+      },
+      {
+       "key": "b",
+       "text": "Teste de confirmação e depois teste de regressão."
+      },
+      {
+       "key": "c",
+       "text": "Apenas teste de regressão."
+      },
+      {
+       "key": "d",
+       "text": "Teste de regressão e depois teste de confirmação."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-2.2.3",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O teste de confirmação, para checar se as atualizações resultaram numa implementação correta, é necessário, mas depois é sensato fazer o teste de regressão, para garantir que nenhum defeito foi introduzido ou revelado em áreas não alteradas do sistema",
+      "b) Correta. O teste de confirmação checa se as atualizações resultaram numa implementação correta, e depois o teste de regressão garante que nenhum defeito foi introduzido ou revelado em áreas não alteradas do sistema",
+      "c) Incorreta. O teste de regressão deve ser usado para garantir que a atualização não introduziu nem revelou defeitos em áreas não alteradas do sistema, mas também é necessário o teste de confirmação, que checa se as atualizações resultaram numa implementação correta",
+      "d) Incorreta. O teste de confirmação checa se as atualizações resultaram numa implementação correta, e o teste de regressão garante que nenhum defeito foi introduzido ou revelado em áreas não alteradas do sistema. Porém, quando os dois são feitos (ou seja, quando uma atualização precisa ser testada), o teste de confirmação vem antes do teste de regressão"
+     ]
+    },
+    {
+     "id": "15",
+     "stem": [
+      {
+       "p": "Considere os seguintes exemplos de defeitos:"
+      },
+      {
+       "pre": "i.   Duas partes diferentes da especificação de projeto se contradizem por causa da complexidade do projeto\nii.  Um tempo de resposta é longo demais e faz os usuários perderem a paciência\niii. Um caminho no código não pode ser alcançado durante a execução\niv.  Uma variável é declarada, mas nunca é usada depois no programa\nv.   A quantidade de memória de que o programa precisa para gerar um relatório é alta demais"
+      },
+      {
+       "p": "Qual das seguintes opções MELHOR identifica os exemplos de defeitos que poderiam ser encontrados pelo teste estático (em vez do teste dinâmico)?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "ii, v"
+      },
+      {
+       "key": "b",
+       "text": "iii, v"
+      },
+      {
+       "key": "c",
+       "text": "i, ii, iv"
+      },
+      {
+       "key": "d",
+       "text": "i, iii, iv"
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-3.1.3",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada exemplo de defeito listado:",
+      {
+       "li": "i. Duas partes da especificação de projeto se contradizem: é um defeito de especificação, categoria que inclui inconsistências, ambiguidades, contradições, omissões, imprecisões e duplicações, mais facilmente encontradas pelo teste estático"
+      },
+      {
+       "li": "ii. Um tempo de resposta longo demais: é um defeito de tempo de resposta, que na prática só pode ser detectado executando o programa e medindo o tempo de resposta, ou seja, é mais facilmente encontrado pelo teste dinâmico"
+      },
+      {
+       "li": "iii. Um caminho no código que não pode ser alcançado: é um defeito de código, categoria que inclui variáveis com valores indefinidos, variáveis não declaradas, código duplicado ou inalcançável e complexidade excessiva, mais facilmente encontrados pelo teste estático"
+      },
+      {
+       "li": "iv. Uma variável declarada e nunca usada: também é um defeito de código, mais facilmente encontrado pelo teste estático"
+      },
+      {
+       "li": "v. Memória demais para gerar um relatório: é um defeito de desempenho, que na prática só pode ser detectado executando o programa e medindo a memória usada, ou seja, é mais facilmente encontrado pelo teste dinâmico"
+      },
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Correta. Os defeitos que correspondem ao teste estático são i, iii e iv"
+     ]
+    },
+    {
+     "id": "16",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um benefício do feedback antecipado e frequente das partes interessadas?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "As mudanças nos requisitos são entendidas e implementadas mais cedo."
+      },
+      {
+       "key": "b",
+       "text": "Garante que as partes interessadas do negócio entendam os requisitos de usuário."
+      },
+      {
+       "key": "c",
+       "text": "Permite que os product owners mudem seus requisitos quantas vezes quiserem."
+      },
+      {
+       "key": "d",
+       "text": "Os usuários finais são informados, antes da entrega, de quais requisitos não serão implementados."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-3.2.1",
+     "k": "K1",
+     "explanation": [
+      "a) Correta. Obter feedback das partes interessadas cedo e com frequência no processo de desenvolvimento pode ser muito benéfico. Isso facilita a comunicação antecipada de possíveis problemas de qualidade, pode evitar mal-entendidos sobre os requisitos e garante que mudanças nos requisitos das partes interessadas sejam entendidas e implementadas mais cedo",
+      "b) Incorreta. O feedback vem das partes interessadas, então dar feedback dificilmente melhora o entendimento delas sobre os próprios requisitos de usuário",
+      "c) Incorreta. O feedback antecipado e frequente traz os benefícios citados em a). Mas o fato de as mudanças nos requisitos poderem ser entendidas e implementadas mais cedo não significa que mudanças ilimitadas sejam incentivadas",
+      "d) Incorreta. O feedback vem das partes interessadas e não trata da comunicação com elas. A comunicação com os usuários finais poderia incluir avisar quais requisitos não serão implementados antes da entrega, mas o ideal é que isso nem aconteça"
+     ]
+    },
+    {
+     "id": "17",
+     "stem": [
+      {
+       "p": "Considere os seguintes tipos de revisão:"
+      },
+      {
+       "pre": "1. Revisão técnica\n2. Revisão informal\n3. Inspeção\n4. Walkthrough"
+      },
+      {
+       "p": "E as seguintes descrições:"
+      },
+      {
+       "pre": "A. Inclui objetivos como chegar a um consenso, gerar novas ideias e motivar os autores a melhorar\nB. Inclui objetivos como educar os revisores, chegar a um consenso, gerar novas ideias e detectar possíveis defeitos\nC. O objetivo principal é detectar possíveis defeitos, e exige coleta de métricas para apoiar a melhoria de processo\nD. O objetivo principal é detectar possíveis defeitos, e não gera nenhuma saída formal documentada"
+      },
+      {
+       "p": "Qual das seguintes opções MELHOR relaciona os tipos de revisão às descrições?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "1A, 2B, 3C, 4D"
+      },
+      {
+       "key": "b",
+       "text": "1A, 2D, 3C, 4B"
+      },
+      {
+       "key": "c",
+       "text": "1B, 2C, 3D, 4A"
+      },
+      {
+       "key": "d",
+       "text": "1C, 2D, 3A, 4B"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-3.2.4",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada tipo de revisão listado:",
+      {
+       "li": "1. Revisão técnica: feita por revisores tecnicamente qualificados e conduzida por um moderador. Os objetivos são chegar a um consenso e tomar decisões sobre problemas técnicos, além de avaliar a qualidade e gerar confiança no produto de trabalho, gerar novas ideias, motivar e capacitar os autores a melhorar e detectar anomalias (A)"
+      },
+      {
+       "li": "2. Revisão informal: o objetivo principal é detectar anomalias. O processo não é definido e não exige saída formal documentada (D)"
+      },
+      {
+       "li": "3. Inspeção: é o tipo mais formal e segue o processo genérico de revisão completo. O objetivo principal é encontrar o máximo de anomalias; outros objetivos incluem avaliar a qualidade e gerar confiança no produto de trabalho, motivar e capacitar os autores a melhorar e coletar métricas que possam ser usadas para aprimorar o SDLC, incluindo o próprio processo de inspeção. O autor não pode atuar como líder da revisão nem como escriba (C)"
+      },
+      {
+       "li": "4. Walkthrough: conduzido pelo autor, serve a vários objetivos, como avaliar a qualidade e gerar confiança no produto de trabalho, educar os revisores, chegar a um consenso, gerar novas ideias, motivar e capacitar os autores a melhorar e detectar anomalias. Os revisores podem fazer uma revisão individual antes do walkthrough, mas isso não é obrigatório (B)"
+      },
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "18",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um fator que contribui para o sucesso de uma revisão?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Garantir que a gerência participe como revisora."
+      },
+      {
+       "key": "b",
+       "text": "Dividir produtos de trabalho grandes em partes menores."
+      },
+      {
+       "key": "c",
+       "text": "Definir a avaliação dos revisores como um objetivo."
+      },
+      {
+       "key": "d",
+       "text": "Planejar cobrir um documento por revisão."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-3.2.5",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Para o sucesso das revisões, é importante garantir o apoio da gerência ao processo de revisão. Mas isso não significa que a gerência deva participar como revisora",
+      "b) Correta. Para o sucesso das revisões, é importante dividir o produto de trabalho em partes pequenas o bastante para serem revisadas num prazo razoável, evitando que os revisores percam o foco na revisão individual ou nas reuniões de revisão",
+      "c) Incorreta. Para o sucesso das revisões, é importante definir com clareza os objetivos e critérios de saída mensuráveis, sem avaliar os participantes",
+      "d) Incorreta. Para o sucesso das revisões, é importante dividir a revisão em partes menores, para que os revisores não percam o foco. Então não se deve planejar cobrir um documento por revisão"
+     ]
+    },
+    {
+     "id": "19",
+     "stem": [
+      {
+       "p": "Qual é a PRINCIPAL diferença entre as técnicas de teste caixa-preta e as técnicas de teste baseadas na experiência?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O objeto de teste."
+      },
+      {
+       "key": "b",
+       "text": "O nível de teste em que a técnica de teste é usada."
+      },
+      {
+       "key": "c",
+       "text": "A base de teste."
+      },
+      {
+       "key": "d",
+       "text": "O ciclo de vida de desenvolvimento de software (SDLC) em que a técnica de teste pode ser usada."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-4.1.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Na maioria dos casos, tanto as técnicas caixa-preta quanto as baseadas na experiência podem ser usadas nos mesmos objetos de teste",
+      "b) Incorreta. Tanto as técnicas caixa-preta quanto as baseadas na experiência podem ser usadas em todos os níveis de teste",
+      "c) Correta. As técnicas de teste caixa-preta (também chamadas de técnicas baseadas em especificação) partem da análise do comportamento especificado do objeto de teste, sem considerar sua estrutura interna. Então a base de teste costuma ser uma especificação. As técnicas baseadas na experiência usam o conhecimento e a experiência dos testadores para projetar e implementar os casos de teste. Ou seja, ao projetar os testes, o testador pode nem usar a especificação",
+      "d) Incorreta. As técnicas baseadas na experiência podem detectar defeitos que passariam despercebidos pelas técnicas caixa-preta (e caixa-branca). Por isso, elas são complementares às técnicas caixa-preta e caixa-branca, e tanto as técnicas caixa-preta quanto as baseadas na experiência podem ser usadas em todos os SDLCs"
+     ]
+    },
+    {
+     "id": "20",
+     "stem": [
+      {
+       "p": "Você está testando um validador de PIN, que aceita PINs válidos e rejeita PINs inválidos. Um PIN é uma sequência de dígitos. Um PIN é válido se tiver quatro dígitos e se eles não forem todos iguais. Você identificou as seguintes partições de equivalência:"
+      },
+      {
+       "p": "Variável: comprimento do PIN"
+      },
+      {
+       "li": "Partição \"comprimento correto\": PINs de quatro dígitos"
+      },
+      {
+       "li": "Partição \"comprimento incorreto\": PINs com comprimento diferente de 4"
+      },
+      {
+       "p": "Variável: quantidade de dígitos diferentes"
+      },
+      {
+       "li": "Partição \"quantidade de dígitos diferentes correta\": PINs com pelo menos dois dígitos diferentes"
+      },
+      {
+       "li": "Partição \"quantidade de dígitos diferentes incorreta\": PINs com todos os dígitos iguais"
+      },
+      {
+       "p": "Qual das seguintes opções é o MELHOR conjunto de dados de entrada de teste para cobrir as partições de equivalência identificadas?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "12, 1111, 1234, 12345"
+      },
+      {
+       "key": "b",
+       "text": "1, 123, 1111, 1234"
+      },
+      {
+       "key": "c",
+       "text": "11, 12, 1111, 12345"
+      },
+      {
+       "key": "d",
+       "text": "123, 1222, 12345"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.2.1",
+     "k": "K3",
+     "explanation": [
+      "a) Correta.",
+      {
+       "li": "O valor \"12\" cobre \"comprimento incorreto, poucos dígitos\""
+      },
+      {
+       "li": "O valor \"1111\" cobre \"comprimento correto\" e \"quantidade de dígitos diferentes incorreta\""
+      },
+      {
+       "li": "O valor \"1234\" cobre de novo \"comprimento correto\" e também \"quantidade de dígitos diferentes correta\""
+      },
+      {
+       "li": "O valor \"12345\" cobre \"comprimento incorreto, dígitos demais\""
+      },
+      "b) Incorreta. Todas as partições são cobertas, mas só o lado de baixo de \"comprimento incorreto\" é testado",
+      "c) Incorreta. Nenhum valor cobre um \"PIN correto\"",
+      "d) Incorreta. Nenhum valor cobre \"quantidade de dígitos diferentes incorreta\""
+     ]
+    },
+    {
+     "id": "21",
+     "stem": [
+      {
+       "p": "Um desenvolvedor recebeu a tarefa de implementar a seguinte regra de negócio:"
+      },
+      {
+       "pre": "ENTRADA: valor (número inteiro)\n\nSE (valor ≤ 100 OU valor ≥ 200) ENTÃO escreva \"valor incorreto\"\nSENÃO escreva \"valor OK\""
+      },
+      {
+       "p": "Você projeta os casos de teste usando a análise de valor limite de 2 valores."
+      },
+      {
+       "p": "Qual dos seguintes conjuntos de entradas de teste atinge a maior cobertura?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "100, 150, 200, 201"
+      },
+      {
+       "key": "b",
+       "text": "99, 100, 200, 201"
+      },
+      {
+       "key": "c",
+       "text": "98, 99, 100, 101"
+      },
+      {
+       "key": "d",
+       "text": "101, 150, 199, 200"
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.2.2",
+     "k": "K3",
+     "explanation": [
+      "As partições de equivalência são: {…, 99, 100}, {101, 102, …, 198, 199}, {200, 201, …}.",
+      "Portanto, há 4 valores limite: 100, 101, 199 e 200. Na BVA de 2 valores, cada valor limite gera dois itens de cobertura (o valor limite e o vizinho mais próximo na partição adjacente). Como os vizinhos mais próximos também são valores limite da partição adjacente, há apenas quatro itens de cobertura.",
+      "Por isso:",
+      "a) Incorreta. Só 100 e 200 são itens de cobertura válidos da BVA de 2 valores, o que dá 50% de cobertura",
+      "b) Incorreta. Só 100 e 200 são itens de cobertura válidos da BVA de 2 valores, o que dá 50% de cobertura",
+      "c) Incorreta. Só 100 e 101 são itens de cobertura válidos da BVA de 2 valores, o que dá 50% de cobertura",
+      "d) Correta. 101, 199 e 200 são itens de cobertura válidos da BVA de 2 valores, o que dá 75% de cobertura"
+     ]
+    },
+    {
+     "id": "22",
+     "stem": [
+      {
+       "p": "Você trabalha num projeto que desenvolve um sistema para analisar os resultados do exame de direção. Pediram que você projete casos de teste com base na seguinte tabela de decisão:"
+      },
+      {
+       "table": {
+        "head": [
+         "",
+         "R1",
+         "R2",
+         "R3"
+        ],
+        "rows": [
+         [
+          "C1: Primeira tentativa no exame?",
+          "–",
+          "–",
+          "F"
+         ],
+         [
+          "C2: Passou no exame teórico?",
+          "V",
+          "F",
+          "–"
+         ],
+         [
+          "C3: Passou no exame prático?",
+          "V",
+          "–",
+          "F"
+         ],
+         [
+          "Emitir carteira de motorista?",
+          "X",
+          "",
+          ""
+         ],
+         [
+          "Exigir aulas de direção adicionais?",
+          "",
+          "",
+          "X"
+         ],
+         [
+          "Exigir que refaça o exame?",
+          "",
+          "X",
+          ""
+         ]
+        ]
+       }
+      },
+      {
+       "p": "V = verdadeiro, F = falso, – = indiferente. Que dados de teste mostrarão que há regras contraditórias na tabela de decisão?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "C1 = V, C2 = V, C3 = F"
+      },
+      {
+       "key": "b",
+       "text": "C1 = V, C2 = F, C3 = V"
+      },
+      {
+       "key": "c",
+       "text": "C1 = V, C2 = V, C3 = V e C1 = F, C2 = V, C3 = V"
+      },
+      {
+       "key": "d",
+       "text": "C1 = F, C2 = F, C3 = F"
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.2.3",
+     "k": "K3",
+     "explanation": [
+      "a) Incorreta. A combinação (V, V, F) não corresponde a nenhuma regra. É um exemplo de omissão, não de contradição",
+      "b) Incorreta. A combinação (V, F, V) corresponde a uma única coluna, R2, então não há contradição",
+      "c) Incorreta. As combinações (V, V, V) e (F, V, V) correspondem cada uma a uma única coluna, R1, então não há contradição",
+      "d) Correta. A combinação (F, F, F) corresponde tanto a R2 quanto a R3, mas R2 e R3 têm ações diferentes, o que mostra uma contradição entre R2 e R3"
+     ]
+    },
+    {
+     "id": "23",
+     "stem": [
+      {
+       "p": "Você está projetando casos de teste com base no seguinte diagrama de transição de estados:"
+      },
+      {
+       "img": "c-23.svg",
+       "alt": "Diagrama de estados de reserva de quarto: INÍCIO --Pedido de quarto--> SOLICITANDO; SOLICITANDO --Disponível--> CONFIRMADO; SOLICITANDO --Indisponível--> LISTA DE ESPERA; LISTA DE ESPERA --Disponível--> CONFIRMADO; LISTA DE ESPERA --Cancelar--> FIM; CONFIRMADO --Pagar--> FIM"
+      },
+      {
+       "p": "Qual é o número MÍNIMO de casos de teste necessários para atingir 100% de cobertura de transições válidas?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "3"
+      },
+      {
+       "key": "b",
+       "text": "2"
+      },
+      {
+       "key": "c",
+       "text": "5"
+      },
+      {
+       "key": "d",
+       "text": "6"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.2.4",
+     "k": "K3",
+     "explanation": [
+      "As três transições a seguir não podem aparecer no mesmo caso de teste:",
+      {
+       "li": "SOLICITANDO → CONFIRMADO"
+      },
+      {
+       "li": "LISTA DE ESPERA → CONFIRMADO"
+      },
+      {
+       "li": "LISTA DE ESPERA → FIM"
+      },
+      "Isso indica que são necessários pelo menos três casos de teste. Todas as outras transições podem aparecer junto com uma ou mais dessas três, então o mínimo é três casos de teste. Na verdade, só existem três sequências possíveis:",
+      {
+       "li": "TC1: INÍCIO (Pedido de quarto) → SOLICITANDO (Disponível) → CONFIRMADO (Pagar) → FIM"
+      },
+      {
+       "li": "TC2: INÍCIO (Pedido de quarto) → SOLICITANDO (Indisponível) → LISTA DE ESPERA (Disponível) → CONFIRMADO (Pagar) → FIM"
+      },
+      {
+       "li": "TC3: INÍCIO (Pedido de quarto) → SOLICITANDO (Indisponível) → LISTA DE ESPERA (Cancelar) → FIM"
+      },
+      "Por isso:",
+      "a) Correta.",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "24",
+     "stem": [
+      {
+       "p": "Você quer aplicar o teste de ramificação ao código representado pelo seguinte grafo de fluxo de controle:"
+      },
+      {
+       "img": "c-24.svg",
+       "alt": "Grafo de fluxo de controle com 7 nós e 8 arestas: o nó 1 vai para o nó 2; o nó 2 vai para o nó 3 e para o nó 4; o nó 3 volta para o nó 2 (laço); o nó 4 vai para o nó 5 e para o nó 6; os nós 5 e 6 vão para o nó 7"
+      },
+      {
+       "p": "Quantos itens de cobertura você precisa testar?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "2"
+      },
+      {
+       "key": "b",
+       "text": "4"
+      },
+      {
+       "key": "c",
+       "text": "8"
+      },
+      {
+       "key": "d",
+       "text": "7"
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-4.3.2",
+     "k": "K2",
+     "explanation": [
+      "No teste de ramificação, os itens de cobertura são as ramificações, representadas pelas arestas do grafo de fluxo de controle. O grafo tem 8 arestas.",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Incorreta.",
+      "c) Correta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "25",
+     "stem": [
+      {
+       "p": "Como o teste caixa-branca pode ser útil para apoiar o teste caixa-preta?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "As medidas de cobertura caixa-branca podem ajudar os testadores a avaliar os testes caixa-preta quanto à cobertura de código que esses testes atingem."
+      },
+      {
+       "key": "b",
+       "text": "A análise de cobertura caixa-branca pode ajudar os testadores a identificar trechos inalcançáveis do código-fonte."
+      },
+      {
+       "key": "c",
+       "text": "O teste de ramificação engloba as técnicas caixa-preta, então atingir cobertura total de ramificação garante cobertura total de qualquer técnica caixa-preta."
+      },
+      {
+       "key": "d",
+       "text": "As técnicas de teste caixa-branca podem fornecer itens de cobertura para as técnicas caixa-preta."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.3.3",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. Fazer só teste caixa-preta não fornece uma medida da cobertura real de código. As medidas de cobertura caixa-branca dão uma medição objetiva da cobertura e as informações necessárias para criar testes adicionais que aumentem essa cobertura e, com isso, a confiança no código",
+      "b) Incorreta. A afirmação é verdadeira, mas não tem nada a ver com o teste caixa-preta",
+      "c) Incorreta. Em geral, não há relação de inclusão entre as técnicas caixa-branca e as técnicas caixa-preta",
+      "d) Incorreta. As técnicas caixa-branca projetam testes com base no próprio objeto de teste, enquanto as técnicas caixa-preta projetam testes com base na especificação. Por isso, não há relação entre os itens de cobertura derivados desses dois tipos de técnica"
+     ]
+    },
+    {
+     "id": "26",
+     "stem": [
+      {
+       "p": "Considere a seguinte lista:"
+      },
+      {
+       "li": "Entrada correta não aceita"
+      },
+      {
+       "li": "Entrada incorreta aceita"
+      },
+      {
+       "li": "Formato de saída errado"
+      },
+      {
+       "li": "Divisão por zero"
+      },
+      {
+       "p": "Qual técnica de teste é MAIS PROVAVELMENTE usada pelo testador que usa essa lista ao testar?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Teste exploratório."
+      },
+      {
+       "key": "b",
+       "text": "Ataque de falha."
+      },
+      {
+       "key": "c",
+       "text": "Teste baseado em lista de verificação."
+      },
+      {
+       "key": "d",
+       "text": "Análise de valor limite."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-4.4.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O teste exploratório usa cartas de teste, não uma lista de possíveis defeitos ou falhas. Ele pode incorporar outras técnicas, mas aqui o ataque de falha é a opção mais provável",
+      "b) Correta. É uma lista de possíveis falhas. Os ataques de falha são uma forma metódica de aplicar a suposição de erro: o testador cria ou obtém uma lista de possíveis erros, defeitos e falhas e projeta testes que identifiquem os defeitos associados aos erros, exponham os defeitos ou provoquem as falhas",
+      "c) Incorreta. O testador usa uma lista de itens para apoiar o teste. Tanto a suposição de erro quanto o teste baseado em lista de verificação usam listas assim, mas aqui a lista é de possíveis falhas, não de condições de teste, então a técnica MAIS PROVÁVEL é o ataque de falha, que se concentra em erros, defeitos e falhas",
+      "d) Incorreta. A BVA se baseia na análise dos valores limite das partições de equivalência. A lista acima não menciona partições de equivalência nem seus limites"
+     ]
+    },
+    {
+     "id": "27",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções MELHOR descreve como o teste baseado em lista de verificação pode aumentar a cobertura?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os itens da lista de verificação podem ser definidos num nível de detalhe baixo o suficiente para que o testador implemente e execute casos de teste detalhados com base neles."
+      },
+      {
+       "key": "b",
+       "text": "As listas de verificação podem ser automatizadas, então cada vez que uma execução automatizada cobre os itens da lista, a cobertura aumenta."
+      },
+      {
+       "key": "c",
+       "text": "Cada item da lista de verificação deve ser testado de forma separada e independente, para que os itens cubram áreas diferentes do software."
+      },
+      {
+       "key": "d",
+       "text": "Dois testadores que projetam e executam testes com base nos mesmos itens de alto nível de uma lista de verificação costumam testar de formas um pouco diferentes."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.4.3",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. É verdade que o testador pode implementar e executar casos de teste detalhados com base na lista de verificação, mas isso não explica como a cobertura aumentaria",
+      "b) Incorreta. Os itens da lista de verificação não devem ser automatizados. E, mesmo que fossem, os scripts automatizados sempre executam os testes do mesmo jeito, o que normalmente não aumenta a cobertura",
+      "c) Incorreta. É verdade que cada item deve ser testado de forma separada e independente. Mas isso afeta a ordem de execução, não a cobertura atingida, então não aumenta a cobertura",
+      "d) Correta. Se a lista de verificação for de alto nível, é provável haver alguma variação no teste real, o que pode aumentar a cobertura, com menos repetibilidade. Se dois testadores seguem uma lista de itens de alto nível, cada um pode usar dados de teste, passos etc. diferentes. Assim, um testador provavelmente cobre áreas que o outro não cobriu, e a cobertura aumenta"
+     ]
+    },
+    {
+     "id": "28",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é o MELHOR exemplo de critério de aceite orientado a cenário?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O aplicativo deve permitir que os usuários excluam a conta e todos os dados associados mediante solicitação."
+      },
+      {
+       "key": "b",
+       "text": "Quando um cliente adiciona um item ao carrinho e vai para o checkout, ele deve ser solicitado a fazer login ou criar uma conta, se ainda não tiver feito."
+      },
+      {
+       "key": "c",
+       "text": "IF (contain(product(23).Name, cart.products())) THEN return FALSE"
+      },
+      {
+       "key": "d",
+       "text": "O site deve cumprir as normas de acessibilidade ICT Section 508 e garantir que todo o conteúdo seja acessível a usuários com deficiência."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-4.5.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Esse critério de aceite descreve regras ou regulamentos que o sistema precisa seguir (neste caso, o direito de ser esquecido). É um exemplo de critério de aceite orientado a regras",
+      "b) Correta. Esse critério de aceite descreve um cenário de exemplo que o sistema precisa realizar. É um exemplo de critério de aceite orientado a cenário",
+      "c) Incorreta. Essa frase parece mais uma linha de código que implementa alguma regra de negócio. Os critérios de aceite devem ser escritos em colaboração com os representantes do negócio e, portanto, numa linguagem que eles entendam. Essa frase provavelmente seria incompreensível para essas partes interessadas",
+      "d) Incorreta. Esse critério de aceite descreve regras ou regulamentos que o sistema precisa seguir e como a conformidade será garantida. Então é um critério de aceite orientado a regras, não orientado a cenário"
+     ]
+    },
+    {
+     "id": "29",
+     "stem": [
+      {
+       "p": "Você está usando o desenvolvimento orientado por teste de aceite (ATDD) e projetando casos de teste com base na seguinte história de usuário:"
+      },
+      {
+       "quote": [
+        "Como usuário Regular ou Especial, quero poder usar meu cartão eletrônico de andar para acessar andares específicos.",
+        "Critérios de aceite:",
+        "AC1: Usuários Regulares têm acesso aos andares 1 a 3",
+        "AC2: O andar 4 só é acessível a usuários Especiais",
+        "AC3: Usuários Especiais têm todos os direitos de acesso dos usuários Regulares"
+       ]
+      },
+      {
+       "p": "Qual caso de teste é o MAIS razoável para testar o AC3?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Verificar se um usuário Regular consegue acessar os andares 1 e 3."
+      },
+      {
+       "key": "b",
+       "text": "Verificar se um usuário Regular não consegue acessar o andar 4."
+      },
+      {
+       "key": "c",
+       "text": "Verificar se um usuário Especial consegue acessar o andar 5."
+      },
+      {
+       "key": "d",
+       "text": "Verificar se um usuário Especial consegue acessar os andares 1, 2 e 3."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.5.3",
+     "k": "K3",
+     "explanation": [
+      "a) Incorreta. Queremos checar se usuários Especiais têm os direitos dos usuários Regulares, então precisamos testar os direitos de acesso de um usuário Especial, não de um usuário Regular",
+      "b) Incorreta. Queremos checar se usuários Especiais têm os direitos dos usuários Regulares, então precisamos testar os direitos de acesso de um usuário Especial, não de um usuário Regular",
+      "c) Incorreta. Os critérios de aceite não descrevem nenhum andar 5. Os casos de teste não devem ampliar o escopo da história de usuário. E, mesmo que quiséssemos fazer um teste negativo, esse teste não tem relação direta com o AC3",
+      "d) Correta. É assim que checamos se um usuário Especial consegue acessar os andares acessíveis a um usuário Regular"
+     ]
+    },
+    {
+     "id": "30",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções NÃO é um propósito do plano de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Definir os dados de teste e os resultados esperados para os testes de componente e de integração de componentes."
+      },
+      {
+       "key": "b",
+       "text": "Definir como critério de saída do nível de teste de componente que \"devem ser atingidas 100% de cobertura de instrução e 100% de cobertura de ramificação\"."
+      },
+      {
+       "key": "c",
+       "text": "Descrever quais campos o relatório de progresso do teste deve conter e qual deve ser o formato desse relatório."
+      },
+      {
+       "key": "d",
+       "text": "Explicar por que o teste de integração de sistemas ficará fora do teste, embora a estratégia de teste exija esse nível de teste."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-5.1.1",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. O plano de teste pode incluir requisitos de dados de teste (como parte da abordagem de teste), mas não os dados de teste detalhados dos casos de teste. Os dados de teste fazem parte dos casos de teste, não do plano de teste. Além disso, costuma ser impossível definir esses dados quando o plano de teste é criado, porque ainda não se sabe exatamente como serão os componentes",
+      "b) Incorreta. Um dos propósitos do plano de teste é ajudar a garantir que as atividades de teste cumpram os critérios estabelecidos, incluindo critérios de entrada e de saída. Os critérios de cobertura de código são um exemplo desses critérios para o nível de teste de componente",
+      "c) Incorreta. Modelos de documentação são conteúdo típico de um plano de teste. Isso facilita a comunicação entre as partes interessadas, definindo uma forma padrão de comunicar ou relatar",
+      "d) Incorreta. Um dos propósitos do plano de teste é demonstrar que o teste seguirá a política de teste e a estratégia de teste existentes, ou explicar por que vai se desviar delas. Este é um exemplo de explicação do desvio, quanto aos níveis de teste que serão (ou não) seguidos"
+     ]
+    },
+    {
+     "id": "31",
+     "stem": [
+      {
+       "p": "No início de cada iteração, a equipe estima a quantidade de trabalho (em dias-pessoa) necessária para concluir a iteração. Seja E(n) a quantidade de trabalho estimada para a iteração n e A(n) a quantidade de trabalho real feita na iteração n. A partir da terceira iteração, a equipe usa o seguinte modelo de estimativa baseado em extrapolação:"
+      },
+      {
+       "pre": "E(n) = (3 × A(n − 1) + A(n − 2)) / 4"
+      },
+      {
+       "p": "A tabela mostra a quantidade de trabalho estimada e real (em dias-pessoa) das quatro primeiras iterações, conforme o gráfico do original:"
+      },
+      {
+       "table": {
+        "head": [
+         "Iteração",
+         "Estimado",
+         "Real"
+        ],
+        "rows": [
+         [
+          "#1",
+          "8",
+          "7"
+         ],
+         [
+          "#2",
+          "7",
+          "12"
+         ],
+         [
+          "#3",
+          "10,75",
+          "8"
+         ],
+         [
+          "#4",
+          "9",
+          "6"
+         ]
+        ]
+       }
+      },
+      {
+       "p": "Qual é a quantidade de trabalho estimada para a iteração #5?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "10,5 dias-pessoa"
+      },
+      {
+       "key": "b",
+       "text": "8,25 dias-pessoa"
+      },
+      {
+       "key": "c",
+       "text": "6,5 dias-pessoa"
+      },
+      {
+       "key": "d",
+       "text": "9,4 dias-pessoa"
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-5.1.4",
+     "k": "K3",
+     "explanation": [
+      "Pelos dados, A(4) = 6 e A(3) = 8 (os dois últimos valores reais).",
+      "Pela fórmula: E(5) = (3 × A(4) + A(3)) / 4 = (3 × 6 + 8) / 4 = 26 / 4 = 6,5 dias-pessoa.",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Incorreta.",
+      "c) Correta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "32",
+     "stem": [
+      {
+       "p": "Você está preparando um cronograma de execução do teste para executar sete casos de teste, de TC 1 a TC 7."
+      },
+      {
+       "p": "A figura a seguir mostra as prioridades desses casos de teste (1 = prioridade mais alta, 3 = prioridade mais baixa)."
+      },
+      {
+       "p": "A figura também mostra as dependências entre os casos de teste com setas. Por exemplo, a seta de TC 4 para TC 5 significa que TC 5 só pode ser executado se TC 4 já tiver sido executado antes."
+      },
+      {
+       "img": "c-32.svg",
+       "alt": "Casos de teste e dependências: TC 1 (prioridade 2) → TC 2 (prioridade 3) → TC 5 (prioridade 1) → TC 6 (prioridade 3); TC 4 (prioridade 2) → TC 5 e TC 4 → TC 7 (prioridade 1); TC 3 (prioridade 2) não tem dependências"
+      },
+      {
+       "p": "Qual caso de teste deve ser executado em sexto lugar?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "TC 3"
+      },
+      {
+       "key": "b",
+       "text": "TC 5"
+      },
+      {
+       "key": "c",
+       "text": "TC 6"
+      },
+      {
+       "key": "d",
+       "text": "TC 2"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-5.1.5",
+     "k": "K3",
+     "explanation": [
+      "Queremos executar os casos de teste conforme suas prioridades, mas também precisamos considerar as dependências.",
+      "Considerando só as prioridades, executaríamos primeiro TC 5 e TC 7 (prioridade mais alta), depois TC 1, TC 3 e TC 4 e, por fim, TC 2 e TC 6 (prioridade mais baixa).",
+      "Porém, para executar TC 7, precisamos executar TC 4 antes. Para executar TC 5, precisamos executar TC 4 e TC 2, mas TC 2 depende de TC 1, que deve ser executado antes de TC 2.",
+      "Então, para executar os casos de prioridade 1 o quanto antes, os cinco primeiros devem ser: TC 4 - TC 7 - TC 1 - TC 2 - TC 5. Em seguida, executamos TC 3, que tem prioridade mais alta que TC 6.",
+      "O cronograma completo fica TC 4 - TC 7 - TC 1 - TC 2 - TC 5 - TC 3 - TC 6. Logo, o sexto caso de teste é TC 3.",
+      "Por isso:",
+      "a) Correta.",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "33",
+     "stem": [
+      {
+       "p": "O que o modelo da pirâmide de teste mostra?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Que os testes podem ter prioridades diferentes."
+      },
+      {
+       "key": "b",
+       "text": "Que os testes podem ter granularidades diferentes."
+      },
+      {
+       "key": "c",
+       "text": "Que os testes podem exigir critérios de cobertura diferentes."
+      },
+      {
+       "key": "d",
+       "text": "Que os testes podem depender de outros testes."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-5.1.6",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. O modelo da pirâmide de teste não dá informações sobre as prioridades dos testes",
+      "b) Correta. O modelo da pirâmide de teste mostra que testes diferentes têm níveis de granularidade diferentes",
+      "c) Incorreta. O modelo da pirâmide de teste independe dos critérios de cobertura",
+      "d) Incorreta. O modelo da pirâmide de teste não mostra relações entre testes diferentes"
+     ]
+    },
+    {
+     "id": "34",
+     "stem": [
+      {
+       "p": "Qual é a relação entre os quadrantes de teste, os níveis de teste e os tipos de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os quadrantes de teste representam combinações específicas de níveis e tipos de teste, definindo sua posição no ciclo de vida de desenvolvimento de software."
+      },
+      {
+       "key": "b",
+       "text": "Os quadrantes de teste descrevem o grau de granularidade de cada tipo de teste executado em cada nível de teste."
+      },
+      {
+       "key": "c",
+       "text": "Os quadrantes de teste atribuem aos níveis de teste os tipos de teste que podem ser executados neles."
+      },
+      {
+       "key": "d",
+       "text": "Os quadrantes de teste agrupam níveis e tipos de teste segundo vários critérios, como o foco em partes interessadas específicas."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-5.1.7",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Os quadrantes de teste agrupam níveis e tipos de teste separadamente, segundo vários critérios. Eles não representam combinações de níveis e tipos de teste e não têm relação com uma posição no ciclo de vida de desenvolvimento de software. No modelo dos quadrantes, níveis e tipos de teste são tratados separadamente",
+      "b) Incorreta. Os quadrantes de teste agrupam níveis e tipos de teste segundo vários critérios. Eles não descrevem o grau de granularidade de cada tipo de teste em cada nível. O modelo que trata disso, quanto aos níveis de teste, é a pirâmide de teste",
+      "c) Incorreta. A afirmação está errada porque, em geral, qualquer tipo de teste pode ser executado em qualquer nível de teste",
+      "d) Correta. Os quadrantes de teste agrupam níveis de teste, tipos de teste, atividades, técnicas e produtos de trabalho no desenvolvimento ágil de software. Nesse modelo, os testes podem ser voltados ao negócio ou à tecnologia, e podem apoiar a equipe (isto é, orientar o desenvolvimento) ou criticar o produto (isto é, medir seu comportamento em relação às expectativas). A combinação desses dois pontos de vista define os quatro quadrantes"
+     ]
+    },
+    {
+     "id": "35",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um exemplo de como a análise de risco do produto pode influenciar o rigor e o escopo do teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O monitoramento contínuo de riscos nos permite identificar um risco emergente o quanto antes."
+      },
+      {
+       "key": "b",
+       "text": "A identificação de riscos nos permite implementar atividades de mitigação e reduzir o nível de risco."
+      },
+      {
+       "key": "c",
+       "text": "O nível de risco avaliado nos ajuda a escolher o rigor do teste."
+      },
+      {
+       "key": "d",
+       "text": "A análise de risco nos permite derivar itens de cobertura."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-5.2.3",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O monitoramento de riscos faz parte do controle de riscos, não da análise de riscos",
+      "b) Incorreta. A identificação de riscos, sozinha, não permite implementar atividades de mitigação. As ações de mitigação são definidas na fase de controle de riscos",
+      "c) Correta. Este é um exemplo de como a análise de risco influencia o rigor e o escopo do teste",
+      "d) Incorreta. Os itens de cobertura são derivados com técnicas de teste, não pela análise de risco"
+     ]
+    },
+    {
+     "id": "36",
+     "stem": [
+      {
+       "p": "Qual das seguintes atividades do processo de teste MAIS usa os relatórios de progresso do teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Projeto de teste."
+      },
+      {
+       "key": "b",
+       "text": "Conclusão do teste."
+      },
+      {
+       "key": "c",
+       "text": "Análise de teste."
+      },
+      {
+       "key": "d",
+       "text": "Planejamento do teste."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-5.3.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Os relatórios de progresso do teste são usados principalmente no monitoramento e controle do teste e na conclusão do teste, não no projeto de teste",
+      "b) Correta. O relatório de conclusão do teste é preparado na conclusão do teste, quando um projeto, nível de teste ou tipo de teste termina e, idealmente, seus critérios de saída foram cumpridos. Esse relatório usa informações dos relatórios de progresso do teste e outros dados",
+      "c) Incorreta. Os relatórios de progresso do teste são usados principalmente no monitoramento e controle do teste e na conclusão do teste, não na análise de teste",
+      "d) Incorreta. Os relatórios de progresso do teste são usados principalmente no monitoramento e controle do teste e na conclusão do teste, não no planejamento do teste"
+     ]
+    },
+    {
+     "id": "37",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções NÃO é um exemplo de como o gerenciamento de configuração apoia o teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Todos os commits no repositório são identificados de forma única e ficam sob controle de versão."
+      },
+      {
+       "key": "b",
+       "text": "Todas as mudanças nos elementos do ambiente de teste são rastreadas."
+      },
+      {
+       "key": "c",
+       "text": "Todas as especificações de requisitos são referenciadas sem ambiguidade nos planos de teste."
+      },
+      {
+       "key": "d",
+       "text": "Todos os defeitos identificados têm um status atribuído."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-5.4.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Quando um usuário relata uma falha, a identificação única dos commits permite remontar os arquivos da versão de software usada pelo usuário (e as versões correspondentes dos scripts de teste), reproduzir a falha e localizar o defeito mais rápido",
+      "b) Incorreta. Se uma mudança no ambiente de teste causa problemas inesperados durante o teste, o gerenciamento de configuração permite que os testadores voltem a uma versão anterior do ambiente. Assim o teste pode continuar sem ser afetado pela mudança",
+      "c) Incorreta. O gerenciamento de configuração garante que toda a documentação identificada (por exemplo, especificações de requisitos) e os itens de software sejam referenciados sem ambiguidade na documentação de teste (por exemplo, planos de teste)",
+      "d) Correta. Isso é garantido pelo gerenciamento de defeitos, não pelo processo de gerenciamento de configuração"
+     ]
+    },
+    {
+     "id": "38",
+     "stem": [
+      {
+       "p": "Considere o seguinte relatório de defeito de uma aplicação web de compras:"
+      },
+      {
+       "pre": "Aplicação: WebShop v0.99\nDefeito: Botão de login não funciona\nPassos para reproduzir:\n  Abrir o site\n  Clicar no botão de login\nResultado esperado: o usuário deve ser redirecionado para a página de login.\nResultado real: o botão de login não responde ao clique.\nSeveridade: Alta\nPrioridade: Urgente"
+      },
+      {
+       "p": "Qual é a informação MAIS importante que falta nesse relatório de defeito?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Nome do testador e data."
+      },
+      {
+       "key": "b",
+       "text": "Elementos do ambiente de teste e os números das suas versões."
+      },
+      {
+       "key": "c",
+       "text": "Identificação do objeto de teste."
+      },
+      {
+       "key": "d",
+       "text": "Impacto sobre os interesses das partes interessadas."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-5.5.1",
+     "k": "K3",
+     "explanation": [
+      "a) Incorreta. Essa informação é importante, mas não tanto quanto os elementos do ambiente de teste",
+      "b) Correta. O que falta de importante é a identificação do navegador e do dispositivo usados no teste. Essas informações importam porque um defeito assim pode ser específico de um navegador ou dispositivo. Por exemplo, um botão de login pode funcionar bem num navegador (ou numa versão de um navegador) e não em outro. Por isso, a informação de navegador e dispositivo ajuda os desenvolvedores a reproduzir o problema e achar a causa raiz mais rápido",
+      "c) Incorreta. O objeto de teste está identificado (WebShop v0.99)",
+      "d) Incorreta. O impacto está incluído: é a severidade (alta)"
+     ]
+    },
+    {
+     "id": "39",
+     "stem": [
+      {
+       "p": "Ferramentas de qual das seguintes categorias ajudam a organizar casos de teste, defeitos detectados e o gerenciamento de configuração?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Ferramentas de execução de teste e de cobertura."
+      },
+      {
+       "key": "b",
+       "text": "Ferramentas de projeto e implementação de teste."
+      },
+      {
+       "key": "c",
+       "text": "Ferramentas de gerenciamento de defeitos."
+      },
+      {
+       "key": "d",
+       "text": "Ferramentas de gerenciamento de teste."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-6.1.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. As ferramentas de execução de teste e de cobertura facilitam a execução automatizada dos casos de teste e a medição da cobertura atingida por eles. Mas não ajudam a organizar defeitos nem o gerenciamento de configuração",
+      "b) Incorreta. As ferramentas de projeto e implementação de teste facilitam a geração de casos de teste, dados de teste e procedimentos de teste, mas não ajudam a organizar defeitos nem o gerenciamento de configuração",
+      "c) Incorreta. As ferramentas de gerenciamento de defeitos servem para gerenciar defeitos, mas não são ferramentas de teste e não são usadas para organizar casos de teste nem o gerenciamento de configuração",
+      "d) Correta. As ferramentas de gerenciamento de teste aumentam a eficiência do processo de teste ao facilitar o gerenciamento do SDLC, dos requisitos, dos testes, dos defeitos e da configuração"
+     ]
+    },
+    {
+     "id": "40",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de ser um benefício da automação de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "A capacidade de gerar casos de teste sem acesso à base de teste."
+      },
+      {
+       "key": "b",
+       "text": "O aumento da cobertura por meio de uma avaliação mais objetiva."
+      },
+      {
+       "key": "c",
+       "text": "O aumento dos tempos de execução do teste possibilitado por maior poder de processamento."
+      },
+      {
+       "key": "d",
+       "text": "A prevenção de erros humanos graças a mais consistência e repetibilidade."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-6.2.1",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Gerar casos de teste sem acesso à base de teste não é possível. A geração de casos de teste, por testadores ou por ferramentas, exige acesso à base de teste",
+      "b) Incorreta. O aumento da cobertura por meio de uma avaliação mais objetiva não é um benefício direto da automação. A automação dá uma avaliação mais objetiva da cobertura, mas essa avaliação não aumenta a cobertura. Só usando os resultados da cobertura para escrever mais casos de teste é que a cobertura pode aumentar",
+      "c) Incorreta. A frase é contraditória: mais poder de processamento normalmente reduz os tempos de execução, e tempos de execução maiores não são um benefício, já que o teste demoraria mais",
+      "d) Correta. A prevenção de erros humanos graças a mais consistência e repetibilidade é um benefício da automação, porque a automação não sofre com erros humanos. Por exemplo, os testes são derivados dos requisitos de forma consistente, os dados de teste são criados de forma sistemática e os testes são executados por uma ferramenta na mesma ordem e com a mesma frequência"
+     ]
+    }
+   ],
+   "extra": []
+  },
+  {
+   "id": "D",
+   "title": "Simulado D",
+   "version": "v1.5 (tradução livre)",
+   "questions": [
+    {
+     "id": "1",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um objetivo de teste típico?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Encontrar e corrigir defeitos no objeto de teste."
+      },
+      {
+       "key": "b",
+       "text": "Manter uma comunicação eficaz com os desenvolvedores."
+      },
+      {
+       "key": "c",
+       "text": "Validar que os requisitos legais foram atendidos."
+      },
+      {
+       "key": "d",
+       "text": "Gerar confiança na qualidade do objeto de teste."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-1.1.1",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Encontrar e corrigir defeitos no objeto de teste não é um objetivo de teste típico: identificar defeitos é um objetivo do teste, mas corrigi-los não é uma atividade de teste",
+      "b) Incorreta. Manter uma comunicação eficaz com os desenvolvedores não é um objetivo de teste típico, embora ajude a atingir outros objetivos, como dar às partes interessadas informações para decisões embasadas. Não é um motivo principal para testar",
+      "c) Incorreta. Validar que os requisitos legais foram atendidos não é um objetivo de teste típico, porque a validação trata de checar se o sistema atende às necessidades dos usuários e de outras partes interessadas no ambiente operacional. Checar se os requisitos legais foram atendidos é uma forma de verificação",
+      "d) Correta. A confiança na qualidade do objeto de teste é gerada pela execução de testes que passam"
+     ]
+    },
+    {
+     "id": "2",
+     "stem": [
+      {
+       "p": "Um designer documenta o projeto de uma interface de usuário que não atende adequadamente usuários com deficiência, porque o designer está cansado. O programador implementa a interface conforme o projeto, mas, como trabalha sob forte pressão de prazo, não inclui no código um tratamento de exceções adequado para os cálculos de bônus. Quando o sistema entra em operação, alguns usuários com deficiência reclamam da interface e, depois, a empresa é multada pelo órgão regulador. Ninguém percebe que os cálculos de bônus às vezes estão incorretos."
+      },
+      {
+       "p": "Qual das seguintes afirmações está CORRETA?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O cálculo errado dos bônus é um defeito que ocorre de vez em quando."
+      },
+      {
+       "key": "b",
+       "text": "A multa recebida por não atender alguns usuários com deficiência é uma falha."
+      },
+      {
+       "key": "c",
+       "text": "O programador trabalhar sob forte pressão de prazo é uma causa raiz."
+      },
+      {
+       "key": "d",
+       "text": "O projeto da interface de usuário contém um erro do designer."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-1.2.3",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O cálculo errado dos bônus é uma falha do sistema, não um defeito",
+      "b) Incorreta. O sistema não atender adequadamente usuários com deficiência é uma falha que acaba gerando uma multa, mas a multa em si não é uma falha (ela parece ser o funcionamento correto do sistema regulatório)",
+      "c) Correta. O erro é cometido pelo programador, e esse engano é causado pelo trabalho sob forte pressão de prazo, que é a causa raiz do defeito resultante",
+      "d) Incorreta. O projeto ruim da interface, que não atende adequadamente usuários com deficiência, é um defeito de projeto causado pelo erro do designer. Portanto, o projeto da interface contém um defeito de projeto, não um erro do designer"
+     ]
+    },
+    {
+     "id": "3",
+     "stem": [
+      {
+       "p": "Os testadores estão usando condições de teste para gerar casos de teste e executar testes. Embora as condições de teste continuem as mesmas, os casos de teste variam a cada vez. Qual dos seguintes 'princípios de teste' está sendo tratado com a variação dos casos de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os testes se degradam."
+      },
+      {
+       "key": "b",
+       "text": "Falácia da ausência de defeitos."
+      },
+      {
+       "key": "c",
+       "text": "Testes antecipados economizam tempo e dinheiro."
+      },
+      {
+       "key": "d",
+       "text": "Os defeitos se agrupam."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-1.3.1",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. O princípio 'os testes se degradam' diz que repetir testes idênticos em código inalterado dificilmente revela defeitos novos, então modificar os testes pode ser essencial. Usando as condições de teste para gerar testes novos a cada vez, os testes não são idênticos e o risco de degradação diminui",
+      "b) Incorreta. O princípio da 'falácia da ausência de defeitos' trata de garantir que as necessidades dos usuários sejam atendidas, mesmo que se teste muito e não se encontre nenhum defeito (ou seja, a validação também é necessária). Usar condições de teste para gerar casos de teste e executar testes não trata diretamente disso",
+      "c) Incorreta. O princípio 'testes antecipados economizam tempo e dinheiro' trata de corrigir defeitos cedo para evitar defeitos derivados em produtos de trabalho posteriores, reduzindo custos e a chance de falhas. Ele costuma ser tratado começando o teste (estático e dinâmico) o quanto antes, e não usando condições de teste para gerar casos de teste",
+      "d) Incorreta. O princípio 'os defeitos se agrupam' trata da distribuição dos defeitos num sistema, que costuma seguir uma distribuição de Pareto. Usar condições de teste para gerar casos de teste não trata disso; isso costuma ser tratado pelo teste baseado em risco"
+     ]
+    },
+    {
+     "id": "4",
+     "stem": [
+      {
+       "p": "Considere as seguintes tarefas de teste:"
+      },
+      {
+       "pre": "1. Derivar casos de teste a partir das condições de teste\n2. Identificar testware reutilizável\n3. Organizar casos de teste em procedimentos de teste\n4. Avaliar a base de teste e o objeto de teste"
+      },
+      {
+       "p": "E as seguintes atividades de teste:"
+      },
+      {
+       "pre": "A. Análise de teste\nB. Projeto de teste\nC. Implementação do teste\nD. Conclusão do teste"
+      },
+      {
+       "p": "Qual das seguintes opções MELHOR relaciona as tarefas às atividades?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "1B, 2A, 3D, 4C"
+      },
+      {
+       "key": "b",
+       "text": "1B, 2D, 3C, 4A"
+      },
+      {
+       "key": "c",
+       "text": "1C, 2A, 3B, 4D"
+      },
+      {
+       "key": "d",
+       "text": "1C, 2D, 3A, 4B"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-1.4.1",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada atividade de teste listada e suas tarefas:",
+      {
+       "li": "A. Análise de teste: para identificar as funcionalidades que precisam de teste, a base de teste é analisada e definida em condições de teste, priorizadas junto com os riscos relacionados. Na análise, costumam ser revelados defeitos na base de teste, e a testabilidade do objeto de teste também pode ser avaliada (tarefa 4)"
+      },
+      {
+       "li": "B. Projeto de teste: usa as condições de teste para criar casos de teste e outros itens de testware necessários, como requisitos de dados de teste e cartas de teste para o teste exploratório (tarefa 1)"
+      },
+      {
+       "li": "C. Implementação do teste: procedimentos de teste, como scripts manuais e automatizados, são criados a partir dos casos de teste e podem ser reunidos em suítes de teste. Os procedimentos são priorizados e organizados num cronograma de execução do teste (tarefa 3)"
+      },
+      {
+       "li": "D. Conclusão do teste: acontece em marcos do projeto, como entrega, fim de iteração ou fim de nível de teste. O testware é identificado e arquivado ou entregue às equipes certas para reuso, o ambiente de teste é desativado e as atividades de teste são analisadas em busca de lições aprendidas e melhorias futuras (tarefa 2)"
+      },
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta. A correspondência CORRETA é: 1B, 2D, 3C, 4A",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "5",
+     "stem": [
+      {
+       "p": "Considere os seguintes itens de testware:"
+      },
+      {
+       "pre": "i.   Relatório de conclusão do teste\nii.  Dados guardados num banco de dados usado para entradas de teste e resultados esperados\niii. A lista de elementos necessários para montar o ambiente de teste\niv.  Sequências documentadas de casos de teste na ordem de execução\nv.   Casos de teste"
+      },
+      {
+       "p": "Qual das seguintes opções MELHOR mostra o testware produzido como resultado da implementação do teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "ii, iv"
+      },
+      {
+       "key": "b",
+       "text": "iii, v"
+      },
+      {
+       "key": "c",
+       "text": "i, ii, v"
+      },
+      {
+       "key": "d",
+       "text": "i, iii, iv"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-1.4.3",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada item de testware listado e a atividade de teste que o produz:",
+      {
+       "li": "i. O relatório de conclusão do teste é uma saída da conclusão do teste"
+      },
+      {
+       "li": "ii. Dados num banco de dados usados para entradas e resultados esperados são os dados de teste, saída da implementação do teste"
+      },
+      {
+       "li": "iii. A lista de elementos necessários para montar o ambiente de teste são os requisitos do ambiente de teste, saída do projeto de teste"
+      },
+      {
+       "li": "iv. Sequências documentadas de casos de teste na ordem de execução são os procedimentos de teste, saída da implementação do teste"
+      },
+      {
+       "li": "v. Casos de teste são saída do projeto de teste"
+      },
+      "A implementação do teste produz: procedimentos de teste (iv), scripts de teste automatizados, suítes de teste, dados de teste (ii), cronograma de execução do teste e elementos do ambiente de teste, como stubs, drivers, simuladores e virtualização de serviços.",
+      "Por isso:",
+      "a) Correta. Os itens ii e iv da lista são produzidos pela implementação do teste",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "6",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de descrever uma tarefa feita por alguém no papel de gerenciamento de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Avaliar a base de teste e o objeto de teste."
+      },
+      {
+       "key": "b",
+       "text": "Definir os requisitos do ambiente de teste."
+      },
+      {
+       "key": "c",
+       "text": "Avaliar a testabilidade do objeto de teste."
+      },
+      {
+       "key": "d",
+       "text": "Criar o relatório de conclusão do teste."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-1.4.5",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O papel de testador é o principal responsável pelos aspectos técnicos e de engenharia do teste, como análise, projeto, implementação e execução do teste. Avaliar a base de teste em busca de defeitos e o objeto de teste quanto à testabilidade são tarefas da análise de teste, então provavelmente ficam com o papel de testador",
+      "b) Incorreta. Definir os requisitos do ambiente de teste é uma tarefa do projeto de teste, então provavelmente fica com o papel de testador",
+      "c) Incorreta. Avaliar a testabilidade do objeto de teste é uma tarefa da análise de teste, então provavelmente fica com o papel de testador",
+      "d) Correta. O papel de gerenciamento de teste envolve principalmente planejamento, monitoramento e controle e conclusão do teste. Assim, criar o relatório de conclusão do teste, principal saída da conclusão do teste, provavelmente é tarefa do papel de gerenciamento de teste"
+     ]
+    },
+    {
+     "id": "7",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é uma vantagem da abordagem de equipe completa?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Melhor comunicação entre os membros da equipe."
+      },
+      {
+       "key": "b",
+       "text": "Menor responsabilidade individual pela qualidade."
+      },
+      {
+       "key": "c",
+       "text": "Implantação mais rápida das entregas para os usuários finais."
+      },
+      {
+       "key": "d",
+       "text": "Menos colaboração com os usuários de negócio externos."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-1.5.2",
+     "k": "K1",
+     "explanation": [
+      "a) Correta. A abordagem de equipe completa promove comunicação e colaboração sólidas entre os membros da equipe",
+      "b) Incorreta. Embora a abordagem de equipe completa priorize a responsabilidade coletiva pela qualidade, cada membro continua igualmente responsável pela qualidade",
+      "c) Incorreta. A abordagem de equipe completa trata de como a equipe trabalha junta, visando entregas de mais qualidade, mas não resulta necessariamente numa implantação mais rápida para os usuários finais",
+      "d) Incorreta. Na abordagem de equipe completa, os testadores trabalham com os representantes do negócio para criar testes de aceite. Nada sugere que a abordagem reduza a colaboração com usuários de negócio externos"
+     ]
+    },
+    {
+     "id": "8",
+     "stem": [
+      {
+       "p": "Considere os seguintes benefícios e desvantagens da independência do teste:"
+      },
+      {
+       "pre": "i.   Os testadores trabalham num local diferente dos desenvolvedores\nii.  Os testadores questionam as suposições que os programadores fazem ao escrever o código\niii. Criou-se uma dinâmica de confronto entre testadores e desenvolvedores\niv.  Os desenvolvedores se convenceram de que os testadores são os principais responsáveis pela qualidade\nv.   Os testadores têm vieses diferentes dos vieses dos desenvolvedores"
+      },
+      {
+       "p": "Quais têm MAIOR probabilidade de ser considerados benefícios?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "i, iv"
+      },
+      {
+       "key": "b",
+       "text": "ii, v"
+      },
+      {
+       "key": "c",
+       "text": "i, iii, iv"
+      },
+      {
+       "key": "d",
+       "text": "ii, iii, v"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-1.5.3",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada benefício e desvantagem listado:",
+      {
+       "li": "i. O ideal é haver colaboração próxima entre testadores e desenvolvedores, e o isolamento não ajuda nisso. Então é uma desvantagem"
+      },
+      {
+       "li": "ii. Testadores e desenvolvedores têm formações, pontos de vista técnicos e possíveis vieses diferentes, o que permite aos testadores questionar, de forma útil, as suposições feitas pelas partes interessadas na especificação e na implementação do sistema. Então é uma vantagem"
+      },
+      {
+       "li": "iii. A principal desvantagem da independência é que os testadores podem ficar isolados da equipe de desenvolvimento, o que gera problemas de comunicação, falta de colaboração e, possivelmente, uma relação de confronto, com os testadores sendo culpados por atrasos e gargalos na entrega. Então é uma desvantagem"
+      },
+      {
+       "li": "iv. Uma das desvantagens da independência é que os testadores podem ficar isolados da equipe de desenvolvimento, fazendo os desenvolvedores se sentirem menos responsáveis pela qualidade. Então é uma desvantagem"
+      },
+      {
+       "li": "v. O principal benefício da independência é que os testadores tendem a identificar tipos de falhas e defeitos diferentes dos que os desenvolvedores identificam, por causa de suas formações, pontos de vista técnicos e possíveis vieses diferentes, incluindo o viés cognitivo"
+      },
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta. Os itens da lista que são benefícios são ii e v",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "9",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é uma boa prática de teste que se aplica a todos os ciclos de vida de desenvolvimento de software?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Cada nível de teste tem objetivos de teste específicos e distintos."
+      },
+      {
+       "key": "b",
+       "text": "A implementação e a execução do teste de um nível de teste devem começar durante a fase de desenvolvimento correspondente."
+      },
+      {
+       "key": "c",
+       "text": "Os testadores devem começar o projeto de teste assim que houver rascunhos dos produtos de trabalho relevantes."
+      },
+      {
+       "key": "d",
+       "text": "Toda atividade de teste dinâmico tem uma atividade de teste estático correspondente."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-2.1.2",
+     "k": "K1",
+     "explanation": [
+      "a) Correta. Cada nível de teste tem objetivos de teste específicos e distintos, já que em cada nível é testado um tipo diferente de objeto de teste (por exemplo, um único componente ou o sistema completo), e objetivos sobrepostos gerariam duplicação desnecessária",
+      "b) Incorreta. A análise e o projeto de teste de um nível devem começar durante a fase de desenvolvimento correspondente, para favorecer o teste antecipado (por exemplo, a análise e o projeto do teste de aceite devem começar na análise de requisitos). A implementação do teste costuma começar depois, e a execução começa durante o nível de teste",
+      "c) Incorreta. O projeto de teste de um nível deve começar durante a fase de desenvolvimento correspondente, para favorecer o teste antecipado. Mas o projeto de teste (por exemplo, a geração de casos de teste) precisa se basear numa base de teste acordada, não num rascunho; caso contrário, pode-se desperdiçar muito esforço criando casos de teste para um projeto que muda depois",
+      "d) Incorreta. O controle de qualidade se aplica a todas as atividades de desenvolvimento, ou seja, toda atividade de desenvolvimento tem uma atividade de teste correspondente. Mas a mesma simetria não vale entre teste dinâmico e teste estático: há atividades de teste estático (por exemplo, a análise estática) sem atividade de teste dinâmico correspondente óbvia"
+     ]
+    },
+    {
+     "id": "10",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções é um exemplo de abordagem de desenvolvimento test-first (teste primeiro)?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Desenvolvimento orientado por comportamento (BDD)."
+      },
+      {
+       "key": "b",
+       "text": "Desenvolvimento orientado por nível de teste."
+      },
+      {
+       "key": "c",
+       "text": "Desenvolvimento orientado por função."
+      },
+      {
+       "key": "d",
+       "text": "Desenvolvimento orientado por desempenho."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-2.1.3",
+     "k": "K1",
+     "explanation": [
+      "a) Correta. O desenvolvimento orientado por comportamento (BDD) é um exemplo bem conhecido de abordagem test-first",
+      "b) Incorreta. 'Desenvolvimento orientado por nível de teste' não é um exemplo de abordagem test-first",
+      "c) Incorreta. 'Desenvolvimento orientado por função' não é um exemplo de abordagem test-first",
+      "d) Incorreta. 'Desenvolvimento orientado por desempenho' não é um exemplo de abordagem test-first"
+     ]
+    },
+    {
+     "id": "11",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de ser um desafio ao implementar DevOps?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Garantir que as características de qualidade não funcionais não sejam esquecidas."
+      },
+      {
+       "key": "b",
+       "text": "Gerenciar ambientes de teste que mudam continuamente."
+      },
+      {
+       "key": "c",
+       "text": "A necessidade de mais testadores manuais com experiência adequada."
+      },
+      {
+       "key": "d",
+       "text": "Configurar a automação de teste como parte do pipeline de entrega."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-2.1.4",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O DevOps costuma aumentar a visibilidade das características de qualidade não funcionais, como desempenho e confiabilidade",
+      "b) Incorreta. Processos automatizados como a integração e entrega contínuas (CI/CD), usados no DevOps, favorecem ambientes de teste estáveis",
+      "c) Incorreta. Processos automatizados como o CI/CD, usados no DevOps, costumam reduzir a necessidade de teste manual",
+      "d) Correta. Implementar DevOps pode trazer vários riscos e desafios, incluindo a necessidade de definir e montar o pipeline de entrega, introduzir e manter as ferramentas de CI/CD e estabelecer e manter a automação de teste"
+     ]
+    },
+    {
+     "id": "12",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções MELHOR descreve as retrospectivas?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "As retrospectivas permitem que os membros da equipe identifiquem outros membros que não contribuíram plenamente para a qualidade, como exige a abordagem de equipe completa."
+      },
+      {
+       "key": "b",
+       "text": "As retrospectivas dão aos testadores a oportunidade de identificar as atividades que deram certo, para que sejam mantidas quando forem feitas melhorias no futuro."
+      },
+      {
+       "key": "c",
+       "text": "As retrospectivas são o momento em que os membros da equipe ágil podem expressar suas queixas sobre a gerência e os clientes num ambiente sem culpa."
+      },
+      {
+       "key": "d",
+       "text": "As retrospectivas dão aos membros da equipe ágil um fórum para discutir o plano e as decisões técnicas da próxima iteração."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-2.1.6",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Os benefícios das retrospectivas incluem a união da equipe, o aprendizado com o compartilhamento de problemas e uma melhor colaboração entre desenvolvedores e testadores, revendo e melhorando as práticas de trabalho. Apontar pessoas que, na visão de alguém, não contribuíram plenamente para a qualidade não ajuda nessa união e colaboração",
+      "b) Correta. Na retrospectiva, o grupo discute quais aspectos do projeto deram certo e devem ser mantidos, quais áreas podem melhorar e como",
+      "c) Incorreta. Os benefícios das retrospectivas vêm do aumento de eficácia e eficiência por meio de melhorias de processo; elas não são uma oportunidade para desabafar e criticar a gerência e os clientes. Além disso, os resultados costumam ser registrados, em geral no relatório de conclusão do teste, então o que for dito na reunião pode ser lido por outras partes interessadas",
+      "d) Incorreta. As retrospectivas costumam acontecer no fim de uma iteração, e nelas a equipe discute questões de qualidade que surgiram na iteração atual. Elas não servem para planejar nem tomar decisões técnicas sobre a próxima iteração; isso é feito na reunião de planejamento da iteração, no início da próxima iteração"
+     ]
+    },
+    {
+     "id": "13",
+     "stem": [
+      {
+       "p": "Qual dos seguintes testes tem MAIOR probabilidade de ser feito como parte do teste funcional?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O teste verifica se a função de ordenação coloca os elementos da lista ou do array em ordem crescente."
+      },
+      {
+       "key": "b",
+       "text": "O teste verifica se a função de ordenação termina de ordenar em até um segundo após começar."
+      },
+      {
+       "key": "c",
+       "text": "O teste verifica com que facilidade a função de ordenação pode ser alterada de ordem crescente para ordem decrescente."
+      },
+      {
+       "key": "d",
+       "text": "O teste verifica se a função de ordenação continua funcionando corretamente quando migrada de uma arquitetura de 32 bits para uma de 64 bits."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-2.2.2",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. Verificar se a função de ordenação coloca os elementos em ordem crescente avalia a correção funcional da função, o que faz parte do teste funcional",
+      "b) Incorreta. Avaliar se a função atende ao requisito não funcional de terminar em até um segundo faz parte do teste de eficiência de desempenho, que é teste não funcional",
+      "c) Incorreta. Avaliar a facilidade de mudar a função de ordem crescente para decrescente testa sua modificabilidade, uma forma de teste de manutenibilidade, que é teste não funcional",
+      "d) Incorreta. Avaliar se a função continua correta ao migrar de 32 para 64 bits testa sua adaptabilidade, uma forma de teste de portabilidade, que é teste não funcional"
+     ]
+    },
+    {
+     "id": "14",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de ser um gatilho para o teste de manutenção de um sistema de câmbio?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os desenvolvedores relataram que alterar o sistema de câmbio era difícil, e os testadores decidiram checar se isso era verdade."
+      },
+      {
+       "key": "b",
+       "text": "A opção de reembolso do sistema de câmbio foi removida porque nem sempre devolvia o valor correto aos clientes."
+      },
+      {
+       "key": "c",
+       "text": "A equipe ágil começou a desenvolver uma história de usuário que adiciona uma nova funcionalidade de fidelidade de clientes ao sistema de câmbio."
+      },
+      {
+       "key": "d",
+       "text": "A opção de suporte a idiomas do sistema de câmbio foi usada para permitir transações de câmbio em inglês e no idioma local."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-2.3.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Se os testadores checassem a facilidade de alterar o sistema de câmbio, isso seria feito com teste de manutenibilidade, e não teste de manutenção. Então não é um gatilho para o teste de manutenção",
+      "b) Correta. Uma modificação do sistema (como uma correção ou melhoria) é um exemplo de gatilho para o teste de manutenção. A remoção da opção de reembolso foi uma correção que levaria ao teste de manutenção",
+      "c) Incorreta. Se a equipe ágil começou a desenvolver uma história de usuário que adiciona uma nova funcionalidade de fidelidade, ela vai testar a nova funcionalidade e depois fazer teste de regressão. Nessa situação não é necessário teste de manutenção",
+      "d) Incorreta. Reconfigurar o sistema de câmbio para aceitar transações no idioma local e em inglês não é uma modificação do sistema, uma mudança no ambiente operacional nem a aposentadoria do sistema, que são os três gatilhos do teste de manutenção"
+     ]
+    },
+    {
+     "id": "15",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções NÃO pode ser examinada pelo teste estático?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Contrato."
+      },
+      {
+       "key": "b",
+       "text": "Plano de teste."
+      },
+      {
+       "key": "c",
+       "text": "Código criptografado."
+      },
+      {
+       "key": "d",
+       "text": "Carta de teste."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-3.1.1",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. A maioria dos produtos de trabalho pode ser examinada por alguma forma de teste estático, e um contrato precisa ser interpretável por humanos, então pode ser revisado, o que é uma forma de teste estático",
+      "b) Incorreta. A maioria dos produtos de trabalho pode ser examinada por alguma forma de teste estático, e um plano de teste precisa ser interpretável por humanos, então pode ser revisado, o que é uma forma de teste estático",
+      "c) Correta. A maioria dos produtos de trabalho pode ser examinada por alguma forma de teste estático; porém, o teste estático não serve para produtos complexos demais para interpretação humana e que não devam ser analisados por ferramentas. O código criptografado é complexo demais para humanos e, se estiver bem criptografado, não pode ser analisado pela maioria das ferramentas",
+      "d) Incorreta. A maioria dos produtos de trabalho pode ser examinada por alguma forma de teste estático, e uma carta de teste precisa ser interpretável por humanos, então pode ser revisada, o que é uma forma de teste estático"
+     ]
+    },
+    {
+     "id": "16",
+     "stem": [
+      {
+       "p": "Qual das seguintes afirmações sobre o valor do teste estático está CORRETA?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os tipos de defeitos encontrados pelo teste estático são diferentes dos tipos de defeitos que podem ser encontrados pelo teste dinâmico."
+      },
+      {
+       "key": "b",
+       "text": "O teste dinâmico pode detectar os tipos de defeitos que o teste estático encontra e mais alguns tipos adicionais."
+      },
+      {
+       "key": "c",
+       "text": "O teste dinâmico pode identificar alguns dos defeitos que o teste estático encontra, mas não todos."
+      },
+      {
+       "key": "d",
+       "text": "O teste estático pode identificar os tipos de defeitos que o teste dinâmico encontra e mais alguns tipos extras."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-3.1.2",
+     "k": "K2",
+     "explanation": [
+      "Há tipos de defeitos que só o teste estático detecta, como código inalcançável, padrões de projeto não implementados como desejado e defeitos em produtos de trabalho não executáveis. Há tipos que tanto o teste estático quanto o dinâmico encontram, como um defeito de programação que um revisor percebe numa revisão de código e que causa uma falha observável no teste dinâmico. E há tipos que só o teste dinâmico detecta, como problemas de desempenho ou de memória que só aparecem ao executar o código ou o sistema.",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Incorreta.",
+      "c) Correta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "17",
+     "stem": [
+      {
+       "p": "Considere as seguintes descrições de atividades de revisão:"
+      },
+      {
+       "pre": "1. As anomalias detectadas são discutidas, e decide-se seu status, o responsável e os próximos passos necessários\n2. Os defeitos são registrados, e as atualizações necessárias são feitas antes da aceitação do produto de trabalho\n3. Os revisores usam técnicas para levantar sugestões e perguntas sobre o produto de trabalho e para identificar anomalias\n4. O objetivo da revisão e seu cronograma são definidos, para garantir uma revisão focada e eficiente\n5. Os participantes recebem acesso ao item que será revisado"
+      },
+      {
+       "p": "Qual das seguintes opções é a sequência CORRETA, no processo de revisão, das atividades que correspondem às descrições?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "4 - 3 - 5 - 2 - 1"
+      },
+      {
+       "key": "b",
+       "text": "4 - 5 - 3 - 1 - 2"
+      },
+      {
+       "key": "c",
+       "text": "5 - 4 - 1 - 3 - 2"
+      },
+      {
+       "key": "d",
+       "text": "5 - 4 - 3 - 2 - 1"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-3.2.2",
+     "k": "K2",
+     "explanation": [
+      "As cinco descrições correspondem às seguintes atividades do processo de revisão:",
+      {
+       "li": "1. Parte da atividade de comunicação e análise"
+      },
+      {
+       "li": "2. Parte da atividade de correção e relatório"
+      },
+      {
+       "li": "3. Parte da atividade de revisão individual"
+      },
+      {
+       "li": "4. Parte da atividade de planejamento"
+      },
+      {
+       "li": "5. Parte da atividade de início da revisão"
+      },
+      "O processo genérico de revisão da ISO/IEC 20246, descrito no syllabus, tem estas atividades, nesta ordem lógica: planejamento (4), início da revisão (5), revisão individual (3), comunicação e análise (1) e correção e relatório (2).",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta. A sequência correta das atividades é: 4 - 5 - 3 - 1 - 2",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "18",
+     "stem": [
+      {
+       "p": "Qual participante do processo de revisão é responsável por garantir que as reuniões de revisão sejam eficazes e que todos na reunião possam expressar suas opiniões livremente?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Gerente."
+      },
+      {
+       "key": "b",
+       "text": "Moderador."
+      },
+      {
+       "key": "c",
+       "text": "Presidente da reunião."
+      },
+      {
+       "key": "d",
+       "text": "Líder da revisão."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-3.2.3",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. O gerente é responsável por decidir o que será revisado e por alocar recursos, como pessoas e tempo, para a revisão",
+      "b) Correta. O moderador (ou facilitador) é responsável por garantir que as reuniões de revisão sejam eficazes, o que inclui gerenciar o tempo, mediar as discussões e criar um ambiente seguro em que todos possam expressar suas opiniões livremente",
+      "c) Incorreta. Presidente da reunião não é um papel reconhecido nas revisões",
+      "d) Incorreta. O líder da revisão é responsável por supervisionar o processo de revisão, por exemplo escolhendo os membros da equipe de revisão, agendando as reuniões de revisão e garantindo que a revisão seja concluída com sucesso"
+     ]
+    },
+    {
+     "id": "19",
+     "stem": [
+      {
+       "p": "Você faz o teste de sistema de uma aplicação web de comércio eletrônico e recebe o seguinte requisito:"
+      },
+      {
+       "quote": [
+        "REQ 05-017. Se o valor total das compras passar de US$ 100, o cliente ganha 5% de desconto nas compras seguintes. Caso contrário, o cliente não recebe desconto."
+       ]
+      },
+      {
+       "p": "Quais técnicas de teste serão MAIS úteis para projetar casos de teste com base nesse requisito?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Técnicas de teste caixa-branca."
+      },
+      {
+       "key": "b",
+       "text": "Técnicas de teste caixa-preta."
+      },
+      {
+       "key": "c",
+       "text": "Técnicas de teste baseadas na experiência."
+      },
+      {
+       "key": "d",
+       "text": "Técnicas de teste baseadas em risco."
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-4.1.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O documento não se refere à estrutura interna do objeto de teste; ele especifica o comportamento desejado. Por isso, as técnicas caixa-branca não ajudarão a projetar os casos de teste",
+      "b) Correta. O documento é um requisito que especifica o comportamento desejado do objeto de teste. Por isso, as técnicas mais adequadas aqui são as caixa-preta (por exemplo, análise de valor limite ou teste de tabela de decisão)",
+      "c) Incorreta. As técnicas baseadas na experiência podem ser usadas para projetar casos de teste com base nesse documento, mas as caixa-preta serão mais adequadas. O documento descreve uma regra de negócio precisa e, além disso, um texto como \"passar de US$ 100\" sugere limites de partições de equivalência importantes, que devem ser testados com técnicas caixa-preta como a análise de valor limite",
+      "d) Incorreta. 'Técnicas de teste baseadas em risco' não são um tipo reconhecido de técnica de teste"
+     ]
+    },
+    {
+     "id": "20",
+     "stem": [
+      {
+       "p": "O sistema de venda de ingressos de cinema calcula o tipo de desconto com base no ano de nascimento do cliente (AN) e no ano atual (AA), da seguinte forma:"
+      },
+      {
+       "p": "Seja D a diferença entre AA e AN, ou seja, D = AA - AN."
+      },
+      {
+       "li": "Se D < 0, exiba a mensagem de erro \"o ano de nascimento não pode ser maior que o ano atual\""
+      },
+      {
+       "li": "Se 0 ≤ D < 18, aplique o desconto de estudante"
+      },
+      {
+       "li": "Se 18 ≤ D < 65, não aplique desconto"
+      },
+      {
+       "li": "Se D ≥ 65, aplique o desconto de aposentado"
+      },
+      {
+       "p": "Sua suíte de teste já tem dois casos de teste:"
+      },
+      {
+       "li": "AN = 1990, AA = 2020, resultado esperado: sem desconto"
+      },
+      {
+       "li": "AN = 2030, AA = 2029, resultado esperado: exibir a mensagem de erro"
+      },
+      {
+       "p": "Quais DOIS dos seguintes conjuntos de dados de teste devem ser adicionados para atingir cobertura total das partições de equivalência válidas do tipo de desconto?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "AN = 2001, AA = 2065"
+      },
+      {
+       "key": "b",
+       "text": "AN = 1900, AA = 1965"
+      },
+      {
+       "key": "c",
+       "text": "AN = 1965, AA = 1900"
+      },
+      {
+       "key": "d",
+       "text": "AN = 2011, AA = 2029"
+      },
+      {
+       "key": "e",
+       "text": "AN = 2000, AA = 2000"
+      }
+     ],
+     "answer": [
+      "b",
+      "e"
+     ],
+     "lo": "FL-4.2.1",
+     "k": "K3",
+     "explanation": [
+      "Há duas partições de equivalência ainda não cobertas, que correspondem a \"desconto de estudante\" e \"desconto de aposentado\".",
+      "a) Incorreta. AA - AN = 64, então essas entradas correspondem à partição \"sem desconto\", já coberta",
+      "b) Correta. AA - AN = 65, então essas entradas correspondem a uma partição ainda não coberta (\"desconto de aposentado\")",
+      "c) Incorreta. AA - AN = -65, então essas entradas correspondem à partição \"mensagem de erro\", já coberta",
+      "d) Incorreta. AA - AN = 18, então essas entradas correspondem à partição \"sem desconto\", já coberta",
+      "e) Correta. AA - AN = 0, então essas entradas correspondem a uma partição ainda não coberta (\"desconto de estudante\")"
+     ]
+    },
+    {
+     "id": "21",
+     "stem": [
+      {
+       "p": "Você está testando um sistema de controle de temperatura de uma câmara fria para produtos hortícolas. O sistema recebe a temperatura (em graus Celsius inteiros) como entrada. Se a temperatura estiver entre 0 e 2 graus, inclusive, o sistema exibe a mensagem \"temperatura OK\". Para temperaturas mais baixas, exibe \"temperatura muito baixa\" e, para temperaturas mais altas, \"temperatura muito alta\"."
+      },
+      {
+       "p": "Usando a análise de valor limite de dois valores, qual dos seguintes conjuntos de entradas de teste fornece o maior nível de cobertura de valor limite?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "-1, 3"
+      },
+      {
+       "key": "b",
+       "text": "0, 2"
+      },
+      {
+       "key": "c",
+       "text": "-1, 0, 2, 3"
+      },
+      {
+       "key": "d",
+       "text": "-2, 0, 2, 4"
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-4.2.2",
+     "k": "K3",
+     "explanation": [
+      "Há três partições de equivalência: {…, -2, -1}, {0, 1, 2}, {3, 4, …}.",
+      "Na BVA de 2 valores, todos os valores limite de todas as partições de equivalência precisam ser cobertos. Os valores limite são -1 (da partição \"temperatura muito baixa\"), 0 e 2 (da partição \"temperatura OK\") e 3 (da partição \"temperatura muito alta\").",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Incorreta.",
+      "c) Correta. A opção correta é: -1, 0, 2, 3",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "22",
+     "stem": [
+      {
+       "p": "Você está projetando casos de teste com base na seguinte tabela de decisão:"
+      },
+      {
+       "table": {
+        "head": [
+         "",
+         "R1",
+         "R2",
+         "R3",
+         "R4",
+         "R5",
+         "R6",
+         "R7"
+        ],
+        "rows": [
+         [
+          "C1: Idade",
+          "0-18",
+          "19-65",
+          "19-65",
+          ">65",
+          "0-18",
+          "19-65",
+          ">65"
+         ],
+         [
+          "C2: Experiência",
+          "–",
+          "0-4",
+          ">4",
+          "–",
+          "–",
+          "–",
+          "–"
+         ],
+         [
+          "C3: Cadastrado?",
+          "NÃO",
+          "NÃO",
+          "NÃO",
+          "NÃO",
+          "SIM",
+          "SIM",
+          "SIM"
+         ],
+         [
+          "Categoria",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "D",
+          "C"
+         ]
+        ]
+       }
+      },
+      {
+       "p": "Até agora, você projetou os seguintes casos de teste:"
+      },
+      {
+       "li": "TC1: homem de 19 anos, não cadastrado, sem experiência; resultado esperado: categoria A"
+      },
+      {
+       "li": "TC2: mulher de 65 anos, não cadastrada, com 5 anos de experiência; resultado esperado: categoria B"
+      },
+      {
+       "li": "TC3: homem de 66 anos, cadastrado, sem experiência; resultado esperado: categoria C"
+      },
+      {
+       "li": "TC4: mulher de 65 anos, cadastrada, com 4 anos de experiência; resultado esperado: categoria D"
+      },
+      {
+       "p": "Qual dos seguintes casos de teste, se adicionado ao conjunto existente, aumentará a cobertura da tabela de decisão?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Homem de 66 anos, não cadastrado, sem experiência; resultado esperado: categoria B."
+      },
+      {
+       "key": "b",
+       "text": "Mulher de 55 anos, não cadastrada, com 2 anos de experiência; resultado esperado: categoria A."
+      },
+      {
+       "key": "c",
+       "text": "Mulher de 19 anos, cadastrada, com 5 anos de experiência; resultado esperado: categoria D."
+      },
+      {
+       "key": "d",
+       "text": "Nenhum caso de teste adicional pode aumentar a cobertura da tabela de decisão já atingida."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.2.3",
+     "k": "K3",
+     "explanation": [
+      "Os casos de teste TC1, TC2, TC3 e TC4 cobrem, respectivamente, as regras R2, R3, R7 e R6 da tabela de decisão.",
+      "a) Correta. As condições \"66 anos\", \"não cadastrado\" e \"sem experiência\" correspondem à regra R4, que não é coberta pelos casos de teste existentes. Então, ao adicionar esse caso de teste, a cobertura da tabela de decisão aumenta",
+      "b) Incorreta. As condições \"55 anos\", \"não cadastrada\" e \"2 anos de experiência\" correspondem à regra R2, já coberta por TC1. Então esse caso de teste não aumenta a cobertura",
+      "c) Incorreta. As condições \"19 anos\", \"cadastrada\" e \"5 anos de experiência\" correspondem à regra R6, já coberta por TC4. Então esse caso de teste não aumenta a cobertura",
+      "d) Incorreta. Os casos de teste existentes cobrem só 4 das 7 colunas da tabela de decisão. A cobertura pode aumentar com casos de teste que cubram as colunas ainda não cobertas, ou seja, R1, R4 e R5"
+     ]
+    },
+    {
+     "id": "23",
+     "stem": [
+      {
+       "p": "Você está aplicando o teste de transição de estados ao sistema de reserva de quartos de hotel modelado pela seguinte tabela de transição de estados, com 4 estados e 5 eventos diferentes:"
+      },
+      {
+       "table": {
+        "head": [
+         "Estado",
+         "Available",
+         "NotAvailable",
+         "ChangeRoom",
+         "Cancel",
+         "Pay"
+        ],
+        "rows": [
+         [
+          "S1: Solicitando",
+          "S2",
+          "S3",
+          "",
+          "",
+          ""
+         ],
+         [
+          "S2: Confirmado",
+          "",
+          "",
+          "S1",
+          "S4",
+          "S4"
+         ],
+         [
+          "S3: Lista de espera",
+          "S2",
+          "",
+          "",
+          "S4",
+          ""
+         ],
+         [
+          "S4: Fim",
+          "",
+          "",
+          "",
+          "",
+          ""
+         ]
+        ]
+       }
+      },
+      {
+       "p": "Eventos: Available (disponível), NotAvailable (indisponível), ChangeRoom (trocar de quarto), Cancel (cancelar) e Pay (pagar)."
+      },
+      {
+       "p": "Supondo que todos os casos de teste comecem no estado 'Solicitando', qual dos seguintes casos de teste, representados como sequências de eventos, atinge a maior cobertura de transições válidas?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "NotAvailable, Available, ChangeRoom, NotAvailable, Cancel"
+      },
+      {
+       "key": "b",
+       "text": "Available, ChangeRoom, NotAvailable, Available, Pay"
+      },
+      {
+       "key": "c",
+       "text": "Available, ChangeRoom, Available, ChangeRoom, NotAvailable"
+      },
+      {
+       "key": "d",
+       "text": "NotAvailable, Cancel, ChangeRoom, Available, Pay"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-4.2.4",
+     "k": "K3",
+     "explanation": [
+      "a) Incorreta. Essa sequência de cinco eventos cobre 4 transições válidas diferentes (os dois eventos NotAvailable correspondem à mesma transição, de S1 para S3). Esse caso de teste cobre 4 das 7 transições válidas",
+      "b) Correta. Essa sequência de cinco eventos cobre 5 transições diferentes (o primeiro Available corresponde à transição de S1 para S2, e o segundo Available, à transição de S3 para S2, então são duas transições diferentes). Esse caso de teste cobre 5 das 7 transições válidas e atinge a maior cobertura de transições válidas",
+      "c) Incorreta. Essa sequência de cinco eventos cobre 3 transições diferentes (os dois Available correspondem à mesma transição, de S1 para S2, e os dois ChangeRoom, à mesma transição, de S2 para S1). Esse caso de teste cobre 3 das 7 transições válidas",
+      "d) Incorreta. Essa sequência de cinco eventos não é um caso de teste viável, porque depois de Cancel o sistema fica no estado Fim e nenhuma outra transição válida pode ser executada"
+     ]
+    },
+    {
+     "id": "24",
+     "stem": [
+      {
+       "p": "Sua suíte de teste S para um programa P atinge 100% de cobertura de instrução. Ela tem três casos de teste, e cada um atinge 50% de cobertura de instrução."
+      },
+      {
+       "p": "Qual das seguintes afirmações está CORRETA?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Executar S provocará todas as falhas possíveis em P."
+      },
+      {
+       "key": "b",
+       "text": "S atinge 100% de cobertura de ramificação em P."
+      },
+      {
+       "key": "c",
+       "text": "Toda instrução executável de P que contém um defeito foi executada pelo menos uma vez durante a execução de S."
+      },
+      {
+       "key": "d",
+       "text": "Se um caso de teste for removido de S, os dois restantes ainda atingirão 100% de cobertura de instrução."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-4.3.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Uma instrução com defeito, quando executada, não precisa causar uma falha. Por exemplo, a instrução x := y / z só causa uma falha quando z é igual a 0",
+      "b) Incorreta. 100% de cobertura de instrução não garante 100% de cobertura de ramificação. Por exemplo, para o código abaixo, um caso de teste com x = 0 atinge 100% de cobertura de instrução, mas não cobre a ramificação de 1 para 3:",
+      {
+       "pre": "1. IF (x = 0) THEN\n2.   A;\n3. ENDIF"
+      },
+      "c) Correta. 100% de cobertura de instrução significa que cada instrução executável foi executada pelo menos uma vez",
+      "d) Incorreta. O caso de teste removido pode cobrir algumas instruções que nenhum dos outros dois cobre; nesse caso, os dois restantes não atingem juntos 100% de cobertura de instrução"
+     ]
+    },
+    {
+     "id": "25",
+     "stem": [
+      {
+       "p": "Por que o teste caixa-branca facilita a detecção de defeitos mesmo quando a especificação do software é vaga, desatualizada ou incompleta?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os casos de teste são projetados com base na estrutura do objeto de teste, e não na especificação."
+      },
+      {
+       "key": "b",
+       "text": "Para cada técnica de teste caixa-branca, a cobertura pode ser bem definida e facilmente medida."
+      },
+      {
+       "key": "c",
+       "text": "As técnicas de teste caixa-branca são muito bem projetadas para detectar omissões nos requisitos."
+      },
+      {
+       "key": "d",
+       "text": "As técnicas de teste caixa-branca podem ser usadas tanto no teste estático quanto no teste dinâmico."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.3.3",
+     "k": "K2",
+     "explanation": [
+      "a) Correta. Uma força fundamental de todas as técnicas caixa-branca é que a implementação inteira do software é levada em conta no teste, o que facilita a detecção de defeitos mesmo quando a especificação é vaga, desatualizada ou incompleta. Assim, o teste caixa-branca pode encontrar defeitos como uma funcionalidade extra adicionada ao código (por acidente ou de propósito) que não deveria estar lá, algo que o teste caixa-preta não detecta",
+      "b) Incorreta. O fato de a cobertura poder ser definida com precisão não é o motivo. O nível de cobertura atingido teria muito mais impacto do que a possibilidade de medir a cobertura",
+      "c) Incorreta. Se o software não implementa um ou mais requisitos, é improvável que o teste caixa-branca detecte os defeitos de omissão resultantes",
+      "d) Incorreta. A afirmação é verdadeira, mas não é a resposta certa, porque não há ligação entre poder ser usado nos testes estático e dinâmico e o fato de o teste caixa-branca facilitar a detecção de defeitos com especificações ruins"
+     ]
+    },
+    {
+     "id": "26",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções NÃO é antecipada pelo testador ao aplicar a suposição de erro?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O desenvolvedor entendeu errado a fórmula de cálculo de juros da história de usuário."
+      },
+      {
+       "key": "b",
+       "text": "O desenvolvedor escreveu \"FA = A*(1+IR^N)\" em vez de \"FA = A*(1+IR)^N\" no código-fonte."
+      },
+      {
+       "key": "c",
+       "text": "O desenvolvedor faltou ao seminário sobre a nova legislação de juros compostos."
+      },
+      {
+       "key": "d",
+       "text": "A precisão dos juros calculados pelo sistema não é suficiente."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-4.4.1",
+     "k": "K2",
+     "explanation": [
+      "A suposição de erro consiste em antecipar erros, defeitos e falhas com base no conhecimento do testador.",
+      "a) Incorreta. É um exemplo de antecipação do erro do desenvolvedor",
+      "b) Incorreta. É um exemplo de antecipação do defeito",
+      "c) Correta. É um exemplo de possível causa raiz de um defeito, que não é erro, defeito nem falha, e é difícil para o testador antecipar",
+      "d) Incorreta. É um exemplo de antecipação de uma falha, talvez com base na experiência com sistemas anteriores desse domínio de aplicação"
+     ]
+    },
+    {
+     "id": "27",
+     "stem": [
+      {
+       "p": "Qual das seguintes afirmações sobre o teste exploratório é verdadeira?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Os casos de teste são projetados antes do início da sessão de teste exploratório."
+      },
+      {
+       "key": "b",
+       "text": "O testador pode executar os testes, mas não pode projetá-los."
+      },
+      {
+       "key": "c",
+       "text": "Os resultados do teste exploratório são bons preditores da quantidade de defeitos restantes."
+      },
+      {
+       "key": "d",
+       "text": "Durante o teste exploratório, o testador pode usar técnicas de teste caixa-preta."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.4.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. No teste exploratório, os casos de teste costumam ser criados durante a sessão, junto com a análise, a implementação e a execução do teste",
+      "b) Incorreta. No teste exploratório, os testes são projetados, executados e avaliados ao mesmo tempo, enquanto o testador aprende sobre o objeto de teste",
+      "c) Incorreta. Os resultados do teste exploratório dependem muito da experiência do testador. Então, mesmo que possam ser usados como indicador de risco e para avaliar se haverá mais ou menos defeitos em relação à sessão anterior, não são um bom exemplo de modelo confiável de previsão da quantidade de defeitos restantes",
+      "d) Correta. Durante o teste exploratório, os testadores podem usar quaisquer técnicas de teste que considerem úteis"
+     ]
+    },
+    {
+     "id": "28",
+     "stem": [
+      {
+       "p": "Qual prática colaborativa de escrita de histórias de usuário permite que a equipe chegue a um entendimento coletivo do que precisa ser entregue?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Planning poker, para que a equipe chegue a um consenso sobre o esforço necessário para implementar uma história de usuário."
+      },
+      {
+       "key": "b",
+       "text": "Revisões, para que a equipe detecte inconsistências e contradições numa história de usuário."
+      },
+      {
+       "key": "c",
+       "text": "Planejamento da iteração, para que as histórias de usuário de maior valor de negócio para o cliente sejam priorizadas para implementação."
+      },
+      {
+       "key": "d",
+       "text": "Conversa, para que os membros da equipe entendam como o software será usado."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-4.5.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O planning poker estima o esforço de uma história de usuário que já foi escrita. Ele não ajuda a entender o que deve ser entregue",
+      "b) Incorreta. As revisões não são uma prática colaborativa de escrita de histórias de usuário",
+      "c) Incorreta. O planejamento da iteração é uma prática de projeto, usada para planejar o trabalho, não para entender o que precisa ser entregue",
+      "d) Correta. A conversa explica como o software será usado e muitas vezes permite à equipe definir critérios de aceite significativos, chegando a uma visão compartilhada do que deve ser entregue"
+     ]
+    },
+    {
+     "id": "29",
+     "stem": [
+      {
+       "p": "Você acabou de começar a projetar casos de teste para a seguinte história de usuário:"
+      },
+      {
+       "quote": [
+        "Como cliente, quero poder filtrar os resultados de busca por faixa de preço, para encontrar com mais facilidade produtos dentro do meu orçamento.",
+        "Critérios de aceite:",
+        "1. O filtro deve funcionar em todas as versões do aplicativo a partir da 3.0",
+        "2. O filtro deve permitir que o cliente defina uma faixa de preço com preço mínimo e preço máximo",
+        "3. Os resultados da busca devem se atualizar dinamicamente conforme o cliente ajusta o filtro de faixa de preço"
+       ]
+      },
+      {
+       "p": "Em todos os casos de teste, a pré-condição é: há apenas dois produtos disponíveis, A e B. O produto A custa US$ 100 e o produto B custa US$ 110."
+      },
+      {
+       "p": "Qual das seguintes opções é o MELHOR exemplo de caso de teste para essa história de usuário?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Entrar na página e definir o filtro para mostrar preços entre US$ 90 e US$ 100. Resultado esperado: os resultados mostram só o produto A. Definir o preço máximo como US$ 110. Resultado esperado: os resultados passam a incluir os produtos A e B."
+      },
+      {
+       "key": "b",
+       "text": "Entrar na página. Resultado esperado: os preços mínimo e máximo padrão são US$ 100 e US$ 110, respectivamente. Adicionar ao estoque o produto C, com preço de US$ 120. Atualizar a página do cliente. Resultado esperado: o preço máximo padrão passa a ser US$ 120."
+      },
+      {
+       "key": "c",
+       "text": "Entrar na página e definir o filtro para mostrar preços entre US$ 90 e US$ 115. Resultado esperado: os resultados mostram os produtos A e B. Mudar a moeda de USD para EUR. Resultado esperado: a faixa do filtro muda corretamente para valores em EUR, conforme a cotação atual."
+      },
+      {
+       "key": "d",
+       "text": "Entrar na página com três navegadores diferentes: Edge, Chrome e Opera. Em cada um, definir o filtro entre US$ 90 e US$ 110. Resultado esperado: os resultados incluem os produtos A e B, e o layout dos resultados é igual nos três navegadores."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-4.5.3",
+     "k": "K3",
+     "explanation": [
+      "a) Correta. Esse caso de teste está ligado aos critérios de aceite 2 e 3, porque verificamos se é possível definir a faixa de preço (critério 2) e se os resultados se atualizam dinamicamente depois de ajustar o filtro (critério 3)",
+      "b) Incorreta. Esse caso de teste não está ligado a nenhum dos critérios de aceite. Ele verifica se o filtro define dinamicamente a faixa padrão de preço mínimo e máximo, e não se o cliente consegue fazer isso",
+      "c) Incorreta. Esse caso de teste não está ligado a nenhum dos critérios de aceite. Ele verifica a funcionalidade de câmbio, que não é tratada nessa história de usuário",
+      "d) Incorreta. Esse caso de teste não está ligado a nenhum dos critérios de aceite. Ele verifica a compatibilidade da aplicação com diferentes navegadores, que não é tratada nessa história de usuário"
+     ]
+    },
+    {
+     "id": "30",
+     "stem": [
+      {
+       "p": "Quais DUAS das seguintes opções MELHOR definem critérios de SAÍDA num projeto de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "O orçamento é aprovado."
+      },
+      {
+       "key": "b",
+       "text": "O orçamento acaba."
+      },
+      {
+       "key": "c",
+       "text": "A base de teste está disponível."
+      },
+      {
+       "key": "d",
+       "text": "Os casos de teste atingiram pelo menos 80% de cobertura de instrução."
+      },
+      {
+       "key": "e",
+       "text": "Todos os analistas de teste têm a certificação ISTQB de nível Foundation."
+      }
+     ],
+     "answer": [
+      "b",
+      "d"
+     ],
+     "lo": "FL-5.1.3",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. A aprovação do orçamento é um exemplo de critério de entrada. Não faria sentido aprovar o orçamento de uma atividade que já foi feita",
+      "b) Correta. O fim do orçamento pode ser visto como um critério de saída válido",
+      "c) Incorreta. A disponibilidade de recursos é um exemplo de critério de entrada do teste",
+      "d) Correta. A cobertura é uma medida de rigor, então é um critério de saída típico",
+      "e) Incorreta. É um exemplo de critério de entrada, checado antes de o projeto começar"
+     ]
+    },
+    {
+     "id": "31",
+     "stem": [
+      {
+       "p": "A equipe quer estimar o tempo necessário para um testador executar quatro casos de teste de um componente de software. A equipe reuniu as seguintes medidas do esforço para executar um único caso de teste:"
+      },
+      {
+       "li": "Cenário otimista: 1 hora"
+      },
+      {
+       "li": "Cenário pessimista: 8 horas"
+      },
+      {
+       "li": "Cenário mais provável: 3 horas"
+      },
+      {
+       "p": "Usando a técnica de estimativa de três pontos, qual é a estimativa final do tempo necessário para executar os quatro casos de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "14 horas"
+      },
+      {
+       "key": "b",
+       "text": "3,5 horas"
+      },
+      {
+       "key": "c",
+       "text": "16 horas"
+      },
+      {
+       "key": "d",
+       "text": "12 horas"
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-5.1.4",
+     "k": "K3",
+     "explanation": [
+      "Na técnica de estimativa de três pontos, a estimativa final (E) é calculada como E = (a + 4*m + b) / 6, em que a é a estimativa mais otimista, m a mais provável e b a mais pessimista.",
+      "Por isso:",
+      "a) Correta. A estimativa para executar um caso de teste é E = (1h + 4*3h + 8h) / 6 = 3,5 horas. Então o tempo total para o testador executar 4 casos de teste é 3,5h * 4 = 14 horas",
+      "b) Incorreta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "32",
+     "stem": [
+      {
+       "p": "A tabela mostra a matriz de rastreabilidade dos casos de teste para os requisitos. \"X\" significa que o caso de teste cobre o requisito correspondente."
+      },
+      {
+       "table": {
+        "head": [
+         "",
+         "Req1",
+         "Req2",
+         "Req3",
+         "Req4",
+         "Req5",
+         "Req6",
+         "Req7"
+        ],
+        "rows": [
+         [
+          "TC1",
+          "X",
+          "",
+          "X",
+          "X",
+          "",
+          "",
+          "X"
+         ],
+         [
+          "TC2",
+          "X",
+          "",
+          "",
+          "",
+          "X",
+          "",
+          "X"
+         ],
+         [
+          "TC3",
+          "",
+          "",
+          "",
+          "",
+          "X",
+          "X",
+          ""
+         ],
+         [
+          "TC4",
+          "",
+          "X",
+          "",
+          "",
+          "",
+          "",
+          ""
+         ]
+        ]
+       }
+      },
+      {
+       "p": "Você quer priorizar os casos de teste com a técnica de priorização por cobertura adicional. Você vai executar os quatro casos de teste."
+      },
+      {
+       "p": "Qual caso de teste deve ser executado POR ÚLTIMO?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "TC1"
+      },
+      {
+       "key": "b",
+       "text": "TC2"
+      },
+      {
+       "key": "c",
+       "text": "TC3"
+      },
+      {
+       "key": "d",
+       "text": "TC4"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-5.1.5",
+     "k": "K3",
+     "explanation": [
+      "TC1 atinge a maior cobertura (4/7: Req1, Req3, Req4 e Req7), então deve ser executado primeiro.",
+      "Req2, Req5 e Req6 ainda não estão cobertos. O caso de teste com a maior cobertura adicional dos requisitos restantes é TC3, que cobre 2 desses 3 (Req5 e Req6). Então TC3 deve ser o segundo.",
+      "Agora o único requisito ainda não coberto é Req2, coberto por TC4. Então TC4 deve ser o terceiro. Logo, o último caso de teste executado será TC2.",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "33",
+     "stem": [
+      {
+       "p": "Como os quadrantes de teste podem ser úteis para o teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Ajudam no planejamento do teste, dividindo o processo de teste em quatro fases, correspondentes aos quatro níveis de teste básicos: teste de componente, de integração, de sistema e de aceite."
+      },
+      {
+       "key": "b",
+       "text": "Ajudam a avaliar a cobertura de alto nível (por exemplo, cobertura de requisitos) com base na cobertura de baixo nível (por exemplo, cobertura de código)."
+      },
+      {
+       "key": "c",
+       "text": "Ajudam as partes interessadas não técnicas a entender os diferentes tipos de teste e que alguns tipos de teste são mais relevantes para certos níveis de teste do que outros."
+      },
+      {
+       "key": "d",
+       "text": "Ajudam as equipes ágeis a montar uma estratégia de comunicação baseada na classificação das pessoas em quatro tipos psicológicos básicos e na modelagem das relações entre eles."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-5.1.7",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Os quadrantes de teste não têm nada a ver com descrever as relações entre os níveis de teste",
+      "b) Incorreta. Os quadrantes de teste não ajudam a avaliar nenhum tipo de cobertura",
+      "c) Correta. Os quadrantes de teste permitem que gerentes e outras partes interessadas entendam as relações entre os tipos de teste, as atividades que eles apoiam (apoio à equipe ou crítica ao produto) e o ponto de vista em que se concentram (voltado ao negócio ou à tecnologia)",
+      "d) Incorreta. Os quadrantes de teste não são um modelo psicológico"
+     ]
+    },
+    {
+     "id": "34",
+     "stem": [
+      {
+       "p": "Para um certo risco, o nível de risco é US$ 1.000 e a probabilidade do risco é estimada em 50%."
+      },
+      {
+       "p": "Qual é o impacto do risco?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "US$ 500"
+      },
+      {
+       "key": "b",
+       "text": "US$ 2.000"
+      },
+      {
+       "key": "c",
+       "text": "US$ 50.000"
+      },
+      {
+       "key": "d",
+       "text": "US$ 200"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-5.2.1",
+     "k": "K1",
+     "explanation": [
+      "A avaliação de risco pode usar uma abordagem quantitativa, qualitativa ou uma mistura das duas. Na abordagem quantitativa, o nível de risco é calculado multiplicando a probabilidade do risco pelo impacto do risco: nível de risco = probabilidade × impacto.",
+      "Então, impacto do risco = nível de risco / probabilidade do risco. Neste caso, impacto = US$ 1.000 / 50% = US$ 1.000 / 0,5 = US$ 2.000.",
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta.",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "35",
+     "stem": [
+      {
+       "p": "Quais DUAS das seguintes opções são riscos de produto?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Aumento descontrolado do escopo (scope creep)."
+      },
+      {
+       "key": "b",
+       "text": "Arquitetura ruim."
+      },
+      {
+       "key": "c",
+       "text": "Corte de custos."
+      },
+      {
+       "key": "d",
+       "text": "Suporte ruim de ferramentas."
+      },
+      {
+       "key": "e",
+       "text": "Tempo de resposta longo demais."
+      }
+     ],
+     "answer": [
+      "b",
+      "e"
+     ],
+     "lo": "FL-5.2.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O aumento descontrolado do escopo é um exemplo de risco de projeto ligado a questões técnicas",
+      "b) Correta. Arquitetura ruim é um exemplo de risco de produto, porque se refere a uma característica do produto",
+      "c) Incorreta. O corte de custos é um exemplo de risco de projeto ligado a questões organizacionais",
+      "d) Incorreta. O suporte ruim de ferramentas é um exemplo de risco de projeto ligado a questões técnicas",
+      "e) Correta. Um tempo de resposta longo demais é um exemplo de risco de produto, porque se refere a uma característica do produto"
+     ]
+    },
+    {
+     "id": "36",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções NÃO é um propósito válido de um relatório de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Acompanhar o progresso do teste e identificar áreas que precisam de mais atenção."
+      },
+      {
+       "key": "b",
+       "text": "Fornecer informações sobre os testes executados, seus resultados e os defeitos encontrados."
+      },
+      {
+       "key": "c",
+       "text": "Fornecer informações sobre cada defeito, como os passos para reproduzi-lo."
+      },
+      {
+       "key": "d",
+       "text": "Fornecer informações sobre o teste planejado para o próximo período."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-5.3.2",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. Acompanhar o progresso do teste e identificar áreas que precisam de mais atenção é um exemplo de apoio ao controle contínuo do teste. Esse é um dos propósitos dos relatórios de teste",
+      "b) Incorreta. Fornecer informações sobre os testes executados, seus resultados e os defeitos encontrados é um exemplo de resumo das atividades de teste feitas num nível de teste. Esse é um dos propósitos dos relatórios de teste",
+      "c) Correta. Fornecer informações sobre os defeitos é o propósito do relatório de defeito, não do relatório de teste",
+      "d) Incorreta. Fornecer informações sobre o teste planejado para o próximo período é um dos propósitos dos relatórios de teste"
+     ]
+    },
+    {
+     "id": "37",
+     "stem": [
+      {
+       "p": "Um usuário relatou uma falha no software. Um engenheiro da equipe de suporte perguntou ao usuário o número da versão do software em que a falha foi observada. Com base nesse número, a equipe remontou todos os arquivos que compunham aquela versão. Isso permitiu, depois, que um desenvolvedor fizesse a análise, encontrasse o defeito e o corrigisse."
+      },
+      {
+       "p": "Qual das seguintes opções permitiu à equipe fazer essa atividade?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Gerenciamento de risco."
+      },
+      {
+       "key": "b",
+       "text": "Monitoramento e controle do teste."
+      },
+      {
+       "key": "c",
+       "text": "Abordagem de equipe completa."
+      },
+      {
+       "key": "d",
+       "text": "Gerenciamento de configuração."
+      }
+     ],
+     "answer": [
+      "d"
+     ],
+     "lo": "FL-5.4.1",
+     "k": "K2",
+     "explanation": [
+      "a) Incorreta. O gerenciamento de risco consiste em análise de risco e controle de risco. Nenhuma dessas atividades apoia a remontagem dos arquivos que compunham a versão, porque elas lidam com riscos, não com itens de configuração",
+      "b) Incorreta. O monitoramento do teste reúne informações sobre o teste, usadas para avaliar o progresso e medir se os critérios de saída (ou as tarefas ligadas a eles) foram cumpridos, como as metas de cobertura de riscos de produto, requisitos ou outros critérios de aceite. O controle do teste usa as informações do monitoramento para dar, na forma de diretivas de controle, orientações e as ações corretivas necessárias para um teste mais eficaz e eficiente. Nenhuma dessas atividades lida com o gerenciamento de itens de configuração",
+      "c) Incorreta. A abordagem de equipe completa se apoia na habilidade do testador de trabalhar bem em equipe e contribuir positivamente para os objetivos da equipe. Ela trata de questões de equipe, não de itens de configuração",
+      "d) Correta. O gerenciamento de configuração oferece uma disciplina para identificar, controlar e rastrear produtos de trabalho. Ele registra os itens de configuração alterados quando uma nova baseline é criada. Com o gerenciamento de configuração, é possível voltar a uma baseline anterior para reproduzir resultados de teste anteriores"
+     ]
+    },
+    {
+     "id": "38",
+     "stem": [
+      {
+       "p": "Considere o seguinte relatório de defeito de um sistema de empréstimo de livros:"
+      },
+      {
+       "pre": "ID do defeito: 001 | Título: Não é possível devolver um livro\nSeveridade: Alta | Prioridade:\nAmbiente: Windows 10, Google Chrome\n\nDescrição: ao tentar devolver um livro pela funcionalidade Devolução de Livro, o sistema não registra a devolução e o livro continua emprestado ao usuário.\n\nPassos para reproduzir:\n  Fazer login no sistema como um usuário que tem um livro emprestado.\n  Clicar no botão \"Devolver livro\" do livro emprestado.\n  O sistema não registra a devolução e o livro continua emprestado.\n\nResultado esperado: o livro deve ser devolvido e não aparecer mais como emprestado ao usuário.\nResultado real: o livro continua emprestado ao usuário e não é registrado como devolvido no sistema.\n\nAnexos: [lista vazia]"
+      },
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de ajudar o desenvolvedor a reproduzir a falha rapidamente?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "Acrescentar à seção \"Descrição\" informações sobre quais usuários e quais livros a falha afeta."
+      },
+      {
+       "key": "b",
+       "text": "Preencher o valor que falta no campo \"Prioridade\"."
+      },
+      {
+       "key": "c",
+       "text": "Acrescentar à seção \"Anexos\" dumps de memória e snapshots do banco de dados feitos após cada passo descrito em \"Passos para reproduzir\"."
+      },
+      {
+       "key": "d",
+       "text": "Repetir o mesmo caso de teste em ambientes diferentes e escrever um relatório de defeito separado para cada um."
+      }
+     ],
+     "answer": [
+      "a"
+     ],
+     "lo": "FL-5.5.1",
+     "k": "K3",
+     "explanation": [
+      "a) Correta. Com essa informação, o desenvolvedor pode usar os mesmos dados de entrada, então é mais provável que consiga reproduzir a falha rapidamente e, assim, identificar o defeito mais rápido",
+      "b) Incorreta. Preencher a prioridade não ajuda a reproduzir o defeito",
+      "c) Incorreta. Parte dessa informação pode ter valor, mas acrescentar dumps de memória e snapshots do banco de dados após cada passo seria demais: a maioria desses artefatos traria informações inúteis para o desenvolvedor e deixaria o relatório menos legível. Também exigiria que o desenvolvedor gastasse muito tempo analisando essas informações, o que alongaria o processo de correção",
+      "d) Incorreta. A pergunta é sobre ajudar o desenvolvedor a reproduzir a falha numa configuração de ambiente específica"
+     ]
+    },
+    {
+     "id": "39",
+     "stem": [
+      {
+       "p": "Considere as seguintes categorias de ferramentas de teste:"
+      },
+      {
+       "pre": "i.   Ferramentas de colaboração\nii.  Ferramentas de DevOps\niii. Ferramentas de gerenciamento\niv.  Ferramentas de teste não funcional\nv.   Ferramentas de projeto e implementação de teste"
+      },
+      {
+       "p": "Ferramentas de quais categorias têm MAIOR probabilidade de facilitar a execução do teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "i, v"
+      },
+      {
+       "key": "b",
+       "text": "ii, iv"
+      },
+      {
+       "key": "c",
+       "text": "i, iii, v"
+      },
+      {
+       "key": "d",
+       "text": "ii, iii, iv"
+      }
+     ],
+     "answer": [
+      "b"
+     ],
+     "lo": "FL-6.1.1",
+     "k": "K2",
+     "explanation": [
+      "Considerando cada categoria de ferramenta listada:",
+      {
+       "li": "i. Ferramentas de colaboração: facilitam a comunicação. A comunicação não inclui facilitar a execução do teste"
+      },
+      {
+       "li": "ii. Ferramentas de DevOps: apoiam o pipeline de entrega DevOps, o acompanhamento do fluxo de trabalho, os processos de build automatizados e o CI/CD. O pipeline de entrega e o CI/CD incluem facilitar a execução do teste, como o teste de componente na integração contínua"
+      },
+      {
+       "li": "iii. Ferramentas de gerenciamento: aumentam a eficiência do processo de teste ao facilitar o gerenciamento do SDLC, dos requisitos, dos testes, dos defeitos e da configuração. Gerenciar esses itens não inclui facilitar a execução do teste"
+      },
+      {
+       "li": "iv. Ferramentas de teste não funcional: permitem ao testador fazer testes não funcionais difíceis ou impossíveis de fazer manualmente. O teste não funcional pode incluir teste estático e dinâmico, inclusive a execução do teste"
+      },
+      {
+       "li": "v. Ferramentas de projeto e implementação de teste: facilitam a geração de casos de teste, dados de teste e procedimentos de teste. Gerar esse testware não inclui facilitar a execução do teste"
+      },
+      "Por isso:",
+      "a) Incorreta.",
+      "b) Correta. As ferramentas de DevOps (ii) e as de teste não funcional (iv) facilitam a execução do teste",
+      "c) Incorreta.",
+      "d) Incorreta."
+     ]
+    },
+    {
+     "id": "40",
+     "stem": [
+      {
+       "p": "Qual das seguintes opções tem MAIOR probabilidade de ser um risco da automação de teste?"
+      }
+     ],
+     "options": [
+      {
+       "key": "a",
+       "text": "A detecção de mais defeitos de alta severidade."
+      },
+      {
+       "key": "b",
+       "text": "Fornecer medidas complicadas demais para serem obtidas por humanos."
+      },
+      {
+       "key": "c",
+       "text": "Incompatibilidade com a plataforma de desenvolvimento."
+      },
+      {
+       "key": "d",
+       "text": "Tempos de execução do teste muito menores."
+      }
+     ],
+     "answer": [
+      "c"
+     ],
+     "lo": "FL-6.2.1",
+     "k": "K1",
+     "explanation": [
+      "a) Incorreta. Detectar mais defeitos de alta severidade seria um benefício da automação de teste, e não um risco",
+      "b) Incorreta. Fornecer medidas complicadas demais para humanos obterem sozinhos normalmente é considerado um benefício da automação de teste",
+      "c) Correta. Se a automação de teste for incompatível com a plataforma de desenvolvimento, não será possível integrá-las e, por exemplo, passar entradas de teste para o objeto de teste e receber dele os resultados",
+      "d) Incorreta. Tempos de execução do teste muito menores normalmente são considerados um benefício da automação de teste"
+     ]
+    }
+   ],
+   "extra": []
   }
  ]
 }

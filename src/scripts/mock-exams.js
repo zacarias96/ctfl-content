@@ -579,7 +579,7 @@ export function mount(root, data, { base = "/" } = {}) {
           : ""
       }
 
-      <p class="sim-credits">Questões e justificativas: <em>ISTQB® Certified Tester Foundation Level v4.0, Sample Exam A e B, v1.7</em>, tradução BSTQB. © International Software Testing Qualifications Board, usado para estudo não comercial com citação da fonte. Na tradução em português, algumas justificativas dizem "está correto" para alternativas erradas; aqui, o rótulo Correta/Incorreta segue o gabarito oficial.</p>
+      <p class="sim-credits">Questões e justificativas: <em>ISTQB® Certified Tester Foundation Level v4.0, Sample Exams</em> A e B (v1.7, tradução BSTQB), C (v1.6) e D (v1.5). Os simulados C e D não têm tradução oficial: a versão em português é uma tradução livre deste site a partir do original em inglês, com os termos do glossário ISTQB em português. © International Software Testing Qualifications Board, usado para estudo não comercial com citação da fonte. Na tradução do BSTQB, algumas justificativas dizem "está correto" para alternativas erradas; aqui, o rótulo Correta/Incorreta segue o gabarito oficial.</p>
     `;
 
     root.querySelector('[data-act="start-practice"]').onclick = () => {

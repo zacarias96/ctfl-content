@@ -69,6 +69,8 @@ Deploys run on every push to `main` (`.github/workflows/deploy.yml`, GitHub Page
 - `src/data/mock-exams.json` was extracted from the official sample exam PDFs (v1.7, BSTQB translation). Those PDFs are not tracked in git. The pt-BR translation has errors, so option verdicts are normalized to `x) Correta.` / `x) Incorreta.` from the official answer key, which is the source of truth.
 - Review links: each question links to the note that covers its learning objective, through the `NOTES` map (LO prefix -> note path) in `src/scripts/mock-exams.js`. `CHAPTERS[].slug` points to the first note of each chapter (used by the per-chapter score table). Update both, and the `note` fields in `.claude/skills/exam-performance/data/lo-catalog.json`, when notes are renamed or moved.
 - Progress and history are stored in `localStorage` under `ctfl-mock-exams-v1`. Every access goes through `try/catch`, and the page must work without storage.
+- Each finished exam in `history` (last `HISTORY_MAX`) keeps `examId`, `order`, `answers`, `flags`, `minutes` and `timeUp`, so the home screen can reopen its review through `renderResults(historyView(entry))`. A history view is read-only and must not touch `store.session`. Older entries without `answers` show "Sem respostas".
+- Timed practice (optional) uses the exam pace, `PRACTICE_MS_PER_Q` (1.5 min per question, +25% when extended). When the countdown ends, a `<dialog>` asks to go on (an overtime counter starts, shown as `60:00 + mm:ss`) or stop (ungraded questions count as not answered). Timed practice is saved to `history` with `kind: 'practice'`, `limit` and `over`; exam entries have `kind: 'exam'`.
 
 ## Styling
 

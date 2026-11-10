@@ -6,6 +6,8 @@
 // UI text is in Portuguese (the site's language); code and identifiers are in English.
 
 const EXAM = { minutes: 60, extraPct: 25, passMark: 26 };
+// Timed practice keeps the exam pace: 60 min / 40 questions = 1.5 min per question.
+const PRACTICE_MS_PER_Q = (EXAM.minutes * 60000) / 40;
 
 // slug = first note of the section (each chapter is a folder in notes/).
 const CHAPTERS = {
@@ -65,6 +67,13 @@ const noteOf = (q) => {
 };
 
 const STORE_KEY = 'ctfl-mock-exams-v1';
+const HISTORY_MAX = 30; // finished exams kept in storage
+const HISTORY_SHOWN = 8; // rows on the home screen before "show all"
+
+// Time used, with the overtime shown apart: "60:00 + 12:34".
+const fmtUsed = ({ time, limit, over }) => (over > 0 ? `${fmtTime(limit)} + ${fmtTime(over)}` : fmtTime(time));
+
+const fmtDate = (ms) => new Date(ms).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
 
 // ---------- utilities ----------
 
@@ -236,6 +245,48 @@ export function mount(root, data, { base = '/' } = {}) {
     return { ...q, label: extra ? `${e.title} · adicional ${id}` : `${e.title} · ${id}` };
   }
 
+  // ----- history -----
+
+  // Entries saved before answers were stored, or that point to questions no
+  // longer in the data, cannot be reviewed.
+  function canReview(h) {
+    if (!h.order || !h.answers || !exams[h.examId]) return false;
+    return h.order.every((ref) => {
+      const [examId, id] = ref.split(':');
+      const e = exams[examId];
+      return e && (e.questions.some((x) => x.id === id) || e.extra.some((x) => x.id === id));
+    });
+  }
+
+  // Exams use the official pass mark; practice uses the same 65% on its own size.
+  function resultPill(h) {
+    if (h.kind === 'practice') {
+      const pct = Math.round((h.score / h.total) * 100);
+      return `<span class="sim-pill ${pct >= 65 ? 'is-ok' : 'is-bad'}">${pct}%</span>`;
+    }
+    return h.score >= EXAM.passMark ? '<span class="sim-pill is-ok">Aprovado</span>' : '<span class="sim-pill is-bad">Reprovado</span>';
+  }
+
+  // Read-only session snapshot rendered by renderResults.
+  function historyView(h) {
+    return {
+      mode: h.kind === 'practice' ? 'practice' : 'exam',
+      examId: h.examId,
+      order: h.order,
+      answers: h.answers,
+      flags: h.flags || {},
+      minutes: h.minutes,
+      timeUp: !!h.timeUp,
+      startedAt: h.date - h.time,
+      finishedAt: h.date,
+      finished: true,
+      fromHistory: true,
+      date: h.date,
+      limitMs: h.limit || null,
+      over: h.over || 0,
+    };
+  }
+
   // ----- home screen -----
 
   function renderHome() {
@@ -272,6 +323,8 @@ export function mount(root, data, { base = '/' } = {}) {
             <p>Responda uma questão por vez e veja na hora se acertou, qual é a resposta certa e a justificativa oficial de cada alternativa.</p>
             <label class="sim-check"><input type="checkbox" name="extra"> Incluir as questões adicionais (só o Simulado A tem)</label>
             <label class="sim-check"><input type="checkbox" name="shuffle"> Embaralhar a ordem</label>
+            <label class="sim-check"><input type="checkbox" name="timed"> Cronometrar no ritmo da prova (1,5 min por questão)</label>
+            <label class="sim-check sim-check-sub"><input type="checkbox" name="practiceExtended" disabled> Tempo estendido: +${EXAM.extraPct}%</label>
             <label class="sim-field-inline">Capítulo
               <select name="chapter">
                 <option value="0">Todos</option>
@@ -295,16 +348,24 @@ export function mount(root, data, { base = '/' } = {}) {
       ${
         best.length
           ? `<section class="sim-history">
-              <h2>Últimos simulados completos</h2>
-              <table class="sim-table"><thead><tr><th>Data</th><th>Simulado</th><th>Acertos</th><th>Tempo</th><th>Resultado</th></tr></thead><tbody>
+              <h2>Histórico de simulados e treinos cronometrados</h2>
+              <p class="sim-hint">Abra a correção de uma tentativa para ver o que você respondeu, o que acertou e o que errou em cada questão.</p>
+              <div class="sim-table-wrap">
+              <table class="sim-table"><thead><tr><th>Data</th><th>Simulado</th><th>Acertos</th><th>Tempo</th><th>Resultado</th><th><span class="sr-only">Correção</span></th></tr></thead><tbody>
               ${best
-                .slice(-8)
+                .map((h, i) => ({ h, i }))
                 .reverse()
                 .map(
-                  (h) => `<tr><td>${new Date(h.date).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' })}</td><td>${esc(h.title)}</td><td>${h.score}/${h.total}</td><td>${fmtTime(h.time)}</td><td>${h.score >= EXAM.passMark ? '<span class="sim-pill is-ok">Aprovado</span>' : '<span class="sim-pill is-bad">Reprovado</span>'}</td></tr>`
+                  ({ h, i }, n) => `<tr ${n >= HISTORY_SHOWN ? 'class="sim-history-more" hidden' : ''}><td data-label="Data">${fmtDate(h.date)}</td><td data-label="Simulado">${esc(h.title)}${h.kind === 'practice' ? ' <span class="sim-badge">Treino</span>' : ''}</td><td data-label="Acertos">${h.score}/${h.total}</td><td data-label="Tempo">${fmtUsed(h)}</td><td data-label="Resultado">${resultPill(h)}</td><td>${
+                    canReview(h)
+                      ? `<button class="sim-btn sim-btn-small" data-hist="${i}">Ver correção<span class="sr-only"> do ${esc(h.title)} de ${fmtDate(h.date)}</span></button>`
+                      : '<span class="sim-muted" title="Tentativas feitas antes desta versão não guardaram as respostas">Sem respostas</span>'
+                  }</td></tr>`
                 )
                 .join('')}
               </tbody></table>
+              </div>
+              ${best.length > HISTORY_SHOWN ? `<button class="sim-btn sim-btn-small" data-act="history-all">Mostrar todos (${best.length})</button>` : ''}
             </section>`
           : ''
       }
@@ -320,7 +381,14 @@ export function mount(root, data, { base = '/' } = {}) {
       if (chapter) qs = qs.filter((q) => chapterOf(q) === chapter);
       if (!qs.length) return alert('Nenhuma questão para esse filtro.');
       if (f.shuffle.checked) qs = shuffle(qs);
-      startSession('practice', examId, qs);
+      const timing = f.timed.checked ? { limitMs: Math.round(qs.length * PRACTICE_MS_PER_Q * (f.practiceExtended.checked ? 1 + EXAM.extraPct / 100 : 1)) } : null;
+      startSession('practice', examId, qs, null, timing);
+    };
+    const timed = root.querySelector('input[name="timed"]');
+    timed.onchange = () => {
+      const ext = root.querySelector('input[name="practiceExtended"]');
+      ext.disabled = !timed.checked;
+      if (!timed.checked) ext.checked = false;
     };
     root.querySelector('[data-act="start-exam"]').onclick = () => {
       const f = root.querySelector('form');
@@ -328,6 +396,18 @@ export function mount(root, data, { base = '/' } = {}) {
       const minutes = f.extended.checked ? Math.round(EXAM.minutes * (1 + EXAM.extraPct / 100)) : EXAM.minutes;
       startSession('exam', examId, questionsFor(examId, false), minutes);
     };
+    root.querySelectorAll('[data-hist]').forEach((b) => {
+      b.onclick = () => {
+        renderResults(historyView(best[Number(b.dataset.hist)]));
+        root.scrollIntoView({ block: 'start' });
+      };
+    });
+    const all = root.querySelector('[data-act="history-all"]');
+    if (all)
+      all.onclick = () => {
+        root.querySelectorAll('.sim-history-more').forEach((tr) => (tr.hidden = false));
+        all.remove();
+      };
     const resume = root.querySelector('[data-act="resume"]');
     if (resume) {
       resume.onclick = () => {
@@ -342,7 +422,9 @@ export function mount(root, data, { base = '/' } = {}) {
     }
   }
 
-  function startSession(mode, examId, qs, minutes) {
+  // timing (practice only): { limitMs } turns on the countdown.
+  function startSession(mode, examId, qs, minutes, timing = null) {
+    const now = Date.now();
     state = {
       mode,
       examId,
@@ -351,9 +433,13 @@ export function mount(root, data, { base = '/' } = {}) {
       answers: {}, // ref -> [keys]
       checked: {}, // practice: ref -> true once graded
       flags: {},
-      startedAt: Date.now(),
-      deadline: mode === 'exam' ? Date.now() + minutes * 60000 : null,
+      startedAt: now,
+      deadline: mode === 'exam' ? now + minutes * 60000 : timing ? now + timing.limitMs : null,
       minutes: minutes || null,
+      timed: !!timing,
+      limitMs: timing ? timing.limitMs : null,
+      overtime: false, // practice: chose to go on after the time ran out
+      stopped: false, // practice: chose to stop when the time ran out
       finished: false,
     };
     persist();
@@ -398,7 +484,12 @@ export function mount(root, data, { base = '/' } = {}) {
     const hits = Object.keys(state.checked).filter((r) => sameSet(state.answers[r], findQ(r).answer)).length;
 
     root.innerHTML = `
-      <div class="sim-bar">
+      <div class="sim-bar ${state.timed ? 'sim-bar-sticky' : ''}">
+        ${
+          state.timed
+            ? `<span class="sim-timer" aria-live="off"><span class="sr-only">Tempo restante: </span><span data-timer>--:--</span><span class="sim-overtime" data-over hidden></span></span>`
+            : ''
+        }
         <span><strong>Treino</strong> · questão ${state.index + 1} de ${total}</span>
         <span>${hits} acerto${hits === 1 ? '' : 's'} em ${done} respondida${done === 1 ? '' : 's'}</span>
         <button class="sim-btn sim-btn-small" data-act="home">Sair</button>
@@ -458,22 +549,120 @@ export function mount(root, data, { base = '/' } = {}) {
         root.querySelector('.sim-feedback')?.focus({ preventScroll: false });
       };
     }
+    if (state.timed) startPracticeTimer();
+  }
+
+  // Countdown for timed practice. When it reaches zero, a dialog asks whether to
+  // go on (an increasing overtime counter starts) or stop (the rest stays blank).
+  function startPracticeTimer() {
+    const tick = () => {
+      const el = root.querySelector('[data-timer]');
+      if (!el) return clearTimer();
+      const left = state.deadline - Date.now();
+      el.textContent = fmtTime(Math.max(0, left));
+      el.parentElement.classList.toggle('is-low', left > 0 && left <= 5 * 60000);
+      el.parentElement.classList.toggle('is-out', left <= 0);
+      const over = root.querySelector('[data-over]');
+      if (state.overtime) {
+        over.hidden = false;
+        over.textContent = ` + ${fmtTime(-left)}`;
+        over.setAttribute('aria-label', `tempo extra ${fmtTime(-left)}`);
+      }
+      if (left <= 0 && !state.overtime && !root.querySelector('.sim-dialog[open]')) openTimeUpDialog();
+    };
+    tick();
+    timer = setInterval(tick, 1000);
+  }
+
+  function openTimeUpDialog() {
+    const total = state.order.length;
+    const done = Object.keys(state.checked).length;
+    const dialog = document.createElement('dialog');
+    dialog.className = 'sim-dialog';
+    dialog.setAttribute('aria-labelledby', 'sim-dialog-title');
+    dialog.innerHTML = `
+      <h2 id="sim-dialog-title">Tempo esgotado</h2>
+      <p>Os ${fmtTime(state.limitMs)} do treino acabaram. Você respondeu <strong>${done} de ${total}</strong> questões.</p>
+      <p>Você pode continuar e o tempo a mais será contado à parte, ou parar agora e considerar as ${total - done} restantes como não respondidas.</p>
+      <div class="sim-actions">
+        <button class="sim-btn sim-btn-primary" data-act="overtime">Continuar e contar o tempo extra</button>
+        <button class="sim-btn" data-act="stop">Parar e ver o resultado</button>
+      </div>`;
+    root.append(dialog);
+    // Esc must not dismiss the choice.
+    dialog.addEventListener('cancel', (e) => e.preventDefault());
+    dialog.querySelector('[data-act="overtime"]').onclick = () => {
+      state.overtime = true;
+      persist();
+      dialog.close();
+      dialog.remove();
+    };
+    dialog.querySelector('[data-act="stop"]').onclick = () => {
+      state.stopped = true;
+      state.finishedAt = state.deadline;
+      state.index = total;
+      persist();
+      dialog.close();
+      clearTimer();
+      renderPracticeSummary();
+      root.scrollIntoView({ block: 'start' });
+    };
+    dialog.showModal();
+  }
+
+  // Only questions graded with "Responder" count; the rest is blank.
+  const gradedAnswers = (s) => Object.fromEntries(s.order.filter((r) => s.checked[r]).map((r) => [r, s.answers[r] || []]));
+
+  function practiceEntry(s) {
+    const answers = gradedAnswers(s);
+    const end = s.finishedAt;
+    return {
+      kind: 'practice',
+      date: end,
+      title: exams[s.examId].title,
+      score: s.order.filter((r) => sameSet(answers[r], findQ(r).answer)).length,
+      total: s.order.length,
+      time: end - s.startedAt,
+      limit: s.limitMs,
+      over: Math.max(0, end - s.deadline),
+      examId: s.examId,
+      order: s.order,
+      answers,
+      flags: {},
+      minutes: null,
+      timeUp: s.stopped,
+    };
   }
 
   function renderPracticeSummary() {
+    clearTimer();
     const refs = state.order;
-    const wrong = refs.filter((r) => !sameSet(state.answers[r], findQ(r).answer));
+    const answers = gradedAnswers(state);
+    const wrong = refs.filter((r) => !sameSet(answers[r], findQ(r).answer));
+    const blank = refs.filter((r) => !answers[r]).length;
     const hits = refs.length - wrong.length;
-    state.finished = true;
+    if (!state.finished) {
+      state.finished = true;
+      state.finishedAt = state.finishedAt || Date.now();
+      // Timed practice goes to the history, so it can be reviewed later.
+      if (state.timed) store.history = [...(store.history || []), practiceEntry(state)].slice(-HISTORY_MAX);
+    }
     persist();
+    const entry = state.timed ? practiceEntry(state) : null;
     root.innerHTML = `
       <div class="sim-score ${hits / refs.length >= 0.65 ? 'is-ok' : 'is-bad'}">
         <p class="sim-score-big">${hits}/${refs.length}</p>
         <p>${Math.round((hits / refs.length) * 100)}% de acertos no treino</p>
+        ${
+          entry
+            ? `<p>${wrong.length - blank} erradas · ${blank} não respondidas · tempo ${fmtUsed(entry)}${entry.over > 0 ? ' (tempo do treino + tempo extra)' : ` de ${fmtTime(entry.limit)}`}${state.stopped ? ' · encerrado no fim do tempo' : ''}</p>`
+            : ''
+        }
       </div>
-      ${byChapterTable(refs)}
+      ${byChapterTable(refs, answers)}
       <div class="sim-actions">
         ${wrong.length ? '<button class="sim-btn sim-btn-primary" data-act="redo-wrong">Refazer só as que errei</button>' : ''}
+        ${entry ? '<button class="sim-btn" data-act="review">Ver correção completa</button>' : ''}
         <button class="sim-btn" data-act="home">Voltar ao início</button>
       </div>
     `;
@@ -484,6 +673,14 @@ export function mount(root, data, { base = '/' } = {}) {
     };
     const redo = root.querySelector('[data-act="redo-wrong"]');
     if (redo) redo.onclick = () => startSession('practice', state.examId, wrong.map(findQ));
+    const review = root.querySelector('[data-act="review"]');
+    if (review)
+      review.onclick = () => {
+        store.session = null;
+        saveStore(store);
+        renderResults(historyView(entry));
+        root.scrollIntoView({ block: 'start' });
+      };
   }
 
   // ----- exam mode -----
@@ -575,19 +772,34 @@ export function mount(root, data, { base = '/' } = {}) {
     state.finishedAt = Math.min(Date.now(), state.deadline);
     state.timeUp = timeUp;
     const score = state.order.filter((r) => sameSet(state.answers[r], findQ(r).answer)).length;
-    store.history = [...(store.history || []), { date: Date.now(), title: exams[state.examId].title, score, total: state.order.length, time: state.finishedAt - state.startedAt }].slice(-30);
+    // The answers are kept so each attempt can be reviewed later from the home screen.
+    const entry = {
+      kind: 'exam',
+      date: Date.now(),
+      title: exams[state.examId].title,
+      score,
+      total: state.order.length,
+      time: state.finishedAt - state.startedAt,
+      examId: state.examId,
+      order: state.order,
+      answers: state.answers,
+      flags: state.flags,
+      minutes: state.minutes,
+      timeUp: timeUp,
+    };
+    store.history = [...(store.history || []), entry].slice(-HISTORY_MAX);
     persist();
     renderResults();
   }
 
-  function byChapterTable(refs) {
+  function byChapterTable(refs, answers) {
     const rows = {};
     for (const r of refs) {
       const q = findQ(r);
       const ch = chapterOf(q);
       rows[ch] = rows[ch] || { ok: 0, total: 0 };
       rows[ch].total++;
-      if (sameSet(state.answers[r], q.answer)) rows[ch].ok++;
+      if (sameSet(answers[r], q.answer)) rows[ch].ok++;
     }
     return `<section class="sim-chapters">
       <h2>Desempenho por capítulo</h2>
@@ -604,46 +816,62 @@ export function mount(root, data, { base = '/' } = {}) {
     </section>`;
   }
 
-  function renderResults() {
+  function renderResults(view = null) {
     clearTimer();
-    const refs = state.order;
+    // view: a read-only snapshot from the history; otherwise the current session.
+    const s = view || state;
+    const refs = s.order;
     const status = (r) => {
-      const a = state.answers[r] || [];
+      const a = s.answers[r] || [];
       if (!a.length) return 'blank';
       return sameSet(a, findQ(r).answer) ? 'ok' : 'bad';
     };
     const score = refs.filter((r) => status(r) === 'ok').length;
     const blank = refs.filter((r) => status(r) === 'blank').length;
-    const passed = score >= EXAM.passMark;
-    const used = (state.finishedAt || Date.now()) - state.startedAt;
+    const isExam = s.mode === 'exam';
+    const passed = isExam ? score >= EXAM.passMark : score / refs.length >= 0.65;
+    const used = (s.finishedAt || Date.now()) - s.startedAt;
 
     root.innerHTML = `
+      ${
+        s.fromHistory
+          ? `<div class="sim-bar">
+              <span><strong>Histórico</strong> · ${esc(exams[s.examId].title)} · ${fmtDate(s.date)}</span>
+              <button class="sim-btn sim-btn-small" data-act="home">← Voltar</button>
+            </div>`
+          : ''
+      }
       <div class="sim-score ${passed ? 'is-ok' : 'is-bad'}">
         <p class="sim-score-big">${score}/${refs.length}</p>
-        <p><strong>${passed ? 'Aprovado' : 'Reprovado'}</strong> · ${Math.round((score / refs.length) * 100)}% (mínimo: ${EXAM.passMark} acertos)</p>
-        <p>${refs.length - score - blank} erradas · ${blank} em branco · tempo usado ${fmtTime(used)} de ${state.minutes} min${state.timeUp ? ' (tempo esgotado)' : ''}</p>
+        ${
+          isExam
+            ? `<p><strong>${passed ? 'Aprovado' : 'Reprovado'}</strong> · ${Math.round((score / refs.length) * 100)}% (mínimo: ${EXAM.passMark} acertos)</p>
+        <p>${refs.length - score - blank} erradas · ${blank} em branco · tempo usado ${fmtTime(used)} de ${s.minutes} min${s.timeUp ? ' (tempo esgotado)' : ''}</p>`
+            : `<p><strong>Treino cronometrado</strong> · ${Math.round((score / refs.length) * 100)}% de acertos</p>
+        <p>${refs.length - score - blank} erradas · ${blank} não respondidas · tempo ${fmtUsed({ time: used, limit: s.limitMs, over: s.over })}${s.over > 0 ? ' (tempo do treino + tempo extra)' : ` de ${fmtTime(s.limitMs)}`}${s.timeUp ? ' · encerrado no fim do tempo' : ''}</p>`
+        }
       </div>
-      ${byChapterTable(refs)}
+      ${byChapterTable(refs, s.answers)}
       <section class="sim-review">
         <h2>Correção</h2>
         <div class="sim-seg sim-filter" role="group" aria-label="Filtrar correção">
           <label><input type="radio" name="filter" value="all" checked><span>Todas</span></label>
-          <label><input type="radio" name="filter" value="bad"><span>Erradas e em branco (${refs.length - score})</span></label>
-          <label><input type="radio" name="filter" value="flag"><span>Marcadas</span></label>
+          <label><input type="radio" name="filter" value="bad"><span>${isExam ? 'Erradas e em branco' : 'Erradas e não respondidas'} (${refs.length - score})</span></label>
+          ${isExam ? '<label><input type="radio" name="filter" value="flag"><span>Marcadas</span></label>' : ''}
         </div>
         <ol class="sim-review-list">
           ${refs
             .map((r, i) => {
               const q = findQ(r);
               const st = status(r);
-              const sel = state.answers[r] || [];
-              return `<li class="sim-review-item is-${st}" data-status="${st}" data-flag="${state.flags[r] ? 1 : 0}">
+              const sel = s.answers[r] || [];
+              return `<li class="sim-review-item is-${st}" data-status="${st}" data-flag="${s.flags[r] ? 1 : 0}">
                 <details ${st !== 'ok' ? 'open' : ''}>
                   <summary>
-                    <span class="sim-pill ${st === 'ok' ? 'is-ok' : 'is-bad'}">${st === 'ok' ? '✓ Certa' : st === 'bad' ? '✗ Errada' : '○ Em branco'}</span>
+                    <span class="sim-pill ${st === 'ok' ? 'is-ok' : 'is-bad'}">${st === 'ok' ? '✓ Certa' : st === 'bad' ? '✗ Errada' : isExam ? '○ Em branco' : '○ Não respondida'}</span>
                     <span>Questão ${i + 1}</span>
                     <span class="sim-review-ans">sua: <strong>${sel.length ? sel.join(', ') : '-'}</strong> · correta: <strong>${q.answer.join(', ')}</strong></span>
-                    ${state.flags[r] ? '<span class="sim-badge">marcada</span>' : ''}
+                    ${s.flags[r] ? '<span class="sim-badge">marcada</span>' : ''}
                   </summary>
                   ${metaBadges(q, q.label)}
                   <div class="sim-stem">${renderBlocks(q.stem, imgBase)}</div>
@@ -660,8 +888,8 @@ export function mount(root, data, { base = '/' } = {}) {
       </section>
       <div class="sim-actions">
         ${score < refs.length ? '<button class="sim-btn sim-btn-primary" data-act="train-wrong">Treinar as que errei</button>' : ''}
-        <button class="sim-btn" data-act="again">Refazer o simulado</button>
-        <button class="sim-btn" data-act="home">Voltar ao início</button>
+        <button class="sim-btn" data-act="again">${isExam ? 'Refazer o simulado' : 'Refazer o treino'}</button>
+        <button class="sim-btn" data-act="home">${s.fromHistory ? 'Voltar ao histórico' : 'Voltar ao início'}</button>
       </div>
     `;
 
@@ -673,27 +901,36 @@ export function mount(root, data, { base = '/' } = {}) {
         });
       })
     );
-    const examId = state.examId;
-    const minutes = state.minutes;
+    const examId = s.examId;
+    const minutes = s.minutes;
     const wrong = refs.filter((r) => status(r) !== 'ok').map(findQ);
     const leave = () => {
       store.session = null;
       saveStore(store);
     };
-    root.querySelector('[data-act="home"]').onclick = () => {
-      leave();
-      renderHome();
-    };
-    root.querySelector('[data-act="again"]').onclick = () => startSession('exam', examId, questionsFor(examId, false), minutes);
+    root.querySelectorAll('[data-act="home"]').forEach(
+      (b) =>
+        (b.onclick = () => {
+          // A history view must not discard the session in progress.
+          if (!s.fromHistory) leave();
+          renderHome();
+          if (s.fromHistory) root.querySelector('.sim-history')?.scrollIntoView({ block: 'start' });
+        })
+    );
+    // Starting from a history view replaces any unfinished session, so ask first.
+    const okToReplace = () =>
+      !s.fromHistory || !store.session || store.session.finished || confirm('Isso descarta o treino ou simulado que está em andamento. Continuar?');
+    root.querySelector('[data-act="again"]').onclick = () => okToReplace() &&
+      (isExam ? startSession('exam', examId, questionsFor(examId, false), minutes) : startSession('practice', examId, refs.map(findQ), null, { limitMs: s.limitMs }));
     const train = root.querySelector('[data-act="train-wrong"]');
-    if (train) train.onclick = () => startSession('practice', examId, wrong);
+    if (train) train.onclick = () => okToReplace() && startSession('practice', examId, wrong);
   }
 
   // ----- keyboard (practice and exam) -----
 
   document.addEventListener('keydown', (e) => {
     if (!state || state.finished || e.ctrlKey || e.metaKey || e.altKey) return;
-    if (!root.querySelector('.sim-question')) return;
+    if (!root.querySelector('.sim-question') || root.querySelector('.sim-dialog[open]')) return;
     if (e.target.matches('select, textarea, input[type="text"], input[type="search"]')) return;
     const key = e.key.toLowerCase();
     if (/^[a-e]$/.test(key)) {

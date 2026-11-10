@@ -139,9 +139,17 @@
 
 .sim-field-inline {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
   margin: 0 0 1rem;
+}
+
+/* A select sizes itself to its longest option; let it shrink inside the card. */
+.sim-field-inline select {
+  flex: 1 1 10rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .sim-field-inline select {
@@ -256,6 +264,70 @@
   width: 100%;
 }
 
+.sim-history .sim-table th,
+.sim-history .sim-table td {
+  padding: 0.5rem 0.6rem;
+}
+
+.sim-history .sim-table td:last-child {
+  white-space: nowrap;
+}
+
+/* Narrow screens: one card per attempt, so the review button stays visible. */
+@media (max-width: 40rem) {
+  .sim-history .sim-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .sim-history .sim-table,
+  .sim-history .sim-table tbody {
+    display: block;
+  }
+
+  .sim-history .sim-table tr:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--sim-border);
+    border-radius: var(--sim-radius);
+    margin-bottom: 0.6rem;
+  }
+
+  .sim-history .sim-table td {
+    border: 0;
+    padding: 0;
+  }
+
+  .sim-history .sim-table td[data-label="Acertos"]::before,
+  .sim-history .sim-table td[data-label="Tempo"]::before {
+    content: attr(data-label) ": ";
+    color: var(--sl-color-gray-3);
+  }
+
+  .sim-history .sim-table td:first-child,
+  .sim-history .sim-table td:nth-child(2) {
+    font-weight: 600;
+  }
+
+  .sim-history .sim-table td:last-child {
+    flex-basis: 100%;
+  }
+}
+
+.sim-history .sim-hint {
+  margin: 0.25rem 0 0.75rem;
+}
+
+.sim-muted {
+  font-size: var(--sl-text-xs, 0.8rem);
+  color: var(--sl-color-gray-3);
+}
+
 .sim-credits {
   margin-top: 2.5rem;
   font-size: var(--sl-text-xs, 0.8rem);
@@ -263,6 +335,15 @@
 }
 
 /* ---------- top bar / timer ---------- */
+
+.sim-check-sub {
+  padding-left: 1.6rem;
+}
+
+.sim-check:has(input:disabled) {
+  color: var(--sl-color-gray-3);
+  cursor: default;
+}
 
 .sim-bar {
   display: flex;
@@ -290,6 +371,48 @@
 
 .sim-timer.is-low {
   color: var(--sim-bad);
+}
+
+.sim-timer.is-out [data-timer] {
+  color: var(--sim-bad);
+}
+
+.sim-overtime {
+  color: var(--sim-warn);
+}
+
+/* ---------- time-up dialog ---------- */
+
+.sim-dialog {
+  /* Starlight resets margins; a modal dialog needs margin: auto to be centered. */
+  margin: auto;
+  max-width: min(32rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  border: 1px solid var(--sim-border);
+  border-radius: var(--sim-radius);
+  background: var(--sl-color-bg);
+  color: var(--sl-color-gray-2);
+}
+
+.sim-dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.sim-dialog p {
+  margin: 0 0 0.75rem;
+}
+
+.sim-dialog h2 {
+  text-align: center;
+}
+
+.sim-dialog .sim-actions {
+  margin-top: 1.25rem;
+  justify-content: center;
+}
+
+.sim-dialog .sim-actions > :last-child {
+  margin-left: 0;
 }
 
 .sim-progress {

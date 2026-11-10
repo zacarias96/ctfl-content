@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 190" width="640" height="190" font-family="Arial, Helvetica, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#000"/>
+    </marker>
+  </defs>
+  <rect width="640" height="190" fill="#fff"/>
+  <g fill="#fff" stroke="#000" stroke-width="1.5">
+    <rect x="10" y="10" width="115" height="60" rx="8"/>
+    <rect x="175" y="10" width="115" height="60" rx="8"/>
+    <rect x="345" y="10" width="115" height="60" rx="8"/>
+    <rect x="515" y="10" width="115" height="60" rx="8"/>
+    <rect x="10" y="120" width="115" height="60" rx="8"/>
+    <rect x="175" y="120" width="115" height="60" rx="8"/>
+    <rect x="345" y="120" width="115" height="60" rx="8"/>
+  </g>
+  <g text-anchor="middle" fill="#000">
+    <text x="67" y="35">TC 1</text><text x="67" y="55">prioridade: 2</text>
+    <text x="232" y="35">TC 2</text><text x="232" y="55">prioridade: 3</text>
+    <text x="402" y="35">TC 5</text><text x="402" y="55">prioridade: 1</text>
+    <text x="572" y="35">TC 6</text><text x="572" y="55">prioridade: 3</text>
+    <text x="67" y="145">TC 3</text><text x="67" y="165">prioridade: 2</text>
+    <text x="232" y="145">TC 4</text><text x="232" y="165">prioridade: 2</text>
+    <text x="402" y="145">TC 7</text><text x="402" y="165">prioridade: 1</text>
+  </g>
+  <g stroke="#000" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M125 40 H173"/>
+    <path d="M290 40 H343"/>
+    <path d="M460 40 H513"/>
+    <path d="M290 150 H343"/>
+    <path d="M290 140 L358 72"/>
+  </g>
+</svg>

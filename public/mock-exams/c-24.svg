@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 380" width="280" height="380">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#000"/>
+    </marker>
+  </defs>
+  <rect width="280" height="380" fill="#fff"/>
+  <g fill="#fff" stroke="#000" stroke-width="2.5">
+    <circle cx="120" cy="30" r="24"/>
+    <circle cx="120" cy="125" r="24"/>
+    <circle cx="45" cy="205" r="24"/>
+    <circle cx="190" cy="205" r="24"/>
+    <circle cx="125" cy="275" r="24"/>
+    <circle cx="255" cy="275" r="22"/>
+    <circle cx="190" cy="350" r="24"/>
+  </g>
+  <g stroke="#000" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M120 54 V101"/>
+    <path d="M118 149 C114 175 95 196 69 205"/>
+    <path d="M27 189 C20 150 60 120 96 122"/>
+    <path d="M136 143 L174 186"/>
+    <path d="M173 222 L141 257"/>
+    <path d="M206 222 L240 257"/>
+    <path d="M140 294 L173 332"/>
+    <path d="M243 294 L207 332"/>
+  </g>
+</svg>

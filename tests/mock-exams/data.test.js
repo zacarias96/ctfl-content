@@ -7,10 +7,10 @@ const BLOCK_KEYS = ['p', 'li', 'quote', 'pre', 'img', 'table'];
 const isBlock = (b) => typeof b === 'string' || BLOCK_KEYS.some((k) => k in b);
 const allQuestions = data.exams.flatMap((e) => [...e.questions, ...e.extra].map((q) => [`${e.id}:${q.id}`, q]));
 
-// Exams A and B, each with 40 questions in the official chapter split.
+// Exams A to D, each with 40 questions in the official chapter split.
 describe('exams', () => {
-  it('has sample exams A and B', () => {
-    expect(data.exams.map((e) => e.id)).toEqual(['A', 'B']);
+  it('has sample exams A, B, C and D', () => {
+    expect(data.exams.map((e) => e.id)).toEqual(['A', 'B', 'C', 'D']);
   });
 
   it.each(data.exams.map((e) => [e.id, e]))('exam %s has 40 questions split 8/6/4/11/9/2 by chapter', (_, exam) => {

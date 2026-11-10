@@ -137,19 +137,21 @@
   accent-color: var(--sl-color-accent);
 }
 
+/* Label above the select. A select sizes itself to its longest option, so it
+   takes the card width instead and can shrink with it. */
 .sim-field-inline {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  min-width: 0;
   margin: 0 0 1rem;
 }
 
-/* A select sizes itself to its longest option; let it shrink inside the card. */
 .sim-field-inline select {
-  flex: 1 1 10rem;
-  min-width: 0;
   width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .sim-field-inline select {
@@ -226,6 +228,8 @@
   border: 1px solid var(--sim-border);
   border-radius: var(--sim-radius);
   background: var(--sim-surface);
+  /* Grid items default to min-width: auto and would grow to fit the select. */
+  min-width: 0;
 }
 
 .sim-card > :nth-last-child(2) {
@@ -234,7 +238,7 @@
 
 .sim-card .sim-btn {
   margin-top: auto;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .sim-resume {

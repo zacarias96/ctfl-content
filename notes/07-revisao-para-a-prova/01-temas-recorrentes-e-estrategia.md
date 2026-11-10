@@ -70,7 +70,7 @@ São 60 minutos para 40 questões, 1 minuto e meio por questão.
 
 - Revise as **palavras-chave** do início de cada capítulo (todas podem cair em K1).
 - Refaça os **exercícios resolvidos** das notas do capítulo 4 e de estimativa sem olhar a resposta.
-- Faça pelo menos um **simulado oficial** cronometrado. Os exemplos de exame A e B estão nos [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/), em modo treino ou prova de 60 minutos.
+- Faça pelo menos um **simulado oficial** cronometrado. Os exemplos de exame A, B, C e D estão nos [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/), em modo treino ou prova de 60 minutos.
 - Revise os [pares que confundem](02-pares-que-confundem.md) e o [roteiro de cálculos](03-roteiro-de-calculos.md) na véspera, e consulte o [glossário de apoio](04-glossario-de-apoio.md) para os termos que não são palavras-chave.
 
 ## Referências

@@ -35,13 +35,13 @@ Material de estudo em português com todo o conteúdo examinável do **Syllabus 
 2. Siga os capítulos na ordem: o capítulo 1 define o vocabulário que todos os outros usam.
 3. Responda o "Teste seu conhecimento" de cada nota **antes** de abrir as respostas.
 4. Nos capítulos 4 e 5, refaça os exercícios resolvidos no papel, sem olhar.
-5. Feche com a seção [Revisão para a Prova](07-revisao-para-a-prova/01-temas-recorrentes-e-estrategia.md) e com os [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/) (exemplos de exame A e B: treino questão a questão ou prova cronometrada de 60 min). Na correção, cada questão tem um link para a nota que cobre o objetivo de aprendizagem dela.
+5. Feche com a seção [Revisão para a Prova](07-revisao-para-a-prova/01-temas-recorrentes-e-estrategia.md) e com os [simulados interativos](https://zacarias96.github.io/ctfl-content/mock-exams/) (exemplos de exame A, B, C e D: treino questão a questão ou prova cronometrada de 60 min). Na correção, cada questão tem um link para a nota que cobre o objetivo de aprendizagem dela.
 
 ## Fontes
 
 - [Syllabus ISTQB® CTFL v4.0, tradução BSTQB](https://bstqb.online/ctfl), base de todo o conteúdo.
 - [Glossário ISTQB em português](https://glossary.istqb.org/pt-br/search/), fonte das definições das palavras-chave e do glossário de apoio.
-- ISTQB® CTFL v4.0 Sample Exams A e B, v1.7, tradução BSTQB, fonte das questões e justificativas dos simulados.
+- ISTQB® CTFL v4.0 Sample Exams A e B (v1.7, tradução BSTQB), C (v1.6) e D (v1.5) (originais em inglês, em tradução livre), fonte das questões e justificativas dos simulados.
 - Repositório [Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP](https://github.com/Mitesh411/ISTQB-CTFL-4.0-EXAM-PREP), com a análise dos temas recorrentes nos simulados.
 
 Material de estudo pessoal, não comercial. Conteúdo do syllabus © ISTQB®, utilizado conforme as condições de uso do próprio syllabus (extratos para uso não comercial com citação da fonte).

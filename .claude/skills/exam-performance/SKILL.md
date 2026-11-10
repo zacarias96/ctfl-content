@@ -15,7 +15,7 @@ Os dados ficam em `data/lo-catalog.json` e vêm da estrutura oficial **ISTQB Exa
 - Distribuição por nível: 8 K1, 24 K2, 8 K3. Por capítulo: 8, 6, 4, 11, 9, 2.
 - Os 64 LOs estão reunidos em **29 grupos**. Cada grupo sorteia um número fixo de questões entre os seus LOs. Exemplos: o grupo `FL-4.2.1 a 4.2.4 + FL-4.5.3` (K3) sempre rende 5 questões; o grupo `FL-1.4.1 a 1.4.5` rende 3; o grupo `FL-5.1.2, 5.1.6, 5.2.1, 5.3.1` rende só 1.
 - Consequência prática: um LO que **não apareceu** na lista não foi avaliado, mas pode ser sorteado na próxima prova no lugar de um LO "irmão" do mesmo grupo. Esses são pontos cegos, não pontos fortes.
-- Cada LO tem a página do syllabus (`references/ctfl-4.0-syllabus-pt-br.pdf`, página física do PDF), a nota que o cobre em `notes/` e as questões dos simulados A e B (`src/data/mock-exams.json`) com o mesmo LO.
+- Cada LO tem a página do syllabus (`references/ctfl-4.0-syllabus-pt-br.pdf`, página física do PDF), a nota que o cobre em `notes/` e as questões dos simulados A, B, C e D (`src/data/mock-exams.json`) com o mesmo LO.
 
 ## Fluxo
 
@@ -59,7 +59,7 @@ Para cada LO de prioridade alta e média (todos os errados e os não sorteados d
 2. Quando a nota não for suficiente para detalhar o tema, leia a página do syllabus com `Read` (`pages: "<página>"`) em `references/ctfl-4.0-syllabus-pt-br.pdf`.
 3. Consulte também as notas de revisão quando o tema aparecer nelas: `notes/07-revisao-para-a-prova/02-pares-que-confundem.md` (K2), `03-roteiro-de-calculos.md` (K3) e `04-glossario-de-apoio.md` (K1).
 4. Anote, em uma ou duas linhas por LO, **o que exatamente revisar** (os subtemas e as confusões típicas), não apenas o título do objetivo.
-5. Liste as questões dos simulados com o mesmo LO para treino no modo prática (`/ctfl-content/mock-exams/`). As identificações vêm do script: `A20` é a questão 20 do Simulado A; `extra A2` é uma questão adicional do Simulado A.
+5. Liste as questões dos simulados com o mesmo LO para treino no modo prática (`/ctfl-content/mock-exams/`). As identificações vêm do script: `A20` é a questão 20 do Simulado A (o mesmo vale para `B`, `C` e `D`); `extra A2` é uma questão adicional do Simulado A.
 
 Pesquise na internet só se faltar algo que nem a nota nem o syllabus cobrem, priorizando fontes oficiais (ISTQB, BSTQB) e conteúdo em pt-BR.
 
@@ -72,7 +72,7 @@ Distribua o tempo disponível em fases, nesta ordem:
 | 1    | LOs errados com maior prioridade, começando pelos K3          | Refazer os exemplos da nota no papel, resolver as questões de simulado do LO, explicar a resposta em voz alta                         |
 | 2    | LOs não sorteados de grupos com erro e LOs errados restantes  | Ler a seção da nota, responder o "Teste seu conhecimento" sem abrir a resposta, revisar os pares que confundem                        |
 | 3    | Demais LOs não sorteados e palavras-chave K1 de cada capítulo | Leitura ativa e flashcards com as definições do glossário                                                                             |
-| 4    | Consolidação                                                  | Simulados A e B completos no modo prova cronometrado, revisão dos erros pelos links de cada questão, revisão rápida dos LOs acertados |
+| 4    | Consolidação                                                  | Simulados A a D completos no modo prova cronometrado, revisão dos erros pelos links de cada questão, revisão rápida dos LOs acertados |
 
 Regras para o cronograma:
 
